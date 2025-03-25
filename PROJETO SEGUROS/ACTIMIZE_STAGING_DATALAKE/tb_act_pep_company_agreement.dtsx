@@ -1,0 +1,1472 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/15/2022 4:00:39 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{DCA68C01-6B73-47D9-8788-E724A07BC661}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="tb_act_pep_company_agreement"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{6C21C283-70A8-40F2-B1B6-005880A746B9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[tb_act_pep_company_agreement]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="tb_act_pep_company_agreement"
+      DTS:DTSID="{0601CC76-C48C-4378-9EE9-8A02CFB6292F}"
+      DTS:ObjectName="tb_act_pep_company_agreement">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::vFileConnectionString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1046"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="H:\WINDOWS\system\Projeto_Actimize\SSIS\Cargas_ETL\POB_TB_ACT_PEP_COMPANY_AGREEMENT_20220825_202208251259">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_CONTROL_ID"
+              DTS:DTSID="{B746FB7C-5F70-42E2-A0BA-450C79089D10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_BRANCH_CD"
+              DTS:DTSID="{C4F385F9-756E-4EB6-8736-DEA42C1F4078}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_VERIFICATION_CD"
+              DTS:DTSID="{9064C30E-B329-45D1-B5BC-17F7AF5A66C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_MATRIX_CONTROL_ID"
+              DTS:DTSID="{9AD7E6E1-C527-43FC-8760-6F2D1CBB62DC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="130"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COMPANY_NM"
+              DTS:DTSID="{98154201-6DF4-4298-8608-E04157591D4A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CONTROL_ID"
+              DTS:DTSID="{DCB69DE5-B1C9-4F76-9E0E-B207EB3F49BA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="BRANCH_CD"
+              DTS:DTSID="{099D1315-6F0C-4902-9BCF-471B817E94FC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="VERIFICATION_CD"
+              DTS:DTSID="{FB7A1C06-87C8-490F-8CBE-DBEF54926C04}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PERSON_COMPANY_NM"
+              DTS:DTSID="{CB8E8177-4596-43CA-A194-632C8838AA23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="133"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SYSTEM_DATE_DT"
+              DTS:DTSID="{DBF11ED7-3697-4700-993A-FA211EB42EDE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RELATIONSHIP_CD"
+              DTS:DTSID="{F578FC08-D81E-45B5-ADA6-7AA5975791EB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RELATIONSHIP_TX"
+              DTS:DTSID="{79931A64-93A4-46A9-8F1D-1546A4308FD0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AGREEMENT_NR"
+              DTS:DTSID="{B76F7C1B-F657-4AAB-8668-E217D0ABF3B0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="131"
+              DTS:DataPrecision="18"
+              DTS:DataScale="6"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARTNER_PERCENT_VL"
+              DTS:DTSID="{B32DDA3D-3C4D-45CA-9A8C-FFA817BEDA6D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARTNER_COMPANY_ADMIN_FG"
+              DTS:DTSID="{09555445-4D00-435A-8BB6-A18A6D70579C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE_SYSTEM_CD"
+              DTS:DTSID="{F9C02BC2-783F-45FE-9CCC-1A3CC80F4043}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2EEA72F1-1936-4534-AA00-41EA02604EBC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BA68DB94-AA63-4416-AFFE-7F3C149E9843}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCF_insert_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9EBEE20F-C933-4BD8-82B3-BF4721451802}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCF_source_entity_name_CA">
+      <DTS:VariableValue
+        DTS:DataType="8">tb_act_pep_company_agreement</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{275B073C-CA9B-4705-9510-A213171F1D2E}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCF_type">
+      <DTS:VariableValue
+        DTS:DataType="8">FraudRisk</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D9834301-ECB3-4A85-A0E9-71BD6724AA6C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::P_FILES_PATH] +  @[User::V_tb_act_pep_company_agreement] +  @[User::V_BusinessDate] + &quot;_&quot; +  @[User::V_TimesTamp]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vFileConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">H:\WINDOWS\system\Projeto_Actimize\SSIS\Cargas_ETL\POB_TB_ACT_PEP_COMPANY_AGREEMENT_20220825_202208251259</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D6063D99-9793-4900-B681-37ECFE271183}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::P_FILES_PATH]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">H:\WINDOWS\system\Projeto_Actimize\SSIS\Cargas_ETL\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A69BDF2F-3CBE-4951-BB37-3549EA75837A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::V_tb_act_pep_company_agreement] +  @[User::V_BusinessDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="VUTF8_Companyagreement">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_TB_ACT_PEP_COMPANY_AGREEMENT_20220825</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D584D091-82F5-490C-9F19-C0DF032E16D9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_BusinessDate">
+      <DTS:VariableValue
+        DTS:DataType="8">20220825</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{0593F954-5F50-4C04-8607-24B535BB5D76}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_tb_act_pep_company_agreement">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_TB_ACT_PEP_COMPANY_AGREEMENT_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{2423872A-FCAB-4CB9-8393-560AFEDAE1C5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,@[System::StartTime]) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,@[System::StartTime]) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,@[System::StartTime]),2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;hh&quot;,@[System::StartTime]),2)+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mi&quot;,@[System::StartTime]),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_TimesTamp">
+      <DTS:VariableValue
+        DTS:DataType="8">202208251259</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\tb_act_pep_company_agreement"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{CABA40E3-2129-4725-A81E-94D599B413F3}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="tb_act_pep_company_agreement">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\tb_act_pep_company_agreement\CONVERT UTF8 BOM"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9E8A0BAE-FCAA-4D51-AFF3-030983275C6A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CONVERT UTF8 BOM"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>06_Converte_UTF8-Bom.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>pFileName</ParameterName>
+                <BindedVariableOrParameterName>User::VUTF8_Companyagreement</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pFilePath</ParameterName>
+                <BindedVariableOrParameterName>User::vFilePath</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\tb_act_pep_company_agreement\Executa ControlFile"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{96D5578E-754E-4C32-B6B6-87A094A36787}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa ControlFile"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>05_ControlFiles.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Data_Classification</ParameterName>
+                <BindedVariableOrParameterName>$Project::pCF_data_classification</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_File_Name</ParameterName>
+                <BindedVariableOrParameterName>User::V_tb_act_pep_company_agreement</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_File_Name_Prefix</ParameterName>
+                <BindedVariableOrParameterName>User::V_tb_act_pep_company_agreement</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_File_Path</ParameterName>
+                <BindedVariableOrParameterName>User::vFilePath</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Insert_Record_Count</ParameterName>
+                <BindedVariableOrParameterName>User::vCF_insert_record_count</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_pSource_Entity_Name</ParameterName>
+                <BindedVariableOrParameterName>User::V_tb_act_pep_company_agreement</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Source</ParameterName>
+                <BindedVariableOrParameterName>$Project::pCF_SOURCE_Siges</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Type</ParameterName>
+                <BindedVariableOrParameterName>User::vCF_type</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Business_Date</ParameterName>
+                <BindedVariableOrParameterName>User::V_BusinessDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Timestamp_FileCreation</ParameterName>
+                <BindedVariableOrParameterName>User::V_TimesTamp</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{47EFF040-6155-417F-A08C-E468AFEDA033}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="tb_act_pep_company_agreement"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Flat File Destination"
+                  localeId="1046"
+                  name="Flat File Destination">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                    <property
+                      dataType="System.Boolean"
+                      description="When text qualifier is enabled, specifies whether the text qualifier in the data written to the destination file will be escaped or not."
+                      name="EscapeQualifier">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[tb_act_pep_company_agreement]"
+                      connectionManagerRefId="Package.ConnectionManagers[tb_act_pep_company_agreement]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[COMPANY_CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="COMPANY_CONTROL_ID"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_CONTROL_ID]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_CONTROL_ID]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[COMPANY_BRANCH_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="COMPANY_BRANCH_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_BRANCH_CD]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_BRANCH_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[COMPANY_VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="COMPANY_VERIFICATION_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_VERIFICATION_CD]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_VERIFICATION_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[COMPANY_MATRIX_CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="COMPANY_MATRIX_CONTROL_ID"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_MATRIX_CONTROL_ID]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_MATRIX_CONTROL_ID]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[COMPANY_NM]"
+                          cachedDataType="wstr"
+                          cachedLength="255"
+                          cachedName="COMPANY_NM"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_NM]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_NM]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="CONTROL_ID"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CONTROL_ID]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[BRANCH_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="BRANCH_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BRANCH_CD]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="VERIFICATION_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[VERIFICATION_CD]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[PERSON_COMPANY_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="PERSON_COMPANY_NM"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PERSON_COMPANY_NM]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[SYSTEM_DATE_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="SYSTEM_DATE_DT"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SYSTEM_DATE_DT]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[SYSTEM_DATE_DT]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[RELATIONSHIP_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="RELATIONSHIP_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RELATIONSHIP_CD]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[RELATIONSHIP_TX]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="RELATIONSHIP_TX"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RELATIONSHIP_TX]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TX]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[AGREEMENT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="AGREEMENT_NR"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AGREEMENT_NR]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGREEMENT_NR]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[PARTNER_PERCENT_VL]"
+                          cachedDataType="numeric"
+                          cachedName="PARTNER_PERCENT_VL"
+                          cachedPrecision="18"
+                          cachedScale="6"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTNER_PERCENT_VL]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTNER_PERCENT_VL]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[PARTNER_COMPANY_ADMIN_FG]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="PARTNER_COMPANY_ADMIN_FG"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTNER_COMPANY_ADMIN_FG]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTNER_COMPANY_ADMIN_FG]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="COMPANY_CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="COMPANY_BRANCH_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="COMPANY_VERIFICATION_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_MATRIX_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="COMPANY_MATRIX_CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COMPANY_NM]"
+                          dataType="wstr"
+                          length="255"
+                          name="COMPANY_NM" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="BRANCH_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="VERIFICATION_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="PERSON_COMPANY_NM" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SYSTEM_DATE_DT]"
+                          dataType="dbDate"
+                          name="SYSTEM_DATE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RELATIONSHIP_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="RELATIONSHIP_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RELATIONSHIP_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TX" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AGREEMENT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="AGREEMENT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTNER_PERCENT_VL]"
+                          dataType="numeric"
+                          name="PARTNER_PERCENT_VL"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTNER_COMPANY_ADMIN_FG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="PARTNER_COMPANY_ADMIN_FG" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SOURCE_SYSTEM_CD" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Outputs[Multicast Output 3]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_tb_act_pep_company_agreement]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from st_tb_act_pep_company_agreement
+where COMPANY_CONTROL_ID not in ('000671430')</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{F6BD9322-826F-4B21-A477-77D828BDC510}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 Actimize]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_CONTROL_ID]"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_CONTROL_ID]"
+                          name="COMPANY_CONTROL_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_BRANCH_CD]"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_BRANCH_CD]"
+                          name="COMPANY_BRANCH_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_VERIFICATION_CD]"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_VERIFICATION_CD]"
+                          name="COMPANY_VERIFICATION_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_MATRIX_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_MATRIX_CONTROL_ID]"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_MATRIX_CONTROL_ID]"
+                          name="COMPANY_MATRIX_CONTROL_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_NM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_NM]"
+                          length="255"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[COMPANY_NM]"
+                          name="COMPANY_NM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTROL_ID]"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]"
+                          name="CONTROL_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BRANCH_CD]"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]"
+                          name="BRANCH_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VERIFICATION_CD]"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]"
+                          name="VERIFICATION_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_COMPANY_NM]"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]"
+                          name="PERSON_COMPANY_NM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[SYSTEM_DATE_DT]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SYSTEM_DATE_DT]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[SYSTEM_DATE_DT]"
+                          name="SYSTEM_DATE_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_CD]"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_CD]"
+                          name="RELATIONSHIP_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TX]"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TX]"
+                          name="RELATIONSHIP_TX"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGREEMENT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AGREEMENT_NR]"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[AGREEMENT_NR]"
+                          name="AGREEMENT_NR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTNER_PERCENT_VL]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTNER_PERCENT_VL]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTNER_PERCENT_VL]"
+                          name="PARTNER_PERCENT_VL"
+                          precision="18"
+                          scale="6"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTNER_COMPANY_ADMIN_FG]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTNER_COMPANY_ADMIN_FG]"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTNER_COMPANY_ADMIN_FG]"
+                          name="PARTNER_COMPANY_ADMIN_FG"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_SCD_DT]"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[UPDATE_SCD_DT]"
+                          name="UPDATE_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CHECKSUM_SCD_ID]"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].Columns[CHECKSUM_SCD_ID]"
+                          name="CHECKSUM_SCD_ID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="COMPANY_CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="COMPANY_BRANCH_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="COMPANY_VERIFICATION_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_MATRIX_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="COMPANY_MATRIX_CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COMPANY_NM]"
+                          dataType="wstr"
+                          length="255"
+                          name="COMPANY_NM" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="BRANCH_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="VERIFICATION_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="PERSON_COMPANY_NM" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SYSTEM_DATE_DT]"
+                          dataType="dbDate"
+                          name="SYSTEM_DATE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="RELATIONSHIP_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TX" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AGREEMENT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="AGREEMENT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTNER_PERCENT_VL]"
+                          dataType="numeric"
+                          name="PARTNER_PERCENT_VL"
+                          precision="18"
+                          scale="6" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTNER_COMPANY_ADMIN_FG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="PARTNER_COMPANY_ADMIN_FG" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CHECKSUM_SCD_ID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_CONTROL_ID]"
+                          name="COMPANY_CONTROL_ID" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_BRANCH_CD]"
+                          name="COMPANY_BRANCH_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_VERIFICATION_CD]"
+                          name="COMPANY_VERIFICATION_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_MATRIX_CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_MATRIX_CONTROL_ID]"
+                          name="COMPANY_MATRIX_CONTROL_ID" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_NM]"
+                          dataType="wstr"
+                          length="255"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[COMPANY_NM]"
+                          name="COMPANY_NM" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTROL_ID]"
+                          name="CONTROL_ID" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BRANCH_CD]"
+                          name="BRANCH_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VERIFICATION_CD]"
+                          name="VERIFICATION_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_COMPANY_NM]"
+                          name="PERSON_COMPANY_NM" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SYSTEM_DATE_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SYSTEM_DATE_DT]"
+                          name="SYSTEM_DATE_DT" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_CD]"
+                          name="RELATIONSHIP_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TX]"
+                          name="RELATIONSHIP_TX" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AGREEMENT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AGREEMENT_NR]"
+                          name="AGREEMENT_NR" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTNER_PERCENT_VL]"
+                          dataType="numeric"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTNER_PERCENT_VL]"
+                          name="PARTNER_PERCENT_VL"
+                          precision="18"
+                          scale="6" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTNER_COMPANY_ADMIN_FG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTNER_COMPANY_ADMIN_FG]"
+                          name="PARTNER_COMPANY_ADMIN_FG" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UPDATE_SCD_DT]"
+                          name="UPDATE_SCD_DT" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CHECKSUM_SCD_ID]"
+                          name="CHECKSUM_SCD_ID" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::vCF_insert_record_count</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement.Paths[Multicast Output 1]"
+                  endId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Row Count.Inputs[Row Count Input 1]"
+                  name="Multicast Output 1"
+                  startId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement.Paths[Multicast Output 2]"
+                  endId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Multicast Output 2"
+                  startId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement.Paths[OLE DB Source Output]"
+                  endId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast.Inputs[Multicast Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\tb_act_pep_company_agreement.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{7BDD7E73-C3FC-4273-AA5F-441967F62F37}"
+          DTS:From="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\tb_act_pep_company_agreement\Executa ControlFile" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\tb_act_pep_company_agreement.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{CC86C3AA-99BF-4753-B043-73419FF52373}"
+          DTS:From="Package\tb_act_pep_company_agreement\Executa ControlFile"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\tb_act_pep_company_agreement\CONVERT UTF8 BOM" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="178,42"
+          Id="Package\tb_act_pep_company_agreement\CONVERT UTF8 BOM"
+          TopLeft="42.4000010217938,173.27059062047" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\tb_act_pep_company_agreement\Executa ControlFile"
+          TopLeft="46.4000010899136,100.517646998765" />
+        <NodeLayout
+          Size="236,42"
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement"
+          TopLeft="17.8285720319164,20.2823546056517" />
+        <EdgeLayout
+          Id="Package\tb_act_pep_company_agreement.PrecedenceConstraints[Constraint]"
+          TopLeft="133.314286560915,61.8823546056517">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.6352923931133"
+              Start="0,0"
+              End="0,31.1352923931133">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1352923931133" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_company_agreement.PrecedenceConstraints[Constraint 1]"
+          TopLeft="131.200001055854,142.117646998765">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.152943621705"
+              Start="0,0"
+              End="0,23.652943621705">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.652943621705" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="267,270"
+          Size="267,313"
+          Id="Package\tb_act_pep_company_agreement"
+          TopLeft="55.4428544375361,37.3117651520302" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Row Count"
+          TopLeft="368.571434848163,109.435295601947" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Multicast"
+          TopLeft="142.285716708826,110.117648603182" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\Flat File Destination"
+          TopLeft="118.857144881268,195.152943913417" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source"
+          TopLeft="131.428573666787,18.2117647144621" />
+        <EdgeLayout
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement.Paths[OLE DB Source Output]"
+          TopLeft="204.257145187806,59.8117647144621">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.3058838887199"
+              Start="0,0"
+              End="0,42.8058838887199">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.8058838887199" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement.Paths[Multicast Output 2]"
+          TopLeft="203.371430795047,151.717648603182">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.4352953102351"
+              Start="0,0"
+              End="0,35.9352953102351">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.9352953102351" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement.Paths[Multicast Output 1]"
+          TopLeft="262.285716708826,130.576472102564">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="106.285718139337,0"
+              Start="0,0"
+              End="98.7857181393368,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="98.7857181393368,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\tb_act_pep_company_agreement\tb_act_pep_company_agreement\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

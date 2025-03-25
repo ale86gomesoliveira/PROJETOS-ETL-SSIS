@@ -1,0 +1,333 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/4/2022 3:45:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{D08AAB0A-E3DC-4200-A1B1-8153001B16AF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="08_Gera_Arquivo_Beneowner"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="171"
+  DTS:VersionGUID="{41008DCD-95A3-4605-BEB4-98FE32A95268}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7C3212B2-A2A0-4DAF-BF39-44C859188EE1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_ACCOUNTOWNER_STIPULATOR_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_accountowner_stipulator_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_ACCOUNTOWNER_STIPULATOR_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C107CDBD-2807-48C0-9BBD-66BAC26F5E17}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_BENEFICIARY_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Beneficiary_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_BENEFICIARY_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FD05930-8F75-4379-AAEA-4D12E39630A8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Business_Date_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">20230409</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5E327FD-5FA1-41DB-8F6F-63A0C689F422}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_CUSTOMER_PAYMENT_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_customer_payment_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_CUSTOMER_PAYMENT_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F2640A0C-5AA3-41C8-99F7-1D1D30706064}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_GROUPLIFEBROKER_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_grouplifebroker_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_GROUPLIFEBROKER_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EC0B34B0-8414-48B1-B430-DB73BE4B23BA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_INSURED_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Insured_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_INSURED_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8BE1B183-35EB-4383-A451-721B42A3E630}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_POLICY_PAYMENT_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_policy_payment_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_POLICY_PAYMENT_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8B326D21-D778-47C0-8433-85719D37439C}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;hh&quot;,GetDate()),2)+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mi&quot;,GetDate()),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_TimesTampFileCreation">
+      <DTS:VariableValue
+        DTS:DataType="8">202304091555</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A552CA3E-5967-4EF7-89CC-16B8DD8837DC}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_VENDOR_PAYMENT_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_vendor_payment_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_VENDOR_PAYMENT_</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{6FA68FCD-5D08-4989-84D1-04D0B8BE8AED}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO BENEOWNER PARTY">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package gli_tb_act_beneowner"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{F098D460-8384-4A03-AA94-9DE3FD9BF104}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package gli_tb_act_beneowner"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_beneowner.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package ili_tb_act_beneowner"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{E1CEB528-37F6-43AC-B509-1B9D747E1839}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ili_tb_act_beneowner"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_beneowner.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package mas_tb_act_beneowner"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7B3E61D4-6523-4523-8041-99BA6D14B321}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package mas_tb_act_beneowner"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_beneowner.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Pacote tb_act_party_to_beneowner"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{34983349-47dd-4d32-a544-411946203c11}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Pacote tb_act_party_to_beneowner"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>tb_act_party_to_beneowner.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A452C828-BBEA-40E0-8DAD-47DC3288561A}"
+          DTS:From="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package gli_tb_act_beneowner"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package ili_tb_act_beneowner" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6F97951A-C5BA-436C-9221-FB8D5A03F0BA}"
+          DTS:From="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package ili_tb_act_beneowner"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package mas_tb_act_beneowner" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO BENEOWNER PARTY.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{CA91B9DA-112D-4159-AA28-02D769E54A90}"
+          DTS:From="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package mas_tb_act_beneowner"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Pacote tb_act_party_to_beneowner" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="264.8,41.6"
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package gli_tb_act_beneowner"
+          TopLeft="41.7142869015129,24.7058833052955" />
+        <NodeLayout
+          Size="261.6,41.6"
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package ili_tb_act_beneowner"
+          TopLeft="42.6285727131125,95.5764724672047" />
+        <NodeLayout
+          Size="273.6,41.6"
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Package mas_tb_act_beneowner"
+          TopLeft="37.6000012261527,167.717648894893" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY.PrecedenceConstraints[Constraint]"
+          TopLeft="173.771429807313,66.3058833052955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2705891619092"
+              Start="0,0"
+              End="0,21.7705891619092">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7705891619092" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY.PrecedenceConstraints[Constraint 1]"
+          TopLeft="173.914286969633,137.176472467205">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.5411764276887"
+              Start="0,0"
+              End="0,23.0411764276887">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.0411764276887" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="285.6,41.6"
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY\Execute Pacote tb_act_party_to_beneowner"
+          TopLeft="34.742858320353,250.352942746567" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY.PrecedenceConstraints[Constraint 2]"
+          TopLeft="175.971429773253,209.317648894893">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.0352938516742"
+              Start="0,0"
+              End="0,33.5352938516742">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5352938516742" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="344.8,315.2"
+          Size="344.8,358.4"
+          Id="Package\GERA ARQUIVO BENEOWNER PARTY"
+          TopLeft="43.5428577072767,84.5411778917193" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

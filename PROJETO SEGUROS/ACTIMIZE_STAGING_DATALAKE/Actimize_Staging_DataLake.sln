@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2017
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Actimize_Staging_DataLake", "SSIS_Actimize_Staging_DataLake\Actimize_Staging_DataLake.dtproj", "{82FAFEA8-F222-4821-A214-E0B0CFC874BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82FAFEA8-F222-4821-A214-E0B0CFC874BF}.Development|Default.ActiveCfg = Development
+		{82FAFEA8-F222-4821-A214-E0B0CFC874BF}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {427FF7C8-361B-46A3-8475-D68DEE43E3B1}
+	EndGlobalSection
+EndGlobal

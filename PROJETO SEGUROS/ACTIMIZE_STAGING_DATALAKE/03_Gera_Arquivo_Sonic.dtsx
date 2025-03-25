@@ -1,0 +1,416 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/7/2022 10:55:44 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{03EDFC65-EBAA-4DEC-8A1C-9B51B0D7D5B3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="03_Gera_Arquivo_Sonic"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{C92C654E-C2CC-4867-93D2-3C09793528EA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3D5E43C8-37C2-4FD6-BA06-4C990A41D953}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVOS TABELAS SONIC ACCOUNT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{e97c8653-7f9d-4ba4-bd30-9df99034c970}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package mas_tb_act_account"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_account.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account_to_party"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{e1e03f2a-6fe2-4eb0-a154-61f066018907}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package mas_tb_act_account_to_party"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_account_to_party.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_party_to_customer"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{37134a59-035d-40a8-8764-822675d2e5df}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package mas_tb_act_party_to_customer"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_party_to_customer.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{4894308D-CB34-4BF4-9E3F-EB273F009701}"
+          DTS:From="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account_to_party" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{36C6FC37-A8C9-46BB-9FF5-9D14DB384709}"
+          DTS:From="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account_to_party"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_party_to_customer" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{AE922FDD-31AB-47C4-9514-A50ACAA93966}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Package mas_tb_act_customer_payment"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{BA45EA7B-B5CF-4575-A9F5-603174865907}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package mas_tb_act_customer_payment"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_customer_payment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_account_owner"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{BE1268BD-9246-4D49-85A1-00C4EFFF3702}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Pacote mas_tb_act_account_owner"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_account_owner.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_beneficiary"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0A19E535-34FF-4091-9386-E9B5D701BF29}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Pacote mas_tb_act_beneficiary"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_beneficiary.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_insured"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{09638CC3-2FF6-41BF-A554-8B867C867831}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Pacote mas_tb_act_insured"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>mas_tb_act_insured.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{745E6B27-70F9-490F-8BD9-C4ECBD99FB3B}"
+          DTS:From="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_insured"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_account_owner" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{703B1413-6CF3-473B-90F2-D1D47130F516}"
+          DTS:From="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_account_owner"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_beneficiary" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{277BE21B-3868-488F-B26A-B97BF6F1A3CF}"
+          DTS:From="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_beneficiary"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Package mas_tb_act_customer_payment" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A2A98F3C-196D-4F92-A2F0-62E568680AC3}"
+      DTS:From="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="264,41.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Package mas_tb_act_customer_payment"
+          TopLeft="34.0571442000721,228.847062941818" />
+        <NodeLayout
+          Size="258.4,41.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_account_owner"
+          TopLeft="35.404761044904,92.0039184213003" />
+        <NodeLayout
+          Size="260,41.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_insured"
+          TopLeft="32.6190464722664,19.5862727940379" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT.PrecedenceConstraints[Constraint]"
+          TopLeft="163.611903758585,61.1862727940379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,30.8176456272624"
+              Start="0,0"
+              End="0,23.3176456272624">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.3176456272624" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="264.8,41.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT\Execute Pacote mas_tb_act_beneficiary"
+          TopLeft="35.3142871739913,157.788238494372" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT.PrecedenceConstraints[Constraint 1]"
+          TopLeft="166.159524109448,133.6039184213">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.1843200730712"
+              Start="0,0"
+              End="0,16.6843200730712">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6843200730712" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT.PrecedenceConstraints[Constraint 5]"
+          TopLeft="166.885715687032,199.388238494372">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.4588244474467"
+              Start="0,0"
+              End="0,21.9588244474467">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.9588244474467" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="352.8,290.4"
+          Size="356.8,333.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC PAREY E PAYMENT"
+          TopLeft="51.8452376876102,126.901960137292" />
+        <AnnotationLayout
+          Text="Data:                   Autor:                                    Hisrotico de mudança:&#xA;05-12-2023        Alessandro Oliveira               Inclusão do pacote mas_tb_act_account, o mesmo vai ficar desabilitado porque o desenvolvimento da query/etl vai ser na proxima sprint."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="992,56"
+          Id="131df2d8-e7e7-4c5e-9fc6-4d68dced11e3"
+          TopLeft="56.1547615971341,31.6254904336038" />
+        <NodeLayout
+          Size="269.6,42.4"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account"
+          TopLeft="35.4285710101224,33.6941172781288" />
+        <NodeLayout
+          Size="269.6,41.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_account_to_party"
+          TopLeft="41.142856821722,121.411764131038" />
+        <NodeLayout
+          Size="268,41.6"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT\Execute Package mas_tb_act_party_to_customer"
+          TopLeft="41.142856821722,203.011763839326" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT.PrecedenceConstraints[Constraint]"
+          TopLeft="173.085713915922,76.0941172781288">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.317646852909"
+              Start="0,0"
+              End="0,37.817646852909">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.817646852909" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT.PrecedenceConstraints[Constraint 1]"
+          TopLeft="175.542856821722,163.011764131038">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.9999997082878"
+              Start="0,0"
+              End="0,32.4999997082878">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.4999997082878" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="334.4,285.6"
+          Size="334.4,328.8"
+          Id="Package\GERA ARQUIVOS TABELAS SONIC ACCOUNT"
+          TopLeft="473.028579456952,130.164707898598" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="408.64523768761,294.133334017945">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.3833417693419,0"
+              Start="0,0"
+              End="56.8833417693419,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="56.8833417693419,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

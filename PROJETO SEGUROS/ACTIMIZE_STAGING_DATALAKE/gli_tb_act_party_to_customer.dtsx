@@ -1,0 +1,1080 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="7/7/2022 11:27:15 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{739EC9F5-DD39-4697-B863-2B40705101AF}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="gli_tb_act_party_to_customer"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{520CEC8B-5CD6-41F9-945C-FE62E8D26710}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[gli_tb_act_party_to_customer]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="gli_tb_act_party_to_customer"
+      DTS:DTSID="{62223813-95E3-43FD-8E3E-C9213D878741}"
+      DTS:ObjectName="gli_tb_act_party_to_customer">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::vFileConnectionString]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="H:\WINDOWS\system\Projeto_Actimize\SSIS\Cargas_ETL\POB_GLI_TB_ACT_PARTY_TO_CUSTOMER_20230409_202304091515">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARTY_KEY_ID"
+              DTS:DTSID="{4CC28FA2-3FE7-431B-BA44-66463022859B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARTY_FIRST_KEY_ID"
+              DTS:DTSID="{9D0704EC-F8CC-45DD-8D80-6B7E0CAA4D9A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PARTY_SECONDARY_KEY_ID"
+              DTS:DTSID="{C96750A9-A1B8-4FB5-816E-CFE5139312BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="255"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ACCOUNT_NR"
+              DTS:DTSID="{B8FEBD73-7AAB-403F-9E5C-11C59C2CAF89}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EFFECTIVE_DT"
+              DTS:DTSID="{71580958-B0B0-4FFF-998F-22FA5DB279C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:DataType="135"
+              DTS:TextQualified="True"
+              DTS:ObjectName="EXPIRY_DT"
+              DTS:DTSID="{38A5333B-B4B4-4E1D-A62B-7DC787999C91}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="RELATIONSHIP_TYPE_NM"
+              DTS:DTSID="{1F0A64E7-1D5F-46A3-81B2-F1FA6DAEE774}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="SOURCE_SYSTEM_CD"
+              DTS:DTSID="{05B5B4C6-F282-4EE6-AA3E-69081F510564}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{27326690-62BA-4D41-83DE-8E6A765E7E3E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCF_insert_record_count">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{03227FE7-075F-45A7-9F38-9DDC28AB9B12}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCF_source_entity_name_AO">
+      <DTS:VariableValue
+        DTS:DataType="8">gli_tb_act_party_to_customer</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8264B118-EEFA-4C6F-98E9-C160AB1EE0F4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vCF_type">
+      <DTS:VariableValue
+        DTS:DataType="8">Customer</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7D8AC045-265D-4C5C-B684-5413D6B390D4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::P_FILES_PATH] + @[User::V_gli_tb_act_party_to_customer] + @[User::V_BusinessDate] + &quot;_&quot; + @[User::V_TimesTamp]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vFileConnectionString">
+      <DTS:VariableValue
+        DTS:DataType="8">H:\WINDOWS\system\Projeto_Actimize\SSIS\Cargas_ETL\POB_GLI_TB_ACT_PARTY_TO_CUSTOMER_20230409_202304091515</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BA8A6AB3-5311-4363-9EAB-4356F6266A13}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Project::P_FILES_PATH]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">H:\WINDOWS\system\Projeto_Actimize\SSIS\Cargas_ETL\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E6F69303-3023-4B7E-A551-09F80B56B89B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::V_gli_tb_act_party_to_customer] +  @[User::V_BusinessDate]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="vUTF_Account">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_PARTY_TO_CUSTOMER_20230409</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A50E7C9B-C54D-411D-B335-421D705F0249}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_BusinessDate">
+      <DTS:VariableValue
+        DTS:DataType="8">20230409</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{1213FBD8-71E7-4C62-9F87-14BE86B268A3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_PARTY_TO_CUSTOMER_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_gli_tb_act_party_to_customer">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_PARTY_TO_CUSTOMER_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{D7ED5521-0F24-4D5D-84E7-5B4D3477AE16}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,@[System::StartTime]) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,@[System::StartTime]) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,@[System::StartTime]),2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;hh&quot;,@[System::StartTime]),2)+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mi&quot;,@[System::StartTime]),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_TimesTamp">
+      <DTS:VariableValue
+        DTS:DataType="8">202304091515</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B368D4CD-3790-40DD-A02E-B2403B69A79F}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\CONVERT UTF8 BOM"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{4D765194-1BE1-43C0-A0AA-AF8539248EA7}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="CONVERT UTF8 BOM"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>06_Converte_UTF8-Bom.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>pFileName</ParameterName>
+                <BindedVariableOrParameterName>User::vUTF_Account</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pFilePath</ParameterName>
+                <BindedVariableOrParameterName>User::vFilePath</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\Executa ControlFile"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{2E29A8F5-CBBD-4A1E-AC72-735E64540888}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa ControlFile"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>05_ControlFiles.dtsx</PackageName>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Business_Date</ParameterName>
+                <BindedVariableOrParameterName>User::V_BusinessDate</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Data_Classification</ParameterName>
+                <BindedVariableOrParameterName>$Project::pCF_data_classification</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_File_Name</ParameterName>
+                <BindedVariableOrParameterName>User::V_gli_tb_act_party_to_customer</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_File_Name_Prefix</ParameterName>
+                <BindedVariableOrParameterName>User::V_gli_tb_act_party_to_customer</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_File_Path</ParameterName>
+                <BindedVariableOrParameterName>User::vFilePath</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Insert_Record_Count</ParameterName>
+                <BindedVariableOrParameterName>User::vCF_insert_record_count</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_pSource_Entity_Name</ParameterName>
+                <BindedVariableOrParameterName>User::vCF_source_entity_name_AO</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Source</ParameterName>
+                <BindedVariableOrParameterName>$Project::pCF_SOURCE_GLI</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Timestamp_FileCreation</ParameterName>
+                <BindedVariableOrParameterName>User::V_TimesTamp</BindedVariableOrParameterName>
+              </ParameterAssignment>
+              <ParameterAssignment>
+                <ParameterName>pControlFile_Type</ParameterName>
+                <BindedVariableOrParameterName>User::vCF_type</BindedVariableOrParameterName>
+              </ParameterAssignment>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{85892B13-1A24-4FF5-88B5-36A72162D2D9}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="gli_tb_act_party_to_customer"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination"
+                  componentClassID="Microsoft.FlatFileDestination"
+                  contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Flat File Destination"
+                  localeId="1033"
+                  name="Flat File Destination">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether the data will overwrite or append to the destination file."
+                      name="Overwrite">true</property>
+                    <property
+                      dataType="System.Null"
+                      description="Specifies the text to write to the destination file before any data is written."
+                      expressionType="Notify"
+                      name="Header" />
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[gli_tb_act_party_to_customer]"
+                      connectionManagerRefId="Package.ConnectionManagers[gli_tb_act_party_to_customer]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input]"
+                      hasSideEffects="true"
+                      name="Flat File Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[PARTY_FIRST_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_FIRST_KEY_ID"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[PARTY_SECONDARY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_SECONDARY_KEY_ID"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="ACCOUNT_NR"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ACCOUNT_NR]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[EFFECTIVE_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[EXPIRY_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="EXPIRY_DT"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[RELATIONSHIP_TYPE_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="RELATIONSHIP_TYPE_NM"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]" />
+                        <inputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="ACCOUNT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_SYSTEM_CD" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                </component>
+                <component
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast"
+                  componentClassID="Microsoft.Multicast"
+                  contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
+                  name="Multicast">
+                  <inputs>
+                    <input
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Inputs[Multicast Input 1]"
+                      name="Multicast Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Outputs[Multicast Output 1]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 1"
+                      synchronousInputId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Outputs[Multicast Output 2]"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 2"
+                      synchronousInputId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Outputs[Multicast Output 3]"
+                      dangling="true"
+                      deleteOutputOnPathDetached="true"
+                      name="Multicast Output 3"
+                      synchronousInputId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Inputs[Multicast Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Row Count"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="Row Count">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::vCF_insert_record_count</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Row Count.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Row Count.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Row Count.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="ST_gli_tb_act_party_to_customer_VG"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_gli_tb_act_party_to_customer_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select
+* from st_gli_tb_act_party_to_customer_vg
+where convert(date,[INSERT_SCD_DT]) = ?
+or convert(date, [UPDATE_SCD_DT]) = ?</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping">"Parameter0:Input",{64BD3D82-BD18-4207-901C-9BA64F05E653};"Parameter1:Input",{64BD3D82-BD18-4207-901C-9BA64F05E653};</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{F6BD9322-826F-4B21-A477-77D828BDC510}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD009 Actimize]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[PARTY_KEY_ID]"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]"
+                          name="PARTY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]"
+                          name="PARTY_FIRST_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          name="PARTY_SECONDARY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NR]"
+                          length="255"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]"
+                          name="ACCOUNT_NR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]"
+                          name="EXPIRY_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          length="100"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          name="RELATIONSHIP_TYPE_NM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_SCD_DT]"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[UPDATE_SCD_DT]"
+                          name="UPDATE_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[CHECKSUM_SCD_ID]"
+                          length="100"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].Columns[CHECKSUM_SCD_ID]"
+                          name="CHECKSUM_SCD_ID"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="ACCOUNT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output].ExternalColumns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CHECKSUM_SCD_ID" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[PARTY_KEY_ID]"
+                          name="PARTY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[PARTY_FIRST_KEY_ID]"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NR]"
+                          name="ACCOUNT_NR" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[EXPIRY_DT]"
+                          name="EXPIRY_DT" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[UPDATE_SCD_DT]"
+                          name="UPDATE_SCD_DT" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[CHECKSUM_SCD_ID]"
+                          name="CHECKSUM_SCD_ID" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer.Paths[Multicast Output 1]"
+                  endId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Row Count.Inputs[Row Count Input 1]"
+                  name="Multicast Output 1"
+                  startId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Outputs[Multicast Output 1]" />
+                <path
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer.Paths[Multicast Output 2]"
+                  endId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination.Inputs[Flat File Destination Input]"
+                  name="Multicast Output 2"
+                  startId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Outputs[Multicast Output 2]" />
+                <path
+                  refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer.Paths[OLE DB Source Output]"
+                  endId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast.Inputs[Multicast Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{9BE07081-C2D0-452A-A135-66B1841DF3F2}"
+          DTS:From="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\Executa ControlFile" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{E15BCB9B-423D-4189-9423-1057EA5387F8}"
+          DTS:From="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\Executa ControlFile"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\CONVERT UTF8 BOM" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="192,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\CONVERT UTF8 BOM"
+          TopLeft="62.3885594609543,159.028539937365" />
+        <NodeLayout
+          Size="169.6,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\Executa ControlFile"
+          TopLeft="72.1742736738353,91.3559914627063" />
+        <NodeLayout
+          Size="219.2,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer"
+          TopLeft="47.6980822486338,14.4971683744556" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER.PrecedenceConstraints[Constraint]"
+          TopLeft="157.136177961235,56.0971683744556">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.2588230882507"
+              Start="0,0"
+              End="0,27.7588230882507">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.7588230882507" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER.PrecedenceConstraints[Constraint 1]"
+          TopLeft="157.614749900728,133.355991462706">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.6725484746582"
+              Start="0,0"
+              End="0,18.1725484746582">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.1725484746582" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="313.6,256"
+          Size="313.6,299.2"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER"
+          TopLeft="52.1547628062567,37.9294122966516" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="256,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG"
+          TopLeft="28.0000004768371,20.18823557725" />
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Row Count"
+          TopLeft="314.057138478026,132.141175990121" />
+        <NodeLayout
+          Size="120,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Multicast"
+          TopLeft="99.5642832363598,126.921568289784" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\Flat File Destination"
+          TopLeft="72.0000012261527,231.247062066682" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer.Paths[OLE DB Source Output]"
+          TopLeft="157.782141856598,61.78823557725">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,65.133332712534"
+              Start="0,0"
+              End="0,57.633332712534">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.633332712534" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer.Paths[Multicast Output 2]"
+          TopLeft="158.582142231256,168.521568289784">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.7254937768981"
+              Start="0,0"
+              End="0,55.2254937768981">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.2254937768981" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer.Paths[Multicast Output 1]"
+          TopLeft="219.56428323636,150.331372139952">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="94.4928552416662,0"
+              Start="0,0"
+              End="86.9928552416662,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="86.9928552416662,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\GERA ARQUIVO GLI_TB_ACT_PARTY_TO_CUSTOMER\gli_tb_act_party_to_customer\ST_gli_tb_act_party_to_customer_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

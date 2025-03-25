@@ -1,0 +1,351 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/8/2022 1:23:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{7FB7E66C-6D0F-4BB2-96B2-88A6457862FB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="00_CargaCompleta"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="188"
+  DTS:VersionGUID="{016DF07E-FCA5-428D-9A49-8238C86742CD}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Gera Arquivos"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{3AF49055-5F22-496B-B5BE-FC5ECC76B198}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Gera Arquivos">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Gera Arquivos\Executa 01_Actimize_Gera_Arquivo_I4pro"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{27B3963A-92FF-4142-B56D-997794D2A8FD}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa 01_Actimize_Gera_Arquivo_I4pro"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>01_Gera_Arquivo_I4pro.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gera Arquivos\Executa 02_Actimize_Gera_Arquivo_Ingenium_SAA"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{1C5BBA37-E12C-4B57-A614-432053154EB0}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa 02_Actimize_Gera_Arquivo_Ingenium_SAA"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>02_Gera_Arquivo_Ingenium_SAA.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gera Arquivos\Executa 03_Actimize_Gera_Arquivo_Sonic"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{C74C23EE-709C-4DA2-B8C1-238517B4AC49}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa 03_Actimize_Gera_Arquivo_Sonic"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>03_Gera_Arquivo_Sonic.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gera Arquivos\Executa 04_Actimize_Gera_Arquivo_Siges"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{D36589AB-35E1-4F43-B0BB-9941B03C1CD5}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa 04_Actimize_Gera_Arquivo_Siges"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>04_Gera_Arquivo_Siges.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gera Arquivos\Executa 07_Actimize_Gera_Arquivo_ServiceNow"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{45d61b4a-9f45-4e77-bde2-a34a119158e8}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa 07_Actimize_Gera_Arquivo_ServiceNow"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>07_Gera_Arquivo_ServiceNow.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Gera Arquivos\Execute 08_Gera_Arquivo_Beneowner"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{28330B53-B11C-4655-9E28-E2E4E56D6F00}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute 08_Gera_Arquivo_Beneowner"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>08_Gera_Arquivo_Beneowner.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gera Arquivos.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{A436D25E-13B4-43A7-B150-F6E1F644A3E7}"
+          DTS:From="Package\Gera Arquivos\Executa 01_Actimize_Gera_Arquivo_I4pro"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Gera Arquivos\Executa 02_Actimize_Gera_Arquivo_Ingenium_SAA" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gera Arquivos.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D31947B5-629C-4047-AFD1-255C89DF1FEB}"
+          DTS:From="Package\Gera Arquivos\Executa 02_Actimize_Gera_Arquivo_Ingenium_SAA"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Gera Arquivos\Executa 03_Actimize_Gera_Arquivo_Sonic" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gera Arquivos.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{394F99B2-173B-425F-B703-DA3DC063EACB}"
+          DTS:From="Package\Gera Arquivos\Executa 03_Actimize_Gera_Arquivo_Sonic"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Gera Arquivos\Executa 04_Actimize_Gera_Arquivo_Siges" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gera Arquivos.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{339C7B07-75CB-4145-AFC2-229F4CCEF003}"
+          DTS:From="Package\Gera Arquivos\Executa 04_Actimize_Gera_Arquivo_Siges"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Gera Arquivos\Executa 07_Actimize_Gera_Arquivo_ServiceNow" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Gera Arquivos.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{9BF3A9B7-F279-434C-9C9C-EBAEEF1E8B57}"
+          DTS:From="Package\Gera Arquivos\Executa 07_Actimize_Gera_Arquivo_ServiceNow"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Gera Arquivos\Execute 08_Gera_Arquivo_Beneowner" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="243.2,41.6"
+          Id="Package\Gera Arquivos\Executa 01_Actimize_Gera_Arquivo_I4pro"
+          TopLeft="9.43413622902258,30.7699324672205" />
+        <NodeLayout
+          Size="281.6,42.4"
+          Id="Package\Gera Arquivos\Executa 02_Actimize_Gera_Arquivo_Ingenium_SAA"
+          TopLeft="307.645440968472,26.0245097416512" />
+        <NodeLayout
+          Size="271.2,42.4"
+          Id="Package\Gera Arquivos\Executa 03_Actimize_Gera_Arquivo_Sonic"
+          TopLeft="315.745438564299,116.971404405507" />
+        <NodeLayout
+          Size="244,41.6"
+          Id="Package\Gera Arquivos\Executa 04_Actimize_Gera_Arquivo_Siges"
+          TopLeft="22.4777832608139,117.969937797043" />
+        <NodeLayout
+          Size="276.8,42.4"
+          Id="Package\Gera Arquivos\Executa 07_Actimize_Gera_Arquivo_ServiceNow"
+          TopLeft="11.5650875943728,203.849840014638" />
+        <NodeLayout
+          Size="258.4,41.6"
+          Id="Package\Gera Arquivos\Execute 08_Gera_Arquivo_Beneowner"
+          TopLeft="344.800006471362,202.588239515364" />
+        <EdgeLayout
+          Id="Package\Gera Arquivos.PrecedenceConstraints[Constraint]"
+          TopLeft="252.634136229023,49.3972211044358">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.0113047394493,0"
+              Start="0,0"
+              End="47.5113047394493,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="47.5113047394493,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Gera Arquivos.PrecedenceConstraints[Constraint 1]"
+          TopLeft="449.895439766385,68.4245097416512">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.5468946638558"
+              Start="0,0"
+              End="0,41.0468946638558">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.0468946638558" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Gera Arquivos.PrecedenceConstraints[Constraint 2]"
+          TopLeft="315.745438564299,138.470671101275">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-49.2676553034852,0"
+              Start="0,0"
+              End="-41.7676553034852,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-41.7676553034852,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Gera Arquivos.PrecedenceConstraints[Constraint 3]"
+          TopLeft="147.221435427593,159.569937797043">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.2799022175949"
+              Start="0,0"
+              End="0,36.7799022175949">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.7799022175949" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Gera Arquivos.PrecedenceConstraints[Constraint 4]"
+          TopLeft="288.365087594373,224.219039765001">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="56.4349188769887,0"
+              Start="0,0"
+              End="48.9349188769887,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="48.9349188769887,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="639.2,296"
+          Size="639.2,339.2"
+          Id="Package\Gera Arquivos"
+          TopLeft="43.8234148710385,192.180089179159" />
+        <AnnotationLayout
+          Text="DATA DE CRIAÇÃO: 08-06-2022     &#xA;AUTORES: Alessandro Oliveira, Silvio Ferreira, Isabella Nunes e Alann Kuhl&#xA;PROJETO: Actimize&#xA;OBJETIVO: Extrair dados dos sistemas de Origem i4pro, Ingenium, Saa, Sonic, SIges e enviar os dados para o DataLake"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="650.4,88"
+          Id="5c07711a-cb47-4ac3-ad51-66a8514408f6"
+          TopLeft="34.4563526979769,8.35714270770553" />
+        <AnnotationLayout
+          Text="Data:                   Autor:                                    Hisrotico de mudança:&#xA;05-01-2023        Alessandro Oliveira               Inclusão dos pacotes 07_Actimize_Gera_Arquivo_ServiceNow e tb_act_corp_vendor_provider.&#xA;05-01-2023        Alessandro Oliveira               Inclusão dos pacotes mas_tb_act_account, gli_tb_act_account, ili_tb_act_account"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="754.4,72"
+          Id="4610d92c-685b-42c1-a368-97a2b2c3c6f4"
+          TopLeft="34.4563526979769,99.5134225124923" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

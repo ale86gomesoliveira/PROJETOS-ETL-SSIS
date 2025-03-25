@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MTZSQLD009 Actimize"
+  DTS:DTSID="{F6BD9322-826F-4B21-A477-77D828BDC510}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::pACTIMIZE_DATABASE]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::pACTIMIZE_PASS]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::pACTIMIZE_SERVER]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::pACTIMIZE_USER]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=MTZSQLD009;User ID=srvactimize;Initial Catalog=Actimize;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="Q2L0tMpZYQ=="
+        p4:IV="F5V6aPiQ6JA=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">RnF0Qnncc7AtF23fmSCJw5TSUu2Fi8lANsNwlawoWsd8HbBcZ0OQjWWEK6aLhZYyKRAR2RwkTtGU/yG0frygeXaoMvUtjWtFhHrbFwXBJf4QuWlGk2GhreAngr27nvkMbIoiDgFt0rMI3hHsJBXTkikthsfZun8Uq2+uzRx6eHk=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

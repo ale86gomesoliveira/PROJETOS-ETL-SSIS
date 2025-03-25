@@ -1,0 +1,703 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/4/2022 3:45:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{CF9FC0AF-BCAF-48A8-A596-863E21B6987C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="01_Gera_Arquivo_I4pro"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="160"
+  DTS:VersionGUID="{96072D5A-7BE2-4E47-96A3-0F565E526ADB}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ACE59E0D-DF23-4728-8158-C10FCDA2560A}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_ACCOUNTOWNER_STIPULATOR_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_accountowner_stipulator_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_ACCOUNTOWNER_STIPULATOR_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{07DFA1DC-EC88-45F5-BC44-E20C80D5E60F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_BENEFICIARY_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Beneficiary_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_BENEFICIARY_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{113E5AEE-B7D4-4077-9197-88DFBDC52B87}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Business_Date_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">20230404</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C4D227C5-CFA1-4730-95B2-6A12A5648982}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_CUSTOMER_PAYMENT_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_customer_payment_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_CUSTOMER_PAYMENT_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7BE64194-B9C3-4BED-A727-047606298F34}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_GROUPLIFEBROKER_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_grouplifebroker_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_GROUPLIFEBROKER_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3742D09F-C95D-495B-AD26-C0A3811502EF}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_INSURED_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_Insured_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_INSURED_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F2B12671-05BC-432F-8D5B-AE6050FDD6D6}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_POLICY_PAYMENT_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_policy_payment_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_POLICY_PAYMENT_</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{36197F53-849E-452F-A139-F205C76CD06B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(DT_WSTR,4)DATEPART(&quot;yyyy&quot;,GetDate()) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mm&quot;,GetDate()) ,2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;dd&quot;,GetDate()),2) + RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;hh&quot;,GetDate()),2)+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DATEPART(&quot;mi&quot;,GetDate()),2)"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_TimesTampFileCreation">
+      <DTS:VariableValue
+        DTS:DataType="8">202304042234</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DC42C539-CDE3-47D5-BA4C-FEC75CE110D5}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;POB_GLI_TB_ACT_VENDOR_PAYMENT_&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="V_vendor_payment_VG">
+      <DTS:VariableValue
+        DTS:DataType="8">POB_GLI_TB_ACT_VENDOR_PAYMENT_</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO VG ACCOUNT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{327D9159-448C-4DDB-B3EC-66154C3B3E55}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO VG ACCOUNT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{29B0551D-0E73-475C-A62C-A487F78C8F21}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package gli_tb_act_account"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_account.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account_to_party"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{95989a9f-419e-4118-a27b-08c09df2b1a5}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package gli_tb_act_account_to_party"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_account_to_party.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_party_to_customer"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{a1cc9060-c97e-4152-b6f9-899ae41808fc}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package gli_tb_act_party_to_customer"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_party_to_customer.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG ACCOUNT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E475B3DF-B5A5-4B68-B58E-DC41C67E17F6}"
+          DTS:From="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account_to_party" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG ACCOUNT.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{6A7BB7EC-880D-43BB-A29F-218B345BA540}"
+          DTS:From="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account_to_party"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_party_to_customer" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO VG PARTY"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0550A2D7-C87D-4CA4-B56E-49F0F4066569}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO VG PARTY">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_accountowner_stipulator_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{3BA239DD-8EBF-4FB8-9169-42CF937EA24B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_accountowner_stipulator_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_accountowner_stipulator.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_beneficiary_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{6F59C4A6-C7C7-4675-8303-AB74AFB0DC66}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_beneficiary_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_beneficiary.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_grouplifebroker_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9B8C4708-FAC8-4D88-9765-E157B23F1486}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_grouplifebroker_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_grouplifebroker.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_insured_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{B8DCB32C-B7A3-47D1-A328-4A377E0CCD9B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_insured_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_insured.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG PARTY.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{98E5C2DE-B287-4D86-BDBB-6C8730379E04}"
+          DTS:From="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_accountowner_stipulator_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_beneficiary_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG PARTY.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D126C8D7-77F6-4F4A-8A9E-616D53DEB61B}"
+          DTS:From="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_beneficiary_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_grouplifebroker_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG PARTY.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{5C26304E-017D-45D4-B7D2-60CF081F1877}"
+          DTS:From="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_grouplifebroker_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_insured_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO VG PAYMENT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F91CEAAF-D933-458A-ACE0-0FED64DC1A5E}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO VG PAYMENT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_customer_payment"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{639B4FED-F2E8-45FF-B0B4-E047904D39B6}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_customer_payment"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_customer_payment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_policy_payment"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{513015CD-C512-4151-BD8F-DA5158245C71}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_policy_payment"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_policy_payment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_vendor_payment"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{A4C88714-F4E0-4A11-8ADF-3AB29E8D2824}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package ST_gli_tb_act_vendor_payment"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>gli_tb_act_vendor_payment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG PAYMENT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{63155487-92F7-48E7-AFF9-8A48E91EF9F0}"
+          DTS:From="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_customer_payment"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_policy_payment" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO VG PAYMENT.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{D010E6B1-4EA8-45A6-A79E-DBF1F4A20804}"
+          DTS:From="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_policy_payment"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_vendor_payment" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{85C2A3BE-16CD-40D1-B885-1BA91CA0C55D}"
+      DTS:From="Package\GERA ARQUIVO VG PARTY"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\GERA ARQUIVO VG PAYMENT" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{F990985C-18D7-4D1E-9CF8-C0C12414678C}"
+      DTS:From="Package\GERA ARQUIVO VG PAYMENT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\GERA ARQUIVO VG ACCOUNT" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249.6,41.6"
+          Id="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account"
+          TopLeft="36.9285644126079,30.7619024594625" />
+        <NodeLayout
+          Size="249.6,41.6"
+          Id="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_account_to_party"
+          TopLeft="37.9428610451369,115.152944205129" />
+        <NodeLayout
+          Size="274.4,41.6"
+          Id="Package\GERA ARQUIVO VG ACCOUNT\Execute Package gli_tb_act_party_to_customer"
+          TopLeft="31.0857180712176,205.129414630349" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG ACCOUNT.PrecedenceConstraints[Constraint]"
+          TopLeft="162.235712728872,72.3619024594625">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.7910417456666"
+              Start="0,0"
+              End="0,35.2910417456666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.2910417456666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG ACCOUNT.PrecedenceConstraints[Constraint 1]"
+          TopLeft="165.514289558177,156.752944205129">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48.37647042522"
+              Start="0,0"
+              End="0,40.87647042522">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.87647042522" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="351.2,301.6"
+          Size="351.2,344.8"
+          Id="Package\GERA ARQUIVO VG ACCOUNT"
+          TopLeft="845.357132701292,91.8285713532994" />
+        <NodeLayout
+          Size="281.6,41.6"
+          Id="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_accountowner_stipulator_VG"
+          TopLeft="27.4285723725144,23.4823538763713" />
+        <NodeLayout
+          Size="270.4,41.6"
+          Id="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_beneficiary_VG"
+          TopLeft="37.485715482673,91.905884180432" />
+        <NodeLayout
+          Size="271.2,41.6"
+          Id="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_grouplifebroker_VG"
+          TopLeft="41.4857155507925,165.458826343576" />
+        <NodeLayout
+          Size="264.8,41.6"
+          Id="Package\GERA ARQUIVO VG PARTY\Execute Package ST_gli_tb_act_insured_VG"
+          TopLeft="48.4571442681916,231.341179198954" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG PARTY.PrecedenceConstraints[Constraint]"
+          TopLeft="170.657143927594,65.8823538763713">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.0235303040607"
+              Start="0,0"
+              End="0,18.5235303040607">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5235303040607" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG PARTY.PrecedenceConstraints[Constraint 1]"
+          TopLeft="174.885715516733,133.505884180432">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.9529421631439"
+              Start="0,0"
+              End="0,24.4529421631439">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.4529421631439" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG PARTY.PrecedenceConstraints[Constraint 2]"
+          TopLeft="178.971429909492,207.058826343576">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.2823528553783"
+              Start="0,0"
+              End="0,16.7823528553783">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7823528553783" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="356.8,301.6"
+          Size="356.8,344"
+          Id="Package\GERA ARQUIVO VG PARTY"
+          TopLeft="43.5428577072767,84.5411778917193" />
+        <NodeLayout
+          Size="254.4,41.6"
+          Id="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_customer_payment"
+          TopLeft="37.5000005449567,18.2117660271668" />
+        <NodeLayout
+          Size="264.8,41.6"
+          Id="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_policy_payment"
+          TopLeft="33.8285774133643,97.1294141927805" />
+        <NodeLayout
+          Size="254.4,41.6"
+          Id="Package\GERA ARQUIVO VG PAYMENT\Execute Package ST_gli_tb_act_vendor_payment"
+          TopLeft="41.5000006130763,180.941180074091" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG PAYMENT.PrecedenceConstraints[Constraint]"
+          TopLeft="165.26428897916,59.8117660271668">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.3176481656138"
+              Start="0,0"
+              End="0,29.8176481656138">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.8176481656138" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO VG PAYMENT.PrecedenceConstraints[Constraint 1]"
+          TopLeft="167.26428901322,138.729414192781">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.2117658813107"
+              Start="0,0"
+              End="0,34.7117658813107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.7117658813107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="320.8,303.2"
+          Size="320.8,345.6"
+          Id="Package\GERA ARQUIVO VG PAYMENT"
+          TopLeft="450.38571425652,82.2823529337763" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="400.209524373943,255.911765412748">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="50.1761898825765,0"
+              Start="0,0"
+              End="42.6761898825765,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="42.6761898825765,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="771.18571425652,255.082352933776">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="74.1714184447721,9.14621841952311"
+              Start="0,0"
+              End="66.6714184447721,9.14621841952311">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="33.0857092223861,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="33.0857092223861,0"
+                    Point2="37.0857092223861,0"
+                    Point3="37.0857092223861,4" />
+                  <mssgle:LineSegment
+                    End="37.0857092223861,5.14621841952311" />
+                  <mssgle:CubicBezierSegment
+                    Point1="37.0857092223861,5.14621841952311"
+                    Point2="37.0857092223861,9.14621841952311"
+                    Point3="41.0857092223861,9.14621841952311" />
+                  <mssgle:LineSegment
+                    End="66.6714184447721,9.14621841952311" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Data:                   Autor:                                    Hisrotico de mudança:&#xA;05-12-2023        Alessandro Oliveira               Pacote ST_gli_tb_act_policy_payment desabilitado porque a tabela foi descontinuada do projeto.&#xA;05-12-2023        Alessandro Oliveira               Inclusão do pacote gli_tb_act_account, o mesmo vai ficar desabilitado porque o desenvolvimento da query/etl vai ser na proxima sprint."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="984,72"
+          Id="03ad8413-0158-4fc7-9e89-ab71e25101cf"
+          TopLeft="32.4999995157123,2.16666662792365" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

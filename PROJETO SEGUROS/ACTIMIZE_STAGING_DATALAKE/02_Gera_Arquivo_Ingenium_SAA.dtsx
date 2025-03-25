@@ -1,0 +1,658 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/23/2022 6:50:16 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP202"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{A0ADE13E-C2AD-419C-B153-17826A05DBE3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="02_Gera_Arquivo_Ingenium_SAA"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{D78D408B-7BCC-4BCB-8C87-D8CE08095835}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO ACCOUNT"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{e8a8eb6c-a644-48a4-89b9-6090cffb003b}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO ACCOUNT">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0c39aacb-71ca-410e-9bfa-b04336dc6d6c}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_account"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_account.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account_to_party"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{8e621109-eb34-41f7-8122-27e5e5ec2a1f}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_account_to_party"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_account_to_party.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_party_to_customer"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{b01fc68c-6f17-4015-89d4-fa49dc7ab742}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_party_to_customer"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_party_to_customer.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO ACCOUNT.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{63E8EC26-7E56-4BE6-8E4F-0BCC33794709}"
+          DTS:From="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account_to_party" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO ACCOUNT.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{268DC465-B033-4314-BCC4-0D3B411E457E}"
+          DTS:From="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account_to_party"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_party_to_customer" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO INGENIUM"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F8C37DA1-CE10-4B85-BA70-906CDC493BA9}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO INGENIUM">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO INGENIUM\ili_tb_act_account"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{11CA7A17-64B9-465F-B027-63774288A59B}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_account"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_account.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO INGENIUM\ili_tb_act_customer_payment"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9182400F-66B2-4DAA-8DA4-73DB247253A5}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_customer_payment"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_customer_payment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO INGENIUM.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{FEAE66B1-6CB8-4895-A36E-8F175A1AF7CF}"
+          DTS:From="Package\GERA ARQUIVO INGENIUM\ili_tb_act_customer_payment"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO INGENIUM\ili_tb_act_account" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{832E6017-3606-44BC-BC3F-95F7DEB0C6CA}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO INGENIUM E SAA">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_accountowner_policypayer"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{902F4C2C-3AC9-48C5-99E4-24438172EE28}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_accountowner_policypayer"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_accountowner_policypayer.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_beneficiary"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9B265CB9-A6D8-4004-B9BD-22A73FFC7871}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_beneficiary"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_beneficiary.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_broker_distributor_agency_franchise"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{995195D2-B583-4B8D-9A82-FB5B53D7661C}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_broker_distributor_agency_franchise"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_broker_distributor_agency_franchise.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_insured"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{6596C2CE-B813-4675-BAA1-2CAB02668164}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_insured"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_insured.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{AFED00F4-6A7F-4FB1-BA23-C22346220515}"
+          DTS:From="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_accountowner_policypayer"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_beneficiary" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{72FA939D-A0C5-47CE-87A5-9E4CFE61C842}"
+          DTS:From="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_beneficiary"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_broker_distributor_agency_franchise" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\GERA ARQUIVO INGENIUM E SAA.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{CA0F3FD8-45BC-45AE-B0DF-FDA40F1FD807}"
+          DTS:From="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_broker_distributor_agency_franchise"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_insured" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\GERA ARQUIVO SAA"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{162166be-96d0-485a-b651-2440abca4941}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="GERA ARQUIVO SAA">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\GERA ARQUIVO SAA\ili_tb_act_vendor_payment"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5497CBED-EFAB-4C6D-AAEA-9BFB2DF307B5}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ili_tb_act_vendor_payment"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ili_tb_act_vendor_payment.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D1D5E86A-6048-4A36-8D19-5DA26F4DA4A0}"
+      DTS:From="Package\GERA ARQUIVO INGENIUM E SAA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\GERA ARQUIVO SAA" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{BC71F4E2-F0B1-49CE-A82D-E818C8CB3B3C}"
+      DTS:From="Package\GERA ARQUIVO SAA"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\GERA ARQUIVO INGENIUM" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{1F09E66F-6375-4AFB-B01C-9205F352374A}"
+      DTS:From="Package\GERA ARQUIVO INGENIUM"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\GERA ARQUIVO ACCOUNT" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165.6,42.4"
+          Id="Package\GERA ARQUIVO INGENIUM\ili_tb_act_account"
+          TopLeft="55.5208284206066,113.749995176494" />
+        <NodeLayout
+          Size="217.6,41.6"
+          Id="Package\GERA ARQUIVO INGENIUM\ili_tb_act_customer_payment"
+          TopLeft="33.9169387751596,33.6457553492054" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO INGENIUM.PrecedenceConstraints[Constraint]"
+          TopLeft="140.38555026455,75.6457553492054">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.1042398272887"
+              Start="0,0"
+              End="0,30.6042398272887">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6042398272887" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="309.6,161.6"
+          Size="309.6,204.8"
+          Id="Package\GERA ARQUIVO INGENIUM"
+          TopLeft="454.916816058487,421.851040806934" />
+        <NodeLayout
+          Size="257.6,41.6"
+          Id="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_accountowner_policypayer"
+          TopLeft="39.0857155507924,28.611766610591" />
+        <NodeLayout
+          Size="206.4,41.6"
+          Id="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_beneficiary"
+          TopLeft="56.6523828684979,93.1908524960359" />
+        <NodeLayout
+          Size="302.4,41.6"
+          Id="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_broker_distributor_agency_franchise"
+          TopLeft="12.5015879779853,160.966452559741" />
+        <NodeLayout
+          Size="210.4,41.6"
+          Id="Package\GERA ARQUIVO INGENIUM E SAA\ili_tb_act_insured"
+          TopLeft="65.0359807913875,231.670592954167" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO INGENIUM E SAA.PrecedenceConstraints[Constraint]"
+          TopLeft="163.869049209645,70.611766610591">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5790858854449"
+              Start="0,0"
+              End="0,15.0790858854449">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0790858854449" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO INGENIUM E SAA.PrecedenceConstraints[Constraint 1]"
+          TopLeft="161.743652089908,135.190852496036">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.7756000637053"
+              Start="0,0"
+              End="0,18.2756000637053">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.2756000637053" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO INGENIUM E SAA.PrecedenceConstraints[Constraint 2]"
+          TopLeft="166.935451051353,202.966452559741">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.7041403944258"
+              Start="0,0"
+              End="0,21.2041403944258">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.2041403944258" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="350.4,329.6"
+          Size="350.4,372"
+          Id="Package\GERA ARQUIVO INGENIUM E SAA"
+          TopLeft="31.6142830868156,238.75294176204" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\GERA ARQUIVO SAA\ili_tb_act_vendor_payment"
+          TopLeft="38.9936600387907,34.7612236448117" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="297.6,108"
+          Size="297.6,150.4"
+          Id="Package\GERA ARQUIVO SAA"
+          TopLeft="446.412706015062,245.142004283325" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="381.614283086816,424.75294176204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="64.7984229282464,-104.277604145382"
+              Start="0,0"
+              End="57.2984229282464,-104.277604145382">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="28.3992114641232,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="28.3992114641232,0"
+                    Point2="32.3992114641232,0"
+                    Point3="32.3992114641232,-4" />
+                  <mssgle:LineSegment
+                    End="32.3992114641232,-100.277604145382" />
+                  <mssgle:CubicBezierSegment
+                    Point1="32.3992114641232,-100.277604145382"
+                    Point2="32.3992114641232,-104.277604145382"
+                    Point3="36.3992114641232,-104.277604145382" />
+                  <mssgle:LineSegment
+                    End="57.2984229282464,-104.277604145382" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="595.212706015062,395.542004283325">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.504110043425,26.3090365236092"
+              Start="0,0"
+              End="14.504110043425,18.8090365236092">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.15451826180458" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.15451826180458"
+                    Point2="0,13.1545182618046"
+                    Point3="4,13.1545182618046" />
+                  <mssgle:LineSegment
+                    End="10.504110043425,13.1545182618046" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.504110043425,13.1545182618046"
+                    Point2="14.504110043425,13.1545182618046"
+                    Point3="14.504110043425,17.1545182618046" />
+                  <mssgle:LineSegment
+                    End="14.504110043425,18.8090365236092" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <AnnotationLayout
+          Text="Data:                   Autor:                                    Hisrotico de mudança:&#xA;05-12-2023        Alessandro Oliveira               Inclusão do pacote ili_tb_act_account, o mesmo vai ficar desabilitado porque o desenvolvimento da query/etl vai ser na proxima sprint."
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="978.4,56"
+          Id="26e13ec5-b7e8-4c66-aa35-4345b0866d6e"
+          TopLeft="31.6142830868156,77.0079028763754" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account"
+          TopLeft="38.9936600387907,34.7612236448117" />
+        <NodeLayout
+          Size="216,41.6"
+          Id="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_account_to_party"
+          TopLeft="38.9936600387907,136.361223644812" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\GERA ARQUIVO ACCOUNT\ili_tb_act_party_to_customer"
+          TopLeft="38.9936600387907,237.961223644812" />
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO ACCOUNT.PrecedenceConstraints[Constraint]"
+          TopLeft="146.993660038791,76.3612236448117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\GERA ARQUIVO ACCOUNT.PrecedenceConstraints[Constraint 1]"
+          TopLeft="146.993660038791,177.961223644812">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-21.6,60"
+              Start="0,0"
+              End="-21.6,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,26"
+                    Point2="0,30"
+                    Point3="-4,30" />
+                  <mssgle:LineSegment
+                    End="-17.6,30" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-17.6,30"
+                    Point2="-21.6,30"
+                    Point3="-21.6,34" />
+                  <mssgle:LineSegment
+                    End="-21.6,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="297.6,334.4"
+          Size="297.6,377.6"
+          Id="Package\GERA ARQUIVO ACCOUNT"
+          TopLeft="875.90001175063,259.945152469604" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="764.516816058487,524.251040806934">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="111.383195692143,-75.50588833733"
+              Start="0,0"
+              End="103.883195692143,-75.50588833733">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51.6915978460717,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.6915978460717,0"
+                    Point2="55.6915978460717,0"
+                    Point3="55.6915978460717,-4" />
+                  <mssgle:LineSegment
+                    End="55.6915978460717,-71.50588833733" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.6915978460717,-71.50588833733"
+                    Point2="55.6915978460717,-75.50588833733"
+                    Point3="59.6915978460717,-75.50588833733" />
+                  <mssgle:LineSegment
+                    End="103.883195692143,-75.50588833733" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
