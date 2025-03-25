@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Actimize_Origem_Staging_csv", "Actimize_Origem_Staging\Actimize_Origem_Staging_csv.dtproj", "{E90CDE97-902D-4991-8E6B-B5C6E7843F4D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E90CDE97-902D-4991-8E6B-B5C6E7843F4D}.Development|Default.ActiveCfg = Development
+		{E90CDE97-902D-4991-8E6B-B5C6E7843F4D}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85992DC5-061C-4D56-93DE-B2E685C8637D}
+	EndGlobalSection
+EndGlobal
