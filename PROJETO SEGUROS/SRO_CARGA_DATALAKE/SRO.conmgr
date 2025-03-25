@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="SRO"
+  DTS:DTSID="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::P_SRO_DATABASE]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::P_SRO_PASS]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::P_SRO_SERVER]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::P_SRO_USER]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=ASUS;User ID=USER_SEGUROS;Initial Catalog=SRO;Provider=SQLOLEDB.1;Persist Security Info=True;Application Name=SSIS-{96636EBC-34C0-43F4-9C57-0863174495B1}MTZSQLD001 SRO;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkQjILd5gHEqmLc8INdJotwAAAAACAAAAAAAQZgAAAAEAACAAAACsbdi1Xjgd7hhLyAaFavNaQYYHd89/Xi7rMyo6fnz+/QAAAAAOgAAAAAIAACAAAADnt2HNnvZGBp7edRhxCW2EXEiSIWYY0irHFUUc7hGqCIAAAADW74inUTOC/vl74zMreiBadLzXaCtPEnAYIF7JgrJxUtJvKQ9WL0AckNpYZob0BOna30rYXQ0NnKenRsy8Cr1p/1EKAxBpkIymWNM8VLGbsNwyLaM8xoEnrJvhOstxIoNu7bXKzIZzmsl8loed9zurp5ew0MgfN8KRDtBVsQ99+EAAAADPKtYWDXRQAvFd6Z9I501LaJ0PLCtIWI683wk1tt6PuDEXaFfCcK/KlflhqvVmtpKfmzTxr4HdKGGNWPMPtmP9</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

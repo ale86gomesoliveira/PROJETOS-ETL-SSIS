@@ -1,0 +1,1621 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/24/2022 4:33:21 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{5B3D9602-CE2A-4785-AD9D-58C92AC6865B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_Beneficiario_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{08512595-F2BD-49F8-91E0-3DCDD41A3888}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\INSERE SRO_BENEFICIARIO_VG"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
+      DTS:DTSID="{C9961043-C8E2-4E8A-9363-BF68A7499C7B}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE SRO_BENEFICIARIO_VG"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[SRO_BENEFICIARIO_VG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_APOLICE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="NR_APOLICE"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SQ_BENEFICIARIO]"
+                      cachedDataType="i4"
+                      cachedName="SQ_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SQ_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[SQ_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CD_CLIENTE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="CD_CLIENTE"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CD_CLIENTE]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FL_SISTEMA_ORIGEM]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="FL_SISTEMA_ORIGEM"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[FL_SISTEMA_ORIGEM]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_CARGA"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_ALTERACAO]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_ALTERACAO"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_ALTERACAO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_ALTERACAO]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NM_BENEFICIARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="NM_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NM_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TP_BENEFICIARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TP_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DS_BENEFICIARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="DS_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DS_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PC_BENEFICIARIO]"
+                      cachedDataType="i4"
+                      cachedName="PC_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PC_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[PC_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="ID_BENEFICIARIO_CPF_CNPJ"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_BENEFICIARIO_CPF_CNPJ]" />
+                    <inputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TP_BENEFICIARIO_PF_PJ]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="TP_BENEFICIARIO_PF_PJ"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO_PF_PJ]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO_PF_PJ]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NR_APOLICE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SQ_BENEFICIARIO]"
+                      dataType="i4"
+                      name="SQ_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CD_CLIENTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="FL_SISTEMA_ORIGEM" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_ALTERACAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_ALTERACAO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NM_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TP_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DS_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PC_BENEFICIARIO]"
+                      dataType="i4"
+                      name="PC_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ID_BENEFICIARIO_CPF_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO_PF_PJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TP_BENEFICIARIO_PF_PJ" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[ST_SRO_BENEFICIARIO_VG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                      name="NR_APOLICE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[SQ_BENEFICIARIO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SQ_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[SQ_BENEFICIARIO]"
+                      name="SQ_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_CLIENTE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_CLIENTE]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_CLIENTE]"
+                      name="CD_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[FL_SISTEMA_ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[FL_SISTEMA_ORIGEM]"
+                      name="FL_SISTEMA_ORIGEM"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                      name="DT_CARGA"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_ALTERACAO]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_ALTERACAO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_ALTERACAO]"
+                      name="DT_ALTERACAO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NM_BENEFICIARIO]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_BENEFICIARIO]"
+                      name="NM_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_BENEFICIARIO]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO]"
+                      name="TP_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DS_BENEFICIARIO]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_BENEFICIARIO]"
+                      name="DS_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[PC_BENEFICIARIO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PC_BENEFICIARIO]"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[PC_BENEFICIARIO]"
+                      name="PC_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      name="ID_BENEFICIARIO_CPF_CNPJ"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO_PF_PJ]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_BENEFICIARIO_PF_PJ]"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO_PF_PJ]"
+                      name="TP_BENEFICIARIO_PF_PJ"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NR_APOLICE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SQ_BENEFICIARIO]"
+                      dataType="i4"
+                      name="SQ_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_CLIENTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="FL_SISTEMA_ORIGEM" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_ALTERACAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_ALTERACAO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NM_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TP_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DS_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PC_BENEFICIARIO]"
+                      dataType="i4"
+                      name="PC_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ID_BENEFICIARIO_CPF_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_BENEFICIARIO_PF_PJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TP_BENEFICIARIO_PF_PJ" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                      name="NR_APOLICE" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SQ_BENEFICIARIO]"
+                      dataType="i4"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SQ_BENEFICIARIO]"
+                      name="SQ_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_CLIENTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_CLIENTE]"
+                      name="CD_CLIENTE" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FL_SISTEMA_ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FL_SISTEMA_ORIGEM]"
+                      name="FL_SISTEMA_ORIGEM" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                      name="DT_CARGA" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_ALTERACAO]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_ALTERACAO]"
+                      name="DT_ALTERACAO" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NM_BENEFICIARIO]"
+                      name="NM_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_BENEFICIARIO]"
+                      name="TP_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DS_BENEFICIARIO]"
+                      name="DS_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PC_BENEFICIARIO]"
+                      dataType="i4"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PC_BENEFICIARIO]"
+                      name="PC_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      name="ID_BENEFICIARIO_CPF_CNPJ" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_BENEFICIARIO_PF_PJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_BENEFICIARIO_PF_PJ]"
+                      name="TP_BENEFICIARIO_PF_PJ" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\INSERE SRO_BENEFICIARIO_VG.Paths[OLE DB Source Output]"
+              endId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\INSERE STAGE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{C6143561-F524-4AFD-890B-1C7A1D837792}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE STAGE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\INSERE STAGE\Add Coluna"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Add Coluna"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      length="10"
+                      lineageId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                      name="Flg_Origem_Sistema"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_STR,10,1252)"I4Pro"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_STR,10,1252)"I4Pro"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]"
+                      name="DT_Carga"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE STAGE\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[ST_SRO_BENEFICIARIO_VG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE STAGE\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_Carga]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="DT_Carga"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      lineageId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_APOLICE]"
+                      cachedDataType="numeric"
+                      cachedName="NR_APOLICE"
+                      cachedPrecision="15"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NM_BENEFICIARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="90"
+                      cachedName="NM_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NM_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TP_BENEFICIARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="TP_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DS_BENEFICIARIO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="DS_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DS_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PC_BENEFICIARIO]"
+                      cachedDataType="numeric"
+                      cachedName="PC_BENEFICIARIO"
+                      cachedPrecision="9"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PC_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PC_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CPF]"
+                      cachedDataType="i8"
+                      cachedName="CPF"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CD_TP_PESSOA]"
+                      cachedDataType="i4"
+                      cachedName="CD_TP_PESSOA"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO_PF_PJ]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_TP_PESSOA]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CD_CLIENTE]"
+                      cachedDataType="i4"
+                      cachedName="CD_CLIENTE"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CD_CLIENTE]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_CLIENTE]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CD_BENEFICIARIO]"
+                      cachedDataType="i4"
+                      cachedName="CD_BENEFICIARIO"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SQ_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_BENEFICIARIO]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Flg_Origem_Sistema]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Flg_Origem_Sistema"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                      lineageId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NR_APOLICE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SQ_BENEFICIARIO]"
+                      dataType="i4"
+                      name="SQ_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CD_CLIENTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="CD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="FL_SISTEMA_ORIGEM" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                      dataType="dbTimeStamp"
+                      name="DT_CARGA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_ALTERACAO]"
+                      dataType="dbTimeStamp"
+                      name="DT_ALTERACAO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="NM_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TP_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="DS_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PC_BENEFICIARIO]"
+                      dataType="i4"
+                      name="PC_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_BENEFICIARIO_CPF_CNPJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="ID_BENEFICIARIO_CPF_CNPJ" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_BENEFICIARIO_PF_PJ]"
+                      codePage="1252"
+                      dataType="str"
+                      length="255"
+                      name="TP_BENEFICIARIO_PF_PJ" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE STAGE\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM datalakevw_tb_beneficiario</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE STAGE\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_ENDOSSO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_ENDOSSO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_ENDOSSO]"
+                      name="ID_ENDOSSO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                      name="NR_APOLICE"
+                      precision="15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_SUBESTIPULANTE]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_SUBESTIPULANTE]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_SUBESTIPULANTE]"
+                      name="NR_SUBESTIPULANTE"
+                      precision="18"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_SUBSTIPULANTE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NM_SUBSTIPULANTE]"
+                      length="150"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_SUBSTIPULANTE]"
+                      name="NM_SUBSTIPULANTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_BENEFICIARIO]"
+                      length="10"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_BENEFICIARIO]"
+                      name="TP_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_CLIENTE]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_CLIENTE]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_CLIENTE]"
+                      name="CD_CLIENTE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_BENEFICIARIO]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_BENEFICIARIO]"
+                      name="CD_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NM_BENEFICIARIO]"
+                      length="90"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[NM_BENEFICIARIO]"
+                      name="NM_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DS_BENEFICIARIO]"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_BENEFICIARIO]"
+                      name="DS_BENEFICIARIO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PC_BENEFICIARIO]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PC_BENEFICIARIO]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[PC_BENEFICIARIO]"
+                      name="PC_BENEFICIARIO"
+                      precision="9"
+                      scale="3"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CPF]"
+                      name="CPF"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_TP_PESSOA]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_TP_PESSOA]"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_TP_PESSOA]"
+                      name="CD_TP_PESSOA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_ENDOSSO]"
+                      dataType="i4"
+                      name="ID_ENDOSSO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                      dataType="numeric"
+                      name="NR_APOLICE"
+                      precision="15" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_SUBESTIPULANTE]"
+                      dataType="numeric"
+                      name="NR_SUBESTIPULANTE"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NM_SUBSTIPULANTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="NM_SUBSTIPULANTE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TP_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_CLIENTE]"
+                      dataType="i4"
+                      name="CD_CLIENTE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_BENEFICIARIO]"
+                      dataType="i4"
+                      name="CD_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="90"
+                      name="NM_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="DS_BENEFICIARIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PC_BENEFICIARIO]"
+                      dataType="numeric"
+                      name="PC_BENEFICIARIO"
+                      precision="9"
+                      scale="3" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CPF]"
+                      dataType="i8"
+                      name="CPF" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_TP_PESSOA]"
+                      dataType="i4"
+                      name="CD_TP_PESSOA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_ENDOSSO]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_ENDOSSO]"
+                      name="ID_ENDOSSO" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                      name="NR_APOLICE"
+                      precision="15" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_SUBESTIPULANTE]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_SUBESTIPULANTE]"
+                      name="NR_SUBESTIPULANTE"
+                      precision="18" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NM_SUBSTIPULANTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NM_SUBSTIPULANTE]"
+                      name="NM_SUBSTIPULANTE" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_BENEFICIARIO]"
+                      name="TP_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_CLIENTE]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_CLIENTE]"
+                      name="CD_CLIENTE" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_BENEFICIARIO]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_BENEFICIARIO]"
+                      name="CD_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NM_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="90"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NM_BENEFICIARIO]"
+                      name="NM_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DS_BENEFICIARIO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DS_BENEFICIARIO]"
+                      name="DS_BENEFICIARIO" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PC_BENEFICIARIO]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PC_BENEFICIARIO]"
+                      name="PC_BENEFICIARIO"
+                      precision="9"
+                      scale="3" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      dataType="i8"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CPF]"
+                      name="CPF" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_TP_PESSOA]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_TP_PESSOA]"
+                      name="CD_TP_PESSOA" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\INSERE STAGE.Paths[Derived Column Output]"
+              endId="Package\INSERE STAGE\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\INSERE STAGE\Add Coluna.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\INSERE STAGE.Paths[OLE DB Source Output]"
+              endId="Package\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]"
+              name="OLE DB Source Output"
+              startId="Package\INSERE STAGE\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{A23CBF0C-FCA8-4644-984B-29EEF0545318}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE STAGE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stage.ST_SRO_BENEFICIARIO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B67A8337-0316-4290-B3F7-ED885766BB2C}"
+      DTS:From="Package\INSERE STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\INSERE SRO_BENEFICIARIO_VG" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{CA920AE7-E9C1-4B26-85EC-CADCE70B334D}"
+      DTS:From="Package\TRUNCATE STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\INSERE STAGE" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="233.333333333334,42.6666666666667"
+          Id="Package\INSERE SRO_BENEFICIARIO_VG"
+          TopLeft="63.7499990500512,192.399996559619" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGE"
+          TopLeft="102.999998547137,111.449998105467" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\TRUNCATE STAGE"
+          TopLeft="90.6249986495823,20.799999628067" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="179.374998798594,154.116664772134">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.2833317874856"
+              Start="0,0"
+              End="0,30.7833317874856">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7833317874856" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="176.145831931693,63.4666662947337">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.9833318107329"
+              Start="0,0"
+              End="0,40.4833318107329">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.4833318107329" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\INSERE SRO_BENEFICIARIO_VG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination"
+          TopLeft="194,227" />
+        <NodeLayout
+          Size="150.666666666667,49.3333333333334"
+          Id="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source"
+          TopLeft="204.5,74.5" />
+        <EdgeLayout
+          Id="Package\INSERE SRO_BENEFICIARIO_VG.Paths[OLE DB Source Output]"
+          TopLeft="279.916666666667,123.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,103.166666666667"
+              Start="0,0"
+              End="0,95.6666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.6666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE SRO_BENEFICIARIO_VG\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\INSERE STAGE\OLE DB Destination"
+          TopLeft="154.666664890945,184.566664001147" />
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGE\Add Coluna"
+          TopLeft="173.374998481945,94.6166674454017" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGE\OLE DB Source"
+          TopLeft="162.999997653067,24.9999996513128" />
+        <EdgeLayout
+          Id="Package\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="239.187498067506,67.6666663179795">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.9500011274222"
+              Start="0,0"
+              End="0,19.4500011274222">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.4500011274222" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGE.Paths[Derived Column Output]"
+          TopLeft="240.354165019778,137.283334112068">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.2833298890791"
+              Start="0,0"
+              End="0,39.7833298890791">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.7833298890791" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE STAGE\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE STAGE\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

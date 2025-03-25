@@ -1,0 +1,1436 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/9/2021 12:27:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{5FE494AF-D35A-495E-8EAA-88D2F6E50B2A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_Apolice_Cobertura_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{C2C9F863-91E1-4CA9-9E23-21D0446120D7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_APOLICE_COBERTURA_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F12078FB-E981-4DA3-AE2C-5BFE1EB0AA41}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_APOLICE_COBERTURA_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B9B8391D-FC4F-48A5-827E-7A4C19F325DE}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add Coluna"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          name="DT_CARGA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                          name="Flg_Origem_Sistema"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,10,1252)"I4Pro"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,10,1252)"I4Pro"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Destino ST_SRO_APOLICE_COBERTURA_VG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_APOLICE_COBERTURA_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_CARGA"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output].Columns[DT_CARGA]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Número da apólice]"
+                          cachedDataType="numeric"
+                          cachedName="Número da apólice"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número da apólice]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Código do segurado]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="Código do segurado"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_SEGURADO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do segurado]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Código do produto]"
+                          cachedDataType="i4"
+                          cachedName="Código do produto"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_PRODUTO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do produto]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Status da cobertura]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="Status da cobertura"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ST_COBERTURA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Status da cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Número do processo SUSEP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Número do processo SUSEP"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PROCESSO_SUSEP]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do processo SUSEP]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Número do certificado]"
+                          cachedDataType="i8"
+                          cachedName="Número do certificado"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do certificado]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Número do endosso]"
+                          cachedDataType="i4"
+                          cachedName="Número do endosso"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do endosso]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Tipo de cobertura]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Tipo de cobertura"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[TP_COBERTURA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Tipo de cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Valor do prêmio tarifário]"
+                          cachedDataType="numeric"
+                          cachedName="Valor do prêmio tarifário"
+                          cachedPrecision="19"
+                          cachedScale="8"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_TARIFADO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do prêmio tarifário]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Nome do prestador de serviço (agente de serviço)]"
+                          cachedDataType="i4"
+                          cachedName="Nome do prestador de serviço (agente de serviço)"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_PRESTADOR_SERVICO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Nome do prestador de serviço (agente de serviço)]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data da emissão da cobertura]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data da emissão da cobertura"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_EMISSAO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data da emissão da cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data da emissão do endosso]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data da emissão do endosso"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ENDOSSO]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data da emissão do endosso]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data de início de vigência]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data de início de vigência"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de início de vigência]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data de fim de vigência]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data de fim de vigência"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de fim de vigência]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Valor do prêmio]"
+                          cachedDataType="numeric"
+                          cachedName="Valor do prêmio"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COBERTURA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do prêmio]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Valor do capital segurado]"
+                          cachedDataType="numeric"
+                          cachedName="Valor do capital segurado"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_MONTANTE_COBERTURA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do capital segurado]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Flag indicador de cobertura básica]"
+                          cachedDataType="i4"
+                          cachedName="Flag indicador de cobertura básica"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_COBERTURA_BASICA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Flag indicador de cobertura básica]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Tipo de pessoa coberta]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Tipo de pessoa coberta"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[TP_PESSOA_COBERTURA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Tipo de pessoa coberta]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Número da cobertura]"
+                          cachedDataType="i4"
+                          cachedName="Número da cobertura"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_COBERTURA_APOLICE]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número da cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Código do pagador]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Código do pagador"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CLIENTE]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do pagador]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Flg_Origem_Sistema]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Flg_Origem_Sistema"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data de competência ]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data de competência "
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_COMPETENCIA]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de competência ]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Código do cliente]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="Código do cliente"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do cliente]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data de término da apólice]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data de término da apólice"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FINAL_APOLICE]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de término da apólice]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].Columns[Data de emissão da apólice]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data de emissão da apólice"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_APOLICE]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de emissão da apólice]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_SEGURADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ID_SEGURADO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ID_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="FL_SISTEMA_ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_COBERTURA_APOLICE]"
+                          dataType="i4"
+                          name="ID_COBERTURA_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_PRODUTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="ID_PRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbTimeStamp"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ATUALIZACAO]"
+                          dataType="dbTimeStamp"
+                          name="DT_ATUALIZACAO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[ST_COBERTURA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ST_COBERTURA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_INI_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_FIM_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_MONTANTE_COBERTURA]"
+                          dataType="numeric"
+                          name="VL_MONTANTE_COBERTURA"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COBERTURA]"
+                          dataType="numeric"
+                          name="VL_PREMIO_COBERTURA"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ENDOSSO]"
+                          dataType="dbTimeStamp"
+                          name="DT_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_COMPETENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_COMPETENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_COBERTURA_BASICA]"
+                          dataType="i4"
+                          name="DV_COBERTURA_BASICA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[TP_PESSOA_COBERTURA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="TP_PESSOA_COBERTURA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[TP_COBERTURA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="TP_COBERTURA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_PRESTADOR_SERVICO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_PRESTADOR_SERVICO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_EMISSAO]"
+                          dataType="dbTimeStamp"
+                          name="DT_EMISSAO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_APOLICE]"
+                          dataType="dbTimeStamp"
+                          name="DT_INI_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="NR_CERTIFICADO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_TARIFADO]"
+                          dataType="numeric"
+                          name="VL_PREMIO_TARIFADO"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FINAL_APOLICE]"
+                          dataType="dbTimeStamp"
+                          name="DT_FINAL_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CLIENTE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="NR_CLIENTE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PROCESSO_SUSEP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="NR_PROCESSO_SUSEP" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Origem datalakevw_tb_cobertura"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+	c.[Número da apólice]										
+,	[Código do pagador]										
+,	[Código do segurado]									
+,   a.[Código do cliente]                                            
+,	[Número da cobertura]									
+,	[Código do produto]										
+,	[Status da cobertura]									
+,	[Data da emissão do endosso]							
+,	[Data da emissão da cobertura]							
+,	[Data do vencimento da cobertura]						
+,	[Valor do capital segurado]								
+,	c.[Valor do prêmio]										
+,	[Código do cancelamento da cobertura]					
+,	[Data de competência ]									
+,	[Flag indicador de cobertura básica]					
+,	[Tipo de pessoa coberta]								
+,	[Tipo de cobertura]										
+,	[Nome do prestador de serviço (agente de serviço)]		
+,	[Número do endosso]										
+,	[Número do certificado]									
+,	[Data de início de vigência]							
+,	[Data de fim de vigência]								
+,	[Número do grupo do produto]							
+,	[Valor do prêmio tarifário]								
+,	c.[Número do estipulante]									
+,	[Número do processo SUSEP]
+,   a.[Data de emissão da apólice]					
+,	a.[Data de término da apólice]			
+from datalakevw_tb_cobertura c
+inner join datalakevw_tb_apolice a on c.[Número da apólice] = a.[Número da apólice]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número da apólice]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número da apólice]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número da apólice]"
+                          name="Número da apólice"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do pagador]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do pagador]"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do pagador]"
+                          name="Código do pagador"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do segurado]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do segurado]"
+                          length="15"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do segurado]"
+                          name="Código do segurado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número da cobertura]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número da cobertura]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número da cobertura]"
+                          name="Número da cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do produto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do produto]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do produto]"
+                          name="Código do produto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Status da cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Status da cobertura]"
+                          length="50"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Status da cobertura]"
+                          name="Status da cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data da emissão do endosso]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data da emissão do endosso]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data da emissão do endosso]"
+                          name="Data da emissão do endosso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data da emissão da cobertura]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data da emissão da cobertura]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data da emissão da cobertura]"
+                          name="Data da emissão da cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data do vencimento da cobertura]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data do vencimento da cobertura]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data do vencimento da cobertura]"
+                          name="Data do vencimento da cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do capital segurado]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Valor do capital segurado]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do capital segurado]"
+                          name="Valor do capital segurado"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do prêmio]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Valor do prêmio]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do prêmio]"
+                          name="Valor do prêmio"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do cancelamento da cobertura]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do cancelamento da cobertura]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do cancelamento da cobertura]"
+                          name="Código do cancelamento da cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de competência ]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de competência ]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de competência ]"
+                          name="Data de competência "
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Flag indicador de cobertura básica]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Flag indicador de cobertura básica]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Flag indicador de cobertura básica]"
+                          name="Flag indicador de cobertura básica"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Tipo de pessoa coberta]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Tipo de pessoa coberta]"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Tipo de pessoa coberta]"
+                          name="Tipo de pessoa coberta"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Tipo de cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Tipo de cobertura]"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Tipo de cobertura]"
+                          name="Tipo de cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Nome do prestador de serviço (agente de serviço)]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Nome do prestador de serviço (agente de serviço)]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Nome do prestador de serviço (agente de serviço)]"
+                          name="Nome do prestador de serviço (agente de serviço)"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do endosso]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do endosso]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do endosso]"
+                          name="Número do endosso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do certificado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do certificado]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do certificado]"
+                          name="Número do certificado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de início de vigência]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de início de vigência]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de início de vigência]"
+                          name="Data de início de vigência"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de fim de vigência]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de fim de vigência]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de fim de vigência]"
+                          name="Data de fim de vigência"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do grupo do produto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do grupo do produto]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do grupo do produto]"
+                          name="Número do grupo do produto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do prêmio tarifário]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Valor do prêmio tarifário]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Valor do prêmio tarifário]"
+                          name="Valor do prêmio tarifário"
+                          precision="19"
+                          scale="8"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do estipulante]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do estipulante]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do estipulante]"
+                          name="Número do estipulante"
+                          precision="18"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do processo SUSEP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do processo SUSEP]"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Número do processo SUSEP]"
+                          name="Número do processo SUSEP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do cliente]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do cliente]"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Código do cliente]"
+                          name="Código do cliente"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de emissão da apólice]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de emissão da apólice]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de emissão da apólice]"
+                          name="Data de emissão da apólice"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de término da apólice]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de término da apólice]"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].Columns[Data de término da apólice]"
+                          name="Data de término da apólice"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número da apólice]"
+                          dataType="numeric"
+                          name="Número da apólice"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do pagador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Código do pagador" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do segurado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="Código do segurado" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número da cobertura]"
+                          dataType="i4"
+                          name="Número da cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do produto]"
+                          dataType="i4"
+                          name="Código do produto" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Status da cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Status da cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data da emissão do endosso]"
+                          dataType="dbTimeStamp"
+                          name="Data da emissão do endosso" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data da emissão da cobertura]"
+                          dataType="dbTimeStamp"
+                          name="Data da emissão da cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data do vencimento da cobertura]"
+                          dataType="dbTimeStamp"
+                          name="Data do vencimento da cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Valor do capital segurado]"
+                          dataType="numeric"
+                          name="Valor do capital segurado"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Valor do prêmio]"
+                          dataType="numeric"
+                          name="Valor do prêmio"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do cancelamento da cobertura]"
+                          dataType="i4"
+                          name="Código do cancelamento da cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de competência ]"
+                          dataType="dbTimeStamp"
+                          name="Data de competência " />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Flag indicador de cobertura básica]"
+                          dataType="i4"
+                          name="Flag indicador de cobertura básica" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Tipo de pessoa coberta]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Tipo de pessoa coberta" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Tipo de cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Tipo de cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Nome do prestador de serviço (agente de serviço)]"
+                          dataType="i4"
+                          name="Nome do prestador de serviço (agente de serviço)" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do endosso]"
+                          dataType="i4"
+                          name="Número do endosso" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do certificado]"
+                          dataType="i8"
+                          name="Número do certificado" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de início de vigência]"
+                          dataType="dbTimeStamp"
+                          name="Data de início de vigência" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de fim de vigência]"
+                          dataType="dbTimeStamp"
+                          name="Data de fim de vigência" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do grupo do produto]"
+                          dataType="i4"
+                          name="Número do grupo do produto" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Valor do prêmio tarifário]"
+                          dataType="numeric"
+                          name="Valor do prêmio tarifário"
+                          precision="19"
+                          scale="8" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do estipulante]"
+                          dataType="numeric"
+                          name="Número do estipulante"
+                          precision="18" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Número do processo SUSEP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Número do processo SUSEP" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Código do cliente]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Código do cliente" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de emissão da apólice]"
+                          dataType="dbTimeStamp"
+                          name="Data de emissão da apólice" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output].ExternalColumns[Data de término da apólice]"
+                          dataType="dbTimeStamp"
+                          name="Data de término da apólice" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número da apólice]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número da apólice]"
+                          name="Número da apólice"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do pagador]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do pagador]"
+                          name="Código do pagador" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do segurado]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do segurado]"
+                          name="Código do segurado" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do cliente]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do cliente]"
+                          name="Código do cliente" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número da cobertura]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número da cobertura]"
+                          name="Número da cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do produto]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do produto]"
+                          name="Código do produto" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Status da cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Status da cobertura]"
+                          name="Status da cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data da emissão do endosso]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data da emissão do endosso]"
+                          name="Data da emissão do endosso" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data da emissão da cobertura]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data da emissão da cobertura]"
+                          name="Data da emissão da cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data do vencimento da cobertura]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data do vencimento da cobertura]"
+                          name="Data do vencimento da cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Valor do capital segurado]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Valor do capital segurado]"
+                          name="Valor do capital segurado"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Valor do prêmio]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Valor do prêmio]"
+                          name="Valor do prêmio"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do cancelamento da cobertura]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Código do cancelamento da cobertura]"
+                          name="Código do cancelamento da cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de competência ]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de competência ]"
+                          name="Data de competência " />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Flag indicador de cobertura básica]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Flag indicador de cobertura básica]"
+                          name="Flag indicador de cobertura básica" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Tipo de pessoa coberta]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Tipo de pessoa coberta]"
+                          name="Tipo de pessoa coberta" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Tipo de cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Tipo de cobertura]"
+                          name="Tipo de cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Nome do prestador de serviço (agente de serviço)]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Nome do prestador de serviço (agente de serviço)]"
+                          name="Nome do prestador de serviço (agente de serviço)" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do endosso]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do endosso]"
+                          name="Número do endosso" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do certificado]"
+                          dataType="i8"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do certificado]"
+                          name="Número do certificado" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de início de vigência]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de início de vigência]"
+                          name="Data de início de vigência" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de fim de vigência]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de fim de vigência]"
+                          name="Data de fim de vigência" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do grupo do produto]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do grupo do produto]"
+                          name="Número do grupo do produto" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Valor do prêmio tarifário]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Valor do prêmio tarifário]"
+                          name="Valor do prêmio tarifário"
+                          precision="19"
+                          scale="8" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do estipulante]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do estipulante]"
+                          name="Número do estipulante"
+                          precision="18" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do processo SUSEP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Número do processo SUSEP]"
+                          name="Número do processo SUSEP" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de emissão da apólice]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de emissão da apólice]"
+                          name="Data de emissão da apólice" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de término da apólice]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[Data de término da apólice]"
+                          name="Data de término da apólice" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG.Paths[Derived Column Output]"
+                  endId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_APOLICE_COBERTURA_VG\TRUNCATE TABLE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{2E11DBCA-E39C-4E12-9C75-66CCA2601B41}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE TABLE STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE stage.ST_SRO_APOLICE_COBERTURA_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_APOLICE_COBERTURA_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{E99F918E-2447-4709-A919-A05D8D2CC0A8}"
+          DTS:From="Package\SRO_APOLICE_COBERTURA_VG\TRUNCATE TABLE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="258,42.6666666666667"
+          Id="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG"
+          TopLeft="27.0833365184565,88.6666634122531" />
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\SRO_APOLICE_COBERTURA_VG\TRUNCATE TABLE STAGE"
+          TopLeft="56.1249992456288,18.1166698862116" />
+        <EdgeLayout
+          Id="Package\SRO_APOLICE_COBERTURA_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="156.270834548709,60.7833365528783">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8833268593749"
+              Start="0,0"
+              End="0,20.3833268593749">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3833268593749" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="290.666666666667,176"
+          Size="290.666666666667,218.666666666667"
+          Id="Package\SRO_APOLICE_COBERTURA_VG"
+          TopLeft="19.229163365129,15.3499997016787" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="236,42.6666666666667"
+          Id="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura"
+          TopLeft="28.9166639409956,0.599999488592101" />
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Add Coluna"
+          TopLeft="80.7916631679988,84.4166664923226" />
+        <NodeLayout
+          Size="288,42.6666666666667"
+          Id="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG"
+          TopLeft="1.20833102054871,156.383330036302" />
+        <EdgeLayout
+          Id="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG.Paths[OLE DB Source Output]"
+          TopLeft="147.187496887831,43.2666661552588">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.1500003370638"
+              Start="0,0"
+              End="0,33.6500003370638">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.6500003370638" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG.Paths[Derived Column Output]"
+          TopLeft="146.333330427607,127.083333158989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.2999968773132"
+              Start="0,0"
+              End="0,21.7999968773132">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.7999968773132" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Origem datalakevw_tb_cobertura">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_APOLICE_COBERTURA_VG\INSERE STAGE ST_SRO_APOLICE_COBERTURA_VG\Destino ST_SRO_APOLICE_COBERTURA_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

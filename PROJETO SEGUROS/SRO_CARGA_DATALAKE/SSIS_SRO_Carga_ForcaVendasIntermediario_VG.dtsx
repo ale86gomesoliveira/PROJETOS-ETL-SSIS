@@ -1,0 +1,1862 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/9/2021 12:33:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{E0F6FBD3-12CA-41A2-A0C9-FD5907BC4450}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_ForcaVendasIntermediario_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{36F7B7C8-0820-4094-BB38-DF5CEB91B8B7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E601E10C-6540-4365-B0AC-1EFA501C0EB2}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE FORÇA_VENDAS_INTERMEDIARIO_VG"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split"
+              componentClassID="Microsoft.ConditionalSplit"
+              contactInfo="Conditional Split;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Routes data rows to different outputs depending on the content of the data. Use conditions (SSIS expressions) to specify which rows are routed. For example, separate records that need to be cleaned from those that are ready to be loaded or route only a subset of records."
+              name="Conditional Split"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Inputs[Conditional Split Input]"
+                  description="Input to the Conditional Split Transformation"
+                  name="Conditional Split Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Inputs[Conditional Split Input].Columns[Controle_Atualizacao]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="21"
+                      cachedName="Controle_Atualizacao"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[Controle_Atualizacao]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Case 1]"
+                  description="Output 1 of the Conditional Split Transformation"
+                  errorOrTruncationOperation="Computation"
+                  errorRowDisposition="FailComponent"
+                  exclusionGroup="1"
+                  name="Case 1"
+                  synchronousInputId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Inputs[Conditional Split Input]"
+                  truncationRowDisposition="FailComponent">
+                  <properties>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
+                      name="Expression">#{Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[Controle_Atualizacao]} != "ENVIADO ANTERIORMENTE"</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the friendly version of the expression. This expression version uses column names."
+                      expressionType="Notify"
+                      name="FriendlyExpression">Controle_Atualizacao != "ENVIADO ANTERIORMENTE"</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the position of the condition in the list of conditions that the transformation evaluates. The evaluation order is from the lowest to the highest value."
+                      name="EvaluationOrder">0</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Conditional Split Default Output]"
+                  description="Default Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  name="Conditional Split Default Output"
+                  synchronousInputId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Inputs[Conditional Split Input]">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      name="IsDefaultOut">true</property>
+                  </properties>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Conditional Split Error Output]"
+                  description="Error Output of the Conditional Split Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Conditional Split Error Output"
+                  synchronousInputId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Inputs[Conditional Split Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Conditional Split Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="DESTINO TABELA FORÇAVENDA - SRO"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[SRO_FORCAVENDA_INTERMEDIARIO_VG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[CD_CORRETOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CD_CORRETOR"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_CORRETOR]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_CORRETOR]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[CD_SUSEP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CD_SUSEP"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_SUSEP]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[TP_INTERMEDIADOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TP_INTERMEDIADOR"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[TP_INTERMEDIADOR]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[TP_INTERMEDIADOR]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[CD_NACIONALIDADE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CD_NACIONALIDADE"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_NACIONALIDADE]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_NACIONALIDADE]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[TP_PESSOA_INTERMEDIADOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="TP_PESSOA_INTERMEDIADOR"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[TP_PESSOA_INTERMEDIADOR]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[TP_PESSOA_INTERMEDIADOR]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="ID_CPF_CNPJ_INTERMEDIADOR"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[ID_CPF_CNPJ_INTERMEDIADOR]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[NM_ENDERECO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="200"
+                      cachedName="NM_ENDERECO"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_ENDERECO]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_ENDERECO]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[NM_BAIRRO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NM_BAIRRO"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_BAIRRO]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_BAIRRO]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[NM_ESTADO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="NM_ESTADO"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_ESTADO]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_ESTADO]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[NM_CIDADE]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NM_CIDADE"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_CIDADE]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_CIDADE]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[NM_PAIS]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="NM_PAIS"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_PAIS]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_PAIS]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[CD_CEP]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CD_CEP"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_CEP]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_CEP]" />
+                    <inputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].Columns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="NR_DOCUMENTO_ESTRANGEIRO"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NR_DOCUMENTO_ESTRANGEIRO]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_CORRETOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_CORRETOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_SUSEP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_PAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="NR_DOCUMENTO_ESTRANGEIRO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[TP_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TP_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[TP_PESSOA_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TP_PESSOA_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="NM_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ID_CPF_CNPJ_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_NACIONALIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CD_NACIONALIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[CD_CEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_CEP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input].ExternalColumns[NM_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="NM_ESTADO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ORIGEM VIEW FORÇAVENDA - SRO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM VW_Forca_Vendas_Intermediario_VG</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[regis_unico]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[regis_unico]"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[regis_unico]"
+                      name="regis_unico"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[Controle_Atualizacao]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[Controle_Atualizacao]"
+                      length="21"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[Controle_Atualizacao]"
+                      name="Controle_Atualizacao"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_CORRETOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_CORRETOR]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_CORRETOR]"
+                      name="CD_CORRETOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_SUSEP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_SUSEP]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_SUSEP]"
+                      name="CD_SUSEP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[TP_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[TP_INTERMEDIADOR]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[TP_INTERMEDIADOR]"
+                      name="TP_INTERMEDIADOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_NACIONALIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_NACIONALIDADE]"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_NACIONALIDADE]"
+                      name="CD_NACIONALIDADE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[TP_PESSOA_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[TP_PESSOA_INTERMEDIADOR]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[TP_PESSOA_INTERMEDIADOR]"
+                      name="TP_PESSOA_INTERMEDIADOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      name="ID_CPF_CNPJ_INTERMEDIADOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_ENDERECO]"
+                      length="200"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_ENDERECO]"
+                      name="NM_ENDERECO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_BAIRRO]"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_BAIRRO]"
+                      name="NM_BAIRRO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_ESTADO]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_ESTADO]"
+                      name="NM_ESTADO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_CIDADE]"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_CIDADE]"
+                      name="NM_CIDADE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_PAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_PAIS]"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NM_PAIS]"
+                      name="NM_PAIS"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_CEP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_CEP]"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[CD_CEP]"
+                      name="CD_CEP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      length="40"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].Columns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      name="NR_DOCUMENTO_ESTRANGEIRO"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[regis_unico]"
+                      dataType="i8"
+                      name="regis_unico" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[Controle_Atualizacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="21"
+                      name="Controle_Atualizacao" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_CORRETOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_CORRETOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_SUSEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_SUSEP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[TP_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TP_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_NACIONALIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CD_NACIONALIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[TP_PESSOA_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TP_PESSOA_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ID_CPF_CNPJ_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="NM_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="NM_ESTADO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NM_PAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[CD_CEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_CEP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output].ExternalColumns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="NR_DOCUMENTO_ESTRANGEIRO" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_CORRETOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_CORRETOR]"
+                      name="CD_CORRETOR" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_SUSEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_SUSEP]"
+                      name="CD_SUSEP" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[TP_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[TP_INTERMEDIADOR]"
+                      name="TP_INTERMEDIADOR" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_NACIONALIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_NACIONALIDADE]"
+                      name="CD_NACIONALIDADE" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[TP_PESSOA_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[TP_PESSOA_INTERMEDIADOR]"
+                      name="TP_PESSOA_INTERMEDIADOR" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      name="ID_CPF_CNPJ_INTERMEDIADOR" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_ENDERECO]"
+                      name="NM_ENDERECO" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_BAIRRO]"
+                      name="NM_BAIRRO" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_ESTADO]"
+                      name="NM_ESTADO" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_CIDADE]"
+                      name="NM_CIDADE" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_PAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NM_PAIS]"
+                      name="NM_PAIS" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_CEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[CD_CEP]"
+                      name="CD_CEP" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      name="NR_DOCUMENTO_ESTRANGEIRO" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[regis_unico]"
+                      dataType="i8"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[regis_unico]"
+                      name="regis_unico" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[Controle_Atualizacao]"
+                      codePage="1252"
+                      dataType="str"
+                      length="21"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[Controle_Atualizacao]"
+                      name="Controle_Atualizacao" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG.Paths[Case 1]"
+              endId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO.Inputs[OLE DB Destination Input]"
+              name="Case 1"
+              startId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Outputs[Case 1]" />
+            <path
+              refId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG.Paths[OLE DB Source Output]"
+              endId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split.Inputs[Conditional Split Input]"
+              name="OLE DB Source Output"
+              startId="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\INSERE STAGE"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{dc194543-47a4-4aac-a833-060d71219d34}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE STAGE"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Destino SRO_ForcaVendaIntermedirio_VG_ST"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[ST_SRO_FORCAVENDA_INTERMEDIARIO_VG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Cd_Lp]"
+                      cachedDataType="i4"
+                      cachedName="Cd_Lp"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_CORRETOR]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Cd_Lp]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[susep_vida]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="susep_vida"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[susep_vida]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[City_Nm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="City_Nm"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_CIDADE]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[City_Nm]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Country_Nm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Country_Nm"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_PAIS]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Country_Nm]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Foreign_Document_Nr]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Foreign_Document_Nr"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Foreign_Document_Nr]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Intermediary_Tp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="Intermediary_Tp"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[TP_INTERMEDIADOR]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Intermediary_Tp]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[legal_Nature_Tp]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="legal_Nature_Tp"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[TP_PESSOA_INTERMEDIADOR]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[legal_Nature_Tp]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Address_Nm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Address_Nm"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_ENDERECO]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Address_Nm]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[National_Number_Id]"
+                      cachedDataType="i8"
+                      cachedName="National_Number_Id"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[National_Number_Id]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Nationality_Cd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Nationality_Cd"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_NACIONALIDADE]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Nationality_Cd]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Neiborhood_Nm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="255"
+                      cachedName="Neiborhood_Nm"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_BAIRRO]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Neiborhood_Nm]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[Postal_Code_Cd]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Postal_Code_Cd"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_CEP]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Postal_Code_Cd]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].Columns[State_Nm]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="State_Nm"
+                      externalMetadataColumnId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_ESTADO]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[State_Nm]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_CORRETOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_CORRETOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_SUSEP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_CIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_CIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_PAIS]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_PAIS" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NR_DOCUMENTO_ESTRANGEIRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="NR_DOCUMENTO_ESTRANGEIRO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[TP_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TP_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[TP_PESSOA_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="TP_PESSOA_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_ENDERECO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="200"
+                      name="NM_ENDERECO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[ID_CPF_CNPJ_INTERMEDIADOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="ID_CPF_CNPJ_INTERMEDIADOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_NACIONALIDADE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CD_NACIONALIDADE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_BAIRRO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="NM_BAIRRO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[CD_CEP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CD_CEP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input].ExternalColumns[NM_ESTADO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="NM_ESTADO" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE STAGE\ORIGEM I4PRO"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="ORIGEM I4PRO"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">Select distinct
+	Cd_Lp                  = corr.cd_corretor, 
+	susep_vida 			   = corr.Cd_susep_vida,
+	--susep_re 			   = corr.Cd_susep_re	
+    City_Nm                = cer_corr.nm_cidade,  
+	Country_Nm             = cp.nm_pais, 
+	Foreign_Document_Nr    = ' ',  -- Número do documento de estrangeiro
+	Intermediary_Tp        = ctr.Nm_tp_registro,
+	case
+		when ctp.Nm_tipo_pessoa = 'Jurídica' then 'PJ' 
+		when ctp.Nm_tipo_pessoa = 'Física'   then 'PF' 
+	end as legal_Nature_Tp,
+	Address_Nm             = cer_corr.nm_endereco,          
+	National_Number_Id     = corr.Nr_cnpj_cpf, 
+	Nationality_Cd         = corr.nm_pais_origem, 
+	Neiborhood_Nm          = cer_corr.nm_bairro, 
+	Postal_Code_Cd         = cer_corr.nm_Cep, 
+	State_Nm               = cuf_ender.nm_uf
+	
+From corp_apolice ca
+ Join corp_sub_estipulante cse
+  On cse.id_apolice			= ca.id_apolice 
+ Join corp_endosso ce
+  On ce.id_sub				= cse.id_sub 
+ Join corp_sub_corretor csc
+  On csc.id_endosso			= ce.id_endosso 
+ Join corp_pessoas corr
+  On corr.id_pessoa			= csc.Id_pessoa_corretor
+ Join corp_tp_registro ctr
+  On ctr.Cd_tp_registro		= corr.cd_tp_registro
+ Join corp_pessoa_meio_comunicacao cpmc
+  On cpmc.id_pessoa			= corr.id_pessoa 
+  and cpmc.cd_tp_meio_comunicacao	= 4
+ Join corp_tp_pessoa ctp
+  On ctp.Cd_tipo_pessoa		= corr.Cd_tipo_pessoa
+ Join corp_endereco cer_corr 
+  On cer_corr.id_endereco   = (
+								Select Top 1 cer_corr1.id_endereco 
+								From corp_endereco cer_corr1
+								Where cer_corr1.id_pessoa		= corr.id_pessoa 
+								Order by case when  cer_corr1.id_tp_endereco = 2 then 1 else 2 end
+							  )
+  Left Join corp_uf cuf_ender 
+   On cuf_ender.cd_uf		= cer_corr.cd_uf 
+  Left Join corp_pais cp
+   On cp.cd_pais			= cuf_ender.id_pais</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE STAGE\ORIGEM I4PRO.Connections[OleDbConnection]"
+                  connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Intermediary_Tp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Intermediary_Tp]"
+                      length="30"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Intermediary_Tp]"
+                      name="Intermediary_Tp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Nationality_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Nationality_Cd]"
+                      length="255"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Nationality_Cd]"
+                      name="Nationality_Cd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Address_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Address_Nm]"
+                      length="255"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Address_Nm]"
+                      name="Address_Nm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Neiborhood_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Neiborhood_Nm]"
+                      length="255"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Neiborhood_Nm]"
+                      name="Neiborhood_Nm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[City_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[City_Nm]"
+                      length="255"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[City_Nm]"
+                      name="City_Nm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Country_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Country_Nm]"
+                      length="255"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Country_Nm]"
+                      name="Country_Nm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Postal_Code_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code_Cd]"
+                      length="15"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Postal_Code_Cd]"
+                      name="Postal_Code_Cd"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Cd_Lp]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Cd_Lp]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Cd_Lp]"
+                      name="Cd_Lp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[susep_vida]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[susep_vida]"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[susep_vida]"
+                      name="susep_vida"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Foreign_Document_Nr]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Foreign_Document_Nr]"
+                      length="10"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[Foreign_Document_Nr]"
+                      name="Foreign_Document_Nr"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[National_Number_Id]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[National_Number_Id]"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[National_Number_Id]"
+                      name="National_Number_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[State_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[State_Nm]"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[State_Nm]"
+                      name="State_Nm"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[legal_Nature_Tp]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[legal_Nature_Tp]"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].Columns[legal_Nature_Tp]"
+                      name="legal_Nature_Tp"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Intermediary_Tp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Intermediary_Tp" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Nationality_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Nationality_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Address_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="110"
+                      name="Address_Nm" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Neiborhood_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Neiborhood_Nm" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[City_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City_Nm" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Country_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Country_Nm" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Postal_Code_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Postal_Code_Cd" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Cd_Lp]"
+                      dataType="i4"
+                      name="Cd_Lp" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[susep_vida]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="susep_vida" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[Foreign_Document_Nr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Foreign_Document_Nr" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[National_Number_Id]"
+                      dataType="i8"
+                      name="National_Number_Id" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[State_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="State_Nm" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output].ExternalColumns[legal_Nature_Tp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="legal_Nature_Tp" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Cd_Lp]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Cd_Lp]"
+                      name="Cd_Lp" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[susep_vida]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[susep_vida]"
+                      name="susep_vida" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Foreign_Document_Nr]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Foreign_Document_Nr]"
+                      name="Foreign_Document_Nr" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Intermediary_Tp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Intermediary_Tp]"
+                      name="Intermediary_Tp" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[legal_Nature_Tp]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[legal_Nature_Tp]"
+                      name="legal_Nature_Tp" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Nationality_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Nationality_Cd]"
+                      name="Nationality_Cd" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[National_Number_Id]"
+                      dataType="i8"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[National_Number_Id]"
+                      name="National_Number_Id" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Address_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="110"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Address_Nm]"
+                      name="Address_Nm" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Neiborhood_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Neiborhood_Nm]"
+                      name="Neiborhood_Nm" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[City_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[City_Nm]"
+                      name="City_Nm" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[State_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[State_Nm]"
+                      name="State_Nm" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Country_Nm]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Country_Nm]"
+                      name="Country_Nm" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Postal_Code_Cd]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Error Output].Columns[Postal_Code_Cd]"
+                      name="Postal_Code_Cd" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\INSERE STAGE.Paths[OLE DB Source Output]"
+              endId="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\INSERE STAGE\ORIGEM I4PRO.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE TABLE STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5e8fb1da-598e-4d5c-9227-4df55bcd6af1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE TABLE STAGE"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="truncate table [stage].[ST_SRO_FORCAVENDA_INTERMEDIARIO_VG]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{E337C9C0-BFBC-4A0A-882D-F5F35E43D132}"
+      DTS:From="Package\TRUNCATE TABLE STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\INSERE STAGE" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{16656679-0B3F-4237-8DE7-3BA2F8785B88}"
+      DTS:From="Package\INSERE STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="301.333333333334,42.6666666666667"
+          Id="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG"
+          TopLeft="33.7499994970859,194.133329861959" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGE"
+          TopLeft="110.4166659154,127.566667294303" />
+        <NodeLayout
+          Size="201.333333333334,42.6666666666667"
+          Id="Package\TRUNCATE TABLE STAGE"
+          TopLeft="80.4166663624346,53.0666667906443" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="183.416666138917,95.733333457311">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.8333338369923"
+              Start="0,0"
+              End="0,24.3333338369923">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.3333338369923" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="185.083332706243,170.23333396097">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,23.8999959009893"
+              Start="0,0"
+              End="0,16.3999959009893">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.3999959009893" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="156,42.6666666666667"
+          Id="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\Conditional Split"
+          TopLeft="194.666666666667,143.333333333333" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO"
+          TopLeft="150.833333333333,49.5" />
+        <NodeLayout
+          Size="262.666666666667,42.6666666666667"
+          Id="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO"
+          TopLeft="143.5,233.5" />
+        <EdgeLayout
+          Id="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG.Paths[OLE DB Source Output]"
+          TopLeft="273.75,92.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.1666666666663"
+              Start="0,0"
+              End="0,43.6666666666663">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.6666666666663" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG.Paths[Case 1]"
+          TopLeft="273.75,186">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.5000000000003"
+              Start="0,0"
+              End="0,40.0000000000003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.0000000000003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.2180859375,15.2231445312501,30.436171875,9.5537109375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\ORIGEM VIEW FORÇAVENDA - SRO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE FORÇA_VENDAS_INTERMEDIARIO_VG\DESTINO TABELA FORÇAVENDA - SRO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\INSERE STAGE\ORIGEM I4PRO"
+          TopLeft="252.500001837811,40.833332713445" />
+        <NodeLayout
+          Size="294.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST"
+          TopLeft="184.687500103998,144.150001034439" />
+        <EdgeLayout
+          Id="Package\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="330.260417637571,83.4999993801117">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.650001654327"
+              Start="0,0"
+              End="0,53.150001654327">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.150001654327" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE STAGE\Destino SRO_ForcaVendaIntermedirio_VG_ST">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE STAGE\ORIGEM I4PRO">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

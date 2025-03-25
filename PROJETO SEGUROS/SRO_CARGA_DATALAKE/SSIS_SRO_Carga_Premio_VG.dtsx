@@ -1,0 +1,1931 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2022 3:18:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{8152257F-D957-42C0-A092-1190DEF4ACB6}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="SSIS_SRO_Carga_Premio_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{B3B6A0BE-5755-4DE4-93B4-EEA84A8E3A1B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_PREMIO_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F3C28562-AFED-4C19-B853-2665ECCBF0DB}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_PREMIO_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{D2D7CD87-601C-4FDB-8CA8-6AA8B924769D}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE SRO_PREMIO_VG"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[SRO_PREMIO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_APOLICE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NR_APOLICE"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_ENDOSSO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NR_ENDOSSO"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_ENDOSSO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_CERTIFICADO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NR_CERTIFICADO"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_CERTIFICADO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_PARCELA_PREMIO]"
+                          cachedDataType="i4"
+                          cachedName="NR_PARCELA_PREMIO"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_PARCELA_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_PARCELA_PREMIO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TP_MOV_PREMIO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="TP_MOV_PREMIO"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_MOV_PREMIO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CD_MOEDA]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="CD_MOEDA"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CD_MOEDA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_MOEDA]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_MOV_PREMIO]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_MOV_PREMIO"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_MOV_PREMIO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_VENCI_PARCELA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_VENCI_PARCELA"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_VENCI_PARCELA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_VENCI_PARCELA]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VL_PREMIO]"
+                          cachedDataType="numeric"
+                          cachedName="VL_PREMIO"
+                          cachedPrecision="16"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PREMIO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VL_PREMIO_REAIS]"
+                          cachedDataType="numeric"
+                          cachedName="VL_PREMIO_REAIS"
+                          cachedPrecision="16"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_REAIS]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PREMIO_REAIS]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_INI_VIGENCIA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_INI_VIGENCIA"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_INI_VIGENCIA]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_FIM_VIGENCIA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_FIM_VIGENCIA"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_FIM_VIGENCIA]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ID_MOV_PREMIO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ID_MOV_PREMIO"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_MOV_PREMIO]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[QT_PARCELAS]"
+                          cachedDataType="i4"
+                          cachedName="QT_PARCELAS"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QT_PARCELAS]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[QT_PARCELAS]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_CERTIFICADO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_PARCELA_PREMIO]"
+                          dataType="i4"
+                          name="NR_PARCELA_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TP_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TP_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CD_MOEDA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="CD_MOEDA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_MOV_PREMIO]"
+                          dataType="dbTimeStamp"
+                          name="DT_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_VENCI_PARCELA]"
+                          dataType="dbTimeStamp"
+                          name="DT_VENCI_PARCELA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO]"
+                          dataType="numeric"
+                          name="VL_PREMIO"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_REAIS]"
+                          dataType="numeric"
+                          name="VL_PREMIO_REAIS"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_INI_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_FIM_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[QT_PARCELAS]"
+                          dataType="i4"
+                          name="QT_PARCELAS" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_PREMIO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                          length="100"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                          name="NR_APOLICE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_ENDOSSO]"
+                          length="100"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_ENDOSSO]"
+                          name="NR_ENDOSSO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_CERTIFICADO]"
+                          length="100"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_CERTIFICADO]"
+                          name="NR_CERTIFICADO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_PARCELA_PREMIO]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_PARCELA_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_PARCELA_PREMIO]"
+                          name="NR_PARCELA_PREMIO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_MOV_PREMIO]"
+                          length="50"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[TP_MOV_PREMIO]"
+                          name="TP_MOV_PREMIO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_MOEDA]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_MOEDA]"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[CD_MOEDA]"
+                          name="CD_MOEDA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_MOV_PREMIO]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_MOV_PREMIO]"
+                          name="DT_MOV_PREMIO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_VENCI_PARCELA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_VENCI_PARCELA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_VENCI_PARCELA]"
+                          name="DT_VENCI_PARCELA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PREMIO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VL_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PREMIO]"
+                          name="VL_PREMIO"
+                          precision="16"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PREMIO_REAIS]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VL_PREMIO_REAIS]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PREMIO_REAIS]"
+                          name="VL_PREMIO_REAIS"
+                          precision="16"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_INI_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_INI_VIGENCIA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_INI_VIGENCIA]"
+                          name="DT_INI_VIGENCIA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_FIM_VIGENCIA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_FIM_VIGENCIA]"
+                          name="DT_FIM_VIGENCIA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_MOV_PREMIO]"
+                          length="50"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[ID_MOV_PREMIO]"
+                          name="ID_MOV_PREMIO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[QT_PARCELAS]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QT_PARCELAS]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[QT_PARCELAS]"
+                          name="QT_PARCELAS"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_CERTIFICADO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_PARCELA_PREMIO]"
+                          dataType="i4"
+                          name="NR_PARCELA_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TP_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TP_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CD_MOEDA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="CD_MOEDA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_MOV_PREMIO]"
+                          dataType="dbTimeStamp"
+                          name="DT_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_VENCI_PARCELA]"
+                          dataType="dbTimeStamp"
+                          name="DT_VENCI_PARCELA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VL_PREMIO]"
+                          dataType="numeric"
+                          name="VL_PREMIO"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VL_PREMIO_REAIS]"
+                          dataType="numeric"
+                          name="VL_PREMIO_REAIS"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_INI_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_INI_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_FIM_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ID_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[QT_PARCELAS]"
+                          dataType="i4"
+                          name="QT_PARCELAS" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                          name="NR_APOLICE" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_ENDOSSO]"
+                          name="NR_ENDOSSO" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_CERTIFICADO]"
+                          name="NR_CERTIFICADO" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_PARCELA_PREMIO]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_PARCELA_PREMIO]"
+                          name="NR_PARCELA_PREMIO" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TP_MOV_PREMIO]"
+                          name="TP_MOV_PREMIO" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_MOEDA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CD_MOEDA]"
+                          name="CD_MOEDA" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_MOV_PREMIO]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_MOV_PREMIO]"
+                          name="DT_MOV_PREMIO" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_VENCI_PARCELA]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_VENCI_PARCELA]"
+                          name="DT_VENCI_PARCELA" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VL_PREMIO]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VL_PREMIO]"
+                          name="VL_PREMIO"
+                          precision="16"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VL_PREMIO_REAIS]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VL_PREMIO_REAIS]"
+                          name="VL_PREMIO_REAIS"
+                          precision="16"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_INI_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_INI_VIGENCIA]"
+                          name="DT_INI_VIGENCIA" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_FIM_VIGENCIA]"
+                          name="DT_FIM_VIGENCIA" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ID_MOV_PREMIO]"
+                          name="ID_MOV_PREMIO" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QT_PARCELAS]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[QT_PARCELAS]"
+                          name="QT_PARCELAS" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PREMIO_VG\INSERE STAGE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{5D7664A2-6E61-40F6-BEB3-101CFAF63C1F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Derived Column"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Output].Columns[DT_Carga]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Output].Columns[DT_Carga]"
+                          name="DT_Carga"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Destino SRO_TB_Premio_VG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_PREMIO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[nr_endosso]"
+                          cachedDataType="i4"
+                          cachedName="nr_endosso"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_endosso]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[nr_certificado]"
+                          cachedDataType="i8"
+                          cachedName="nr_certificado"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_certificado]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[dt_fim_vigencia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="dt_fim_vigencia"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_fim_vigencia]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[vl_premio]"
+                          cachedDataType="numeric"
+                          cachedName="vl_premio"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_premio]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[cd_apolice]"
+                          cachedDataType="numeric"
+                          cachedName="cd_apolice"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[cd_apolice]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[cd_tipo_emissao]"
+                          cachedDataType="i4"
+                          cachedName="cd_tipo_emissao"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[TP_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[cd_tipo_emissao]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[codigo_moeda]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="codigo_moeda"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_MOEDA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[codigo_moeda]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[dt_emissao]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="dt_emissao"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_emissao]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[dt_inicio_vigencia]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="dt_inicio_vigencia"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_inicio_vigencia]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[vl_premio_real]"
+                          cachedDataType="numeric"
+                          cachedName="vl_premio_real"
+                          cachedPrecision="25"
+                          cachedScale="8"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_REAIS]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_premio_real]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[qtad_parcelas]"
+                          cachedDataType="i4"
+                          cachedName="qtad_parcelas"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[QT_PARCELAS]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[qtad_parcelas]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[nr_sequencial_premio]"
+                          cachedDataType="i4"
+                          cachedName="nr_sequencial_premio"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PARCELA_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_sequencial_premio]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[DT_Carga]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_Carga"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Output].Columns[DT_Carga]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[id_parcela_movimento]"
+                          cachedDataType="i4"
+                          cachedName="id_parcela_movimento"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_MOV_PREMIO]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[id_parcela_movimento]" />
+                        <inputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].Columns[dt_ultimo_vencimento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="dt_ultimo_vencimento"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_VENCI_PARCELA]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_ultimo_vencimento]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_CERTIFICADO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PARCELA_PREMIO]"
+                          dataType="i4"
+                          name="NR_PARCELA_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[TP_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="TP_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_MOEDA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="CD_MOEDA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_MOV_PREMIO]"
+                          dataType="dbTimeStamp"
+                          name="DT_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_VENCI_PARCELA]"
+                          dataType="dbTimeStamp"
+                          name="DT_VENCI_PARCELA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO]"
+                          dataType="numeric"
+                          name="VL_PREMIO"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_REAIS]"
+                          dataType="numeric"
+                          name="VL_PREMIO_REAIS"
+                          precision="16"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_INI_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                          dataType="dbTimeStamp"
+                          name="DT_FIM_VIGENCIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_MOV_PREMIO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ID_MOV_PREMIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[QT_PARCELAS]"
+                          dataType="i4"
+                          name="QT_PARCELAS" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbDate"
+                          name="DT_CARGA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Origem View datalakevw_tb_premio"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+       tp.[cd_apolice]
+      ,tp.[nr_endosso]
+      ,tp.[nr_certificado]
+      ,[nr_ramo]
+      ,[nr_cobertura]
+      ,tp.[nr_sequencial_premio]
+      ,[cd_tipo_emissao]
+      ,[dt_emissao]
+      ,[dt_inicio_vigencia]
+      ,[dt_fim_vigencia]
+      ,[codigo_moeda]
+      ,[vl_capital_segurado]
+      ,[vl_capital_segurado_real]
+      ,tp.[vl_premio]
+      ,tp.[vl_premio_real]
+      ,[vl_iof]
+      ,[Vl_adicional]
+      ,[vl_custo]
+      ,[qtad_parcelas]
+      ,id_parcela_movimento
+	  ,pp.dt_ultimo_vencimento
+  FROM datalakevw_tb_premio tp
+  inner join datalakevw_tb_parcelas_premio pp 
+  on tp.cd_apolice = pp.cd_apolice and tp.nr_endosso = pp.nr_endosso</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[cd_apolice]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[cd_apolice]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[cd_apolice]"
+                          name="cd_apolice"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_endosso]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_endosso]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_endosso]"
+                          name="nr_endosso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_certificado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_certificado]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_certificado]"
+                          name="nr_certificado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_ramo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_ramo]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_ramo]"
+                          name="nr_ramo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_cobertura]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_cobertura]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_cobertura]"
+                          name="nr_cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_sequencial_premio]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_sequencial_premio]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[nr_sequencial_premio]"
+                          name="nr_sequencial_premio"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[cd_tipo_emissao]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[cd_tipo_emissao]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[cd_tipo_emissao]"
+                          name="cd_tipo_emissao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_emissao]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_emissao]"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_emissao]"
+                          name="dt_emissao"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_inicio_vigencia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_inicio_vigencia]"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_inicio_vigencia]"
+                          name="dt_inicio_vigencia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_fim_vigencia]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_fim_vigencia]"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_fim_vigencia]"
+                          name="dt_fim_vigencia"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[codigo_moeda]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[codigo_moeda]"
+                          length="50"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[codigo_moeda]"
+                          name="codigo_moeda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_capital_segurado]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_segurado]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_capital_segurado]"
+                          name="vl_capital_segurado"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_capital_segurado_real]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_segurado_real]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_capital_segurado_real]"
+                          name="vl_capital_segurado_real"
+                          precision="25"
+                          scale="8"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_premio]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_premio]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_premio]"
+                          name="vl_premio"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_premio_real]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_premio_real]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_premio_real]"
+                          name="vl_premio_real"
+                          precision="25"
+                          scale="8"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_iof]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_iof]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_iof]"
+                          name="vl_iof"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[Vl_adicional]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[Vl_adicional]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[Vl_adicional]"
+                          name="Vl_adicional"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_custo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_custo]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[vl_custo]"
+                          name="vl_custo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[qtad_parcelas]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[qtad_parcelas]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[qtad_parcelas]"
+                          name="qtad_parcelas"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[id_parcela_movimento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[id_parcela_movimento]"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[id_parcela_movimento]"
+                          name="id_parcela_movimento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_ultimo_vencimento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_ultimo_vencimento]"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].Columns[dt_ultimo_vencimento]"
+                          name="dt_ultimo_vencimento"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[cd_apolice]"
+                          dataType="numeric"
+                          name="cd_apolice"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_endosso]"
+                          dataType="i4"
+                          name="nr_endosso" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_certificado]"
+                          dataType="i8"
+                          name="nr_certificado" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_ramo]"
+                          dataType="i4"
+                          name="nr_ramo" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_cobertura]"
+                          dataType="i4"
+                          name="nr_cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[nr_sequencial_premio]"
+                          dataType="i4"
+                          name="nr_sequencial_premio" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[cd_tipo_emissao]"
+                          dataType="i4"
+                          name="cd_tipo_emissao" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_emissao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="dt_emissao" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_inicio_vigencia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="dt_inicio_vigencia" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_fim_vigencia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="dt_fim_vigencia" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[codigo_moeda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="codigo_moeda" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_segurado]"
+                          dataType="numeric"
+                          name="vl_capital_segurado"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_segurado_real]"
+                          dataType="numeric"
+                          name="vl_capital_segurado_real"
+                          precision="25"
+                          scale="8" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_premio]"
+                          dataType="numeric"
+                          name="vl_premio"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_premio_real]"
+                          dataType="numeric"
+                          name="vl_premio_real"
+                          precision="25"
+                          scale="8" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_iof]"
+                          dataType="numeric"
+                          name="vl_iof"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[Vl_adicional]"
+                          dataType="numeric"
+                          name="Vl_adicional"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[vl_custo]"
+                          dataType="i4"
+                          name="vl_custo" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[qtad_parcelas]"
+                          dataType="i4"
+                          name="qtad_parcelas" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[id_parcela_movimento]"
+                          dataType="i4"
+                          name="id_parcela_movimento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output].ExternalColumns[dt_ultimo_vencimento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="dt_ultimo_vencimento" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[cd_apolice]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[cd_apolice]"
+                          name="cd_apolice"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_endosso]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_endosso]"
+                          name="nr_endosso" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_certificado]"
+                          dataType="i8"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_certificado]"
+                          name="nr_certificado" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_ramo]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_ramo]"
+                          name="nr_ramo" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_cobertura]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_cobertura]"
+                          name="nr_cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_sequencial_premio]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[nr_sequencial_premio]"
+                          name="nr_sequencial_premio" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[cd_tipo_emissao]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[cd_tipo_emissao]"
+                          name="cd_tipo_emissao" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_emissao]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_emissao]"
+                          name="dt_emissao" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_inicio_vigencia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_inicio_vigencia]"
+                          name="dt_inicio_vigencia" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_fim_vigencia]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_fim_vigencia]"
+                          name="dt_fim_vigencia" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[codigo_moeda]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[codigo_moeda]"
+                          name="codigo_moeda" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_capital_segurado]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_capital_segurado]"
+                          name="vl_capital_segurado"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_capital_segurado_real]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_capital_segurado_real]"
+                          name="vl_capital_segurado_real"
+                          precision="25"
+                          scale="8" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_premio]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_premio]"
+                          name="vl_premio"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_premio_real]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_premio_real]"
+                          name="vl_premio_real"
+                          precision="25"
+                          scale="8" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_iof]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_iof]"
+                          name="vl_iof"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[Vl_adicional]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[Vl_adicional]"
+                          name="Vl_adicional"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_custo]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[vl_custo]"
+                          name="vl_custo" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[qtad_parcelas]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[qtad_parcelas]"
+                          name="qtad_parcelas" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[id_parcela_movimento]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[id_parcela_movimento]"
+                          name="id_parcela_movimento" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_ultimo_vencimento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[dt_ultimo_vencimento]"
+                          name="dt_ultimo_vencimento" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_PREMIO_VG\INSERE STAGE.Paths[Derived Column Output]"
+                  endId="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_PREMIO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PREMIO_VG\TRUNCATE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{56B098F8-F355-48F1-ACE6-4057981CD411}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE STAGE"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE STAGE.ST_SRO_PREMIO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_PREMIO_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{42EAC933-F49E-4DDB-AE9A-3F897B24C2EB}"
+          DTS:From="Package\SRO_PREMIO_VG\TRUNCATE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_PREMIO_VG\INSERE STAGE" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_PREMIO_VG.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{68351420-AA0E-40C8-BD26-9CAA2A30985A}"
+          DTS:From="Package\SRO_PREMIO_VG\INSERE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202.666666666667,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG"
+          TopLeft="8.6666659216088,173.204162043656" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE STAGE"
+          TopLeft="41.874997699633,96.154163829709" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\TRUNCATE STAGE"
+          TopLeft="34.9166655304531,18.829164804096" />
+        <EdgeLayout
+          Id="Package\SRO_PREMIO_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="117.729164948376,61.4958314707627">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.6583323589464"
+              Start="0,0"
+              End="0,27.1583323589464">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.1583323589464" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_PREMIO_VG.PrecedenceConstraints[Constraint 1]"
+          TopLeft="113.604165143954,138.820830496376">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34.3833315472804"
+              Start="0,0"
+              End="0,26.8833315472804">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.8833315472804" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="248.666666666667,270.666666666667"
+          Size="248.666666666667,314"
+          Id="Package\SRO_PREMIO_VG"
+          TopLeft="41.2499993853271,42.8999992328882" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source"
+          TopLeft="287.5,72.5" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination"
+          TopLeft="273,200" />
+        <EdgeLayout
+          Id="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG.Paths[OLE DB Source Output]"
+          TopLeft="360.916666666667,115.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,84.8333333333333"
+              Start="0,0"
+              End="0,77.3333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,77.3333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PREMIO_VG\INSERE SRO_PREMIO_VG\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SRO_PREMIO_VG\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249.333333333334,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio"
+          TopLeft="68.2083323989063,24.5666663257281" />
+        <NodeLayout
+          Size="214.666666666667,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG"
+          TopLeft="84.9999987334013,197.81666312943" />
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\SRO_PREMIO_VG\INSERE STAGE\Derived Column"
+          TopLeft="118.749998230487,115.049997942746" />
+        <EdgeLayout
+          Id="Package\SRO_PREMIO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="194.479165314697,67.2333329923948">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,47.8166649503509"
+              Start="0,0"
+              End="0,40.3166649503509">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.3166649503509" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_PREMIO_VG\INSERE STAGE.Paths[Derived Column Output]"
+          TopLeft="194.208331815278,157.716664609412">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.0999985200172"
+              Start="0,0"
+              End="0,32.5999985200172">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5999985200172" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PREMIO_VG\INSERE STAGE\Destino SRO_TB_Premio_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PREMIO_VG\INSERE STAGE\Origem View datalakevw_tb_premio">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

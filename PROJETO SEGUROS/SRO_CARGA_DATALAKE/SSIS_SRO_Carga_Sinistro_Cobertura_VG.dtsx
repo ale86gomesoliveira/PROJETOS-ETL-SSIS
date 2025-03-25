@@ -1,0 +1,1353 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2022 5:23:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{B0B37E77-ACF3-49A0-95AA-925910A2DA6C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_Sinistro_Cobertura_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{9C49C467-0A40-4EB8-B739-751DB3FBC640}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_COBERTURA_SINISTRO_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{82C0BDB5-4C21-4171-AE17-45FB3C25BA33}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_COBERTURA_SINISTRO_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{BD7784E2-5E3F-49B5-84D3-86254E3C1BEC}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="ADD COLUNA"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          name="DT_CARGA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FL_SISTEMA_ORIGEM]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FL_SISTEMA_ORIGEM]"
+                          name="FL_SISTEMA_ORIGEM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"I4Pro"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"I4Pro"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Data Conversion"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Inputs[Data Conversion Input].Columns[FL_SISTEMA_ORIGEM]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="FL_SISTEMA_ORIGEM"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FL_SISTEMA_ORIGEM]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FL_SISTEMA_ORIGEM]"
+                          name="Copy of FL_SISTEMA_ORIGEM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FL_SISTEMA_ORIGEM]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="datalakevw_tb_cobertura_sinistrada"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+cs.nr_sinistro				
+,nr_cobertura			
+,ds_cobertura			
+,nr_ramo					
+,nr_produto				
+,nm_status_sinistro		
+,vl_reserva_atual							
+,vl_capital_segurado							
+,vl_juros								
+,vl_correcao_monetaria						
+,vl_pago							
+,vl_cosseguro						
+,vl_cosseguro_recebido	
+,vl_cosseguro_pendente		
+,id_congenere			
+,nm_congenere			
+,vl_is_cobertura			
+,vl_is_sinistro	
+,ce.[Número do certificado]
+,ts.nr_endosso
+from datalakevw_tb_cobertura_sinistrada cs
+inner join  datalakevw_tb_sinistro ts  on cs.nr_sinistro = ts.nr_sinistro
+left join datalakevw_tb_certificado ce on nr_endosso = ts.nr_endosso and ce.[Número do certificado] = ts.nr_certificado</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_sinistro]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_sinistro]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_sinistro]"
+                          name="nr_sinistro"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_cobertura]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_cobertura]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_cobertura]"
+                          name="nr_cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[ds_cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[ds_cobertura]"
+                          length="100"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[ds_cobertura]"
+                          name="ds_cobertura"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_ramo]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_ramo]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_ramo]"
+                          name="nr_ramo"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_produto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_produto]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_produto]"
+                          name="nr_produto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nm_status_sinistro]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nm_status_sinistro]"
+                          length="50"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nm_status_sinistro]"
+                          name="nm_status_sinistro"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_reserva_atual]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_reserva_atual]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_reserva_atual]"
+                          name="vl_reserva_atual"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_capital_segurado]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_segurado]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_capital_segurado]"
+                          name="vl_capital_segurado"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_juros]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_juros]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_juros]"
+                          name="vl_juros"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_correcao_monetaria]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_correcao_monetaria]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_correcao_monetaria]"
+                          name="vl_correcao_monetaria"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_pago]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_pago]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_pago]"
+                          name="vl_pago"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_cosseguro]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro]"
+                          name="vl_cosseguro"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro_recebido]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_cosseguro_recebido]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro_recebido]"
+                          name="vl_cosseguro_recebido"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro_pendente]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_cosseguro_pendente]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro_pendente]"
+                          name="vl_cosseguro_pendente"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[id_congenere]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[id_congenere]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[id_congenere]"
+                          name="id_congenere"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nm_congenere]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nm_congenere]"
+                          length="90"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nm_congenere]"
+                          name="nm_congenere"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_is_cobertura]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_is_cobertura]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_is_cobertura]"
+                          name="vl_is_cobertura"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_is_sinistro]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_is_sinistro]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_is_sinistro]"
+                          name="vl_is_sinistro"
+                          precision="38"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[Número do certificado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[Número do certificado]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[Número do certificado]"
+                          name="Número do certificado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_endosso]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_endosso]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_endosso]"
+                          name="nr_endosso"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_sinistro]"
+                          dataType="i8"
+                          name="nr_sinistro" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_cobertura]"
+                          dataType="i4"
+                          name="nr_cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[ds_cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="ds_cobertura" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_ramo]"
+                          dataType="i4"
+                          name="nr_ramo" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_produto]"
+                          dataType="i4"
+                          name="nr_produto" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nm_status_sinistro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nm_status_sinistro" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_reserva_atual]"
+                          dataType="numeric"
+                          name="vl_reserva_atual"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_segurado]"
+                          dataType="numeric"
+                          name="vl_capital_segurado"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_juros]"
+                          dataType="numeric"
+                          name="vl_juros"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_correcao_monetaria]"
+                          dataType="numeric"
+                          name="vl_correcao_monetaria"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_pago]"
+                          dataType="numeric"
+                          name="vl_pago"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_cosseguro]"
+                          dataType="numeric"
+                          name="vl_cosseguro"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_cosseguro_recebido]"
+                          dataType="numeric"
+                          name="vl_cosseguro_recebido"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_cosseguro_pendente]"
+                          dataType="numeric"
+                          name="vl_cosseguro_pendente"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[id_congenere]"
+                          dataType="i4"
+                          name="id_congenere" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nm_congenere]"
+                          codePage="1252"
+                          dataType="str"
+                          length="90"
+                          name="nm_congenere" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_is_cobertura]"
+                          dataType="numeric"
+                          name="vl_is_cobertura"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[vl_is_sinistro]"
+                          dataType="numeric"
+                          name="vl_is_sinistro"
+                          precision="38"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[Número do certificado]"
+                          dataType="i8"
+                          name="Número do certificado" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].ExternalColumns[nr_endosso]"
+                          dataType="i4"
+                          name="nr_endosso" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_sinistro]"
+                          dataType="i8"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_sinistro]"
+                          name="nr_sinistro" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_cobertura]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_cobertura]"
+                          name="nr_cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[ds_cobertura]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[ds_cobertura]"
+                          name="ds_cobertura" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_ramo]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_ramo]"
+                          name="nr_ramo" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_produto]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_produto]"
+                          name="nr_produto" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nm_status_sinistro]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nm_status_sinistro]"
+                          name="nm_status_sinistro" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_reserva_atual]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_reserva_atual]"
+                          name="vl_reserva_atual"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_capital_segurado]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_capital_segurado]"
+                          name="vl_capital_segurado"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_juros]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_juros]"
+                          name="vl_juros"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_correcao_monetaria]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_correcao_monetaria]"
+                          name="vl_correcao_monetaria"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_pago]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_pago]"
+                          name="vl_pago"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_cosseguro]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_cosseguro]"
+                          name="vl_cosseguro"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_cosseguro_recebido]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_cosseguro_recebido]"
+                          name="vl_cosseguro_recebido"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_cosseguro_pendente]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_cosseguro_pendente]"
+                          name="vl_cosseguro_pendente"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[id_congenere]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[id_congenere]"
+                          name="id_congenere" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nm_congenere]"
+                          codePage="1252"
+                          dataType="str"
+                          length="90"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nm_congenere]"
+                          name="nm_congenere" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_is_cobertura]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_is_cobertura]"
+                          name="vl_is_cobertura"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_is_sinistro]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[vl_is_sinistro]"
+                          name="vl_is_sinistro"
+                          precision="38"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[Número do certificado]"
+                          dataType="i8"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[Número do certificado]"
+                          name="Número do certificado" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_endosso]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[nr_endosso]"
+                          name="nr_endosso" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_SRO_COBERTURA_SINISTRO_VG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_COBERTURA_SINISTRO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_sinistro]"
+                          cachedDataType="i8"
+                          cachedName="nr_sinistro"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SINISTRO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_sinistro]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_cobertura]"
+                          cachedDataType="i4"
+                          cachedName="nr_cobertura"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_COBERTURA]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[ds_cobertura]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="ds_cobertura"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_COBERTURA]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[ds_cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_ramo]"
+                          cachedDataType="i4"
+                          cachedName="nr_ramo"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_RAMO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_ramo]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_produto]"
+                          cachedDataType="i4"
+                          cachedName="nr_produto"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PRODUTO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_produto]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nm_status_sinistro]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nm_status_sinistro"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_STATUS_SINISTRO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nm_status_sinistro]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_reserva_atual]"
+                          cachedDataType="numeric"
+                          cachedName="vl_reserva_atual"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_RESERVA_ATUAL]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_reserva_atual]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_capital_segurado]"
+                          cachedDataType="numeric"
+                          cachedName="vl_capital_segurado"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_CAPITAL_SEGURADO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_capital_segurado]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_juros]"
+                          cachedDataType="numeric"
+                          cachedName="vl_juros"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_JUROS]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_juros]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_correcao_monetaria]"
+                          cachedDataType="numeric"
+                          cachedName="vl_correcao_monetaria"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_CORRECAO_MONETARIA]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_correcao_monetaria]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_pago]"
+                          cachedDataType="numeric"
+                          cachedName="vl_pago"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_pago]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_cosseguro_pendente]"
+                          cachedDataType="numeric"
+                          cachedName="vl_cosseguro_pendente"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_COSSEGURO_PENDENTE]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro_pendente]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nm_congenere]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="90"
+                          cachedName="nm_congenere"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_CONGENERE]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nm_congenere]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_cosseguro]"
+                          cachedDataType="numeric"
+                          cachedName="vl_cosseguro"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_COSSEGURO_PAGO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_cosseguro]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[id_congenere]"
+                          cachedDataType="i4"
+                          cachedName="id_congenere"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_CONGENERE]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[id_congenere]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_is_sinistro]"
+                          cachedDataType="numeric"
+                          cachedName="vl_is_sinistro"
+                          cachedPrecision="38"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_SINISTRO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_is_sinistro]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_is_cobertura]"
+                          cachedDataType="numeric"
+                          cachedName="vl_is_cobertura"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_COBERTURA]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[vl_is_cobertura]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_CARGA"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[Copy of FL_SISTEMA_ORIGEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Copy of FL_SISTEMA_ORIGEM"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of FL_SISTEMA_ORIGEM]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_endosso]"
+                          cachedDataType="i4"
+                          cachedName="nr_endosso"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[nr_endosso]" />
+                        <inputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[Número do certificado]"
+                          cachedDataType="i8"
+                          cachedName="Número do certificado"
+                          externalMetadataColumnId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output].Columns[Número do certificado]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SINISTRO]"
+                          dataType="i8"
+                          name="NR_SINISTRO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbDate"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_COBERTURA]"
+                          dataType="i4"
+                          name="NR_COBERTURA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_COBERTURA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_COBERTURA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_RAMO]"
+                          dataType="i4"
+                          name="NR_RAMO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PRODUTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="NR_PRODUTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_RESERVA_ATUAL]"
+                          dataType="numeric"
+                          name="VL_RESERVA_ATUAL"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_CAPITAL_SEGURADO]"
+                          dataType="numeric"
+                          name="VL_CAPITAL_SEGURADO"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_JUROS]"
+                          dataType="numeric"
+                          name="VL_JUROS"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_CORRECAO_MONETARIA]"
+                          dataType="numeric"
+                          name="VL_CORRECAO_MONETARIA"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGO]"
+                          dataType="numeric"
+                          name="VL_PAGO"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_COSSEGURO_PAGO]"
+                          dataType="numeric"
+                          name="VL_COSSEGURO_PAGO"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_COSSEGURO_PENDENTE]"
+                          dataType="numeric"
+                          name="VL_COSSEGURO_PENDENTE"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_CONGENERE]"
+                          dataType="i4"
+                          name="CD_CONGENERE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_COBERTURA]"
+                          dataType="numeric"
+                          name="VL_COBERTURA"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_SINISTRO]"
+                          dataType="numeric"
+                          name="VL_SINISTRO"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_STATUS_SINISTRO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_STATUS_SINISTRO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_CONGENERE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_CONGENERE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_CERTIFICADO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_CERTIFICADO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="FL_SISTEMA_ORIGEM" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE.Paths[Data Conversion Output]"
+                  endId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE.Paths[Derived Column Output]"
+                  endId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_COBERTURA_SINISTRO_VG\TRUNCATE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{5F4DEC20-E85A-4024-8A2E-85CAE75C56AD}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE STAGE"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE STAGE.ST_SRO_COBERTURA_SINISTRO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_COBERTURA_SINISTRO_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{DD74B7BA-5E30-4776-B899-693FFE46CC1C}"
+          DTS:From="Package\SRO_COBERTURA_SINISTRO_VG\TRUNCATE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE"
+          TopLeft="41.8333279316626,89.3000023013352" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\TRUNCATE STAGE"
+          TopLeft="36.3749948684127,10.6666703859965" />
+        <EdgeLayout
+          Id="Package\SRO_COBERTURA_SINISTRO_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="118.437494733371,53.3333370526632">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.966665248672"
+              Start="0,0"
+              End="0,28.466665248672">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.466665248672" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="258.666666666667,186.666666666667"
+          Size="258.666666666667,230"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG"
+          TopLeft="69.0416699914886,50.1333337750038" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249.333333333334,42.6666666666667"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada"
+          TopLeft="145.374998705462,44.2499991282821" />
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ADD COLUNA"
+          TopLeft="203,131.666666666667" />
+        <NodeLayout
+          Size="254.666666666667,42"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG"
+          TopLeft="152,301.666666666667" />
+        <NodeLayout
+          Size="157.333333333334,42.6666666666667"
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\Data Conversion"
+          TopLeft="198,213" />
+        <EdgeLayout
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="272.520832686064,86.9166657949488">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44.7500008717179"
+              Start="0,0"
+              End="0,37.2500008717179">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.2500008717179" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE.Paths[Derived Column Output]"
+          TopLeft="275.833333333333,174.333333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.6666666666664"
+              Start="0,0"
+              End="0,31.1666666666664">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.1666666666664" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE.Paths[Data Conversion Output]"
+          TopLeft="278,255.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.9999999999999"
+              Start="0,0"
+              End="0,38.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\datalakevw_tb_cobertura_sinistrada">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_COBERTURA_SINISTRO_VG\INSERE STAGE\ST_SRO_COBERTURA_SINISTRO_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

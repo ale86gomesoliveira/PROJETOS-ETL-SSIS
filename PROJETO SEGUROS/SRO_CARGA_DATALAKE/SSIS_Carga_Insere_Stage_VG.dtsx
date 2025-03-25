@@ -1,0 +1,784 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/29/2021 2:58:25 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{1D67B9B7-8153-4714-A1C9-FF60B9FDDAAC}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_Carga_Insere_Stage_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="82"
+  DTS:VersionGUID="{AA9898E3-1D03-453B-ABD9-3D4C15BB2B6E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\INSERE STAGES"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{66E572FC-8D93-4CFA-8E1D-44470907932A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE STAGES">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote Apolice Franquia"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{4f5cb08f-e571-49a0-b28a-a688dac42493}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Apolice Franquia"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Apolice_Franquia_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote Apolice_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7077FCE0-1AAA-44C6-B9E7-4408588BF081}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Apolice_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Apolice_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote Carga Apolice Cobertura VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{c35bdbf9-d236-4e48-bc26-f822adc36b62}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Apolice Cobertura VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Apolice_Cobertura_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote Carga Apolice Cosseguro VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{4DE2815A-CB2A-425B-ABD7-EBF647CFBBE8}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Apolice Cosseguro VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Apolice_Cosseguro_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote Carga PremioCobertura_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{3c96c02a-6cca-4d8a-ae19-9edc932256ac}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga PremioCobertura_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Premio_Cobertura_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote ForcaVendasIntermediario_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0334266d-9178-4df9-a3eb-0dd849bead14}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote ForcaVendasIntermediario_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_ForcaVendasIntermediario_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Executa Pacote Premio_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{5807A93A-0427-4387-9B03-D4C82096974A}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Premio_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Premio_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES\Execute Pacote Carga_PremioPagamento_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{D6BEDB5B-7B24-40D4-AE28-3570B3263485}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Pacote Carga_PremioPagamento_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_PremioPagamento_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CD30B354-04BB-45C1-9706-27B66DFD2D71}"
+          DTS:From="Package\INSERE STAGES\Executa Pacote Apolice Franquia"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\INSERE STAGES\Executa Pacote Premio_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{EC5E141B-C9C9-49FE-AB63-72420EAA5325}"
+          DTS:From="Package\INSERE STAGES\Executa Pacote Premio_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\INSERE STAGES\Execute Pacote Carga_PremioPagamento_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{081C592E-B1E8-40E7-B8E3-FAE9A8880652}"
+          DTS:From="Package\INSERE STAGES\Executa Pacote Apolice_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\INSERE STAGES\Executa Pacote Carga Apolice Cobertura VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{510A93C9-C4B1-45E5-8404-9F5E3622DB58}"
+          DTS:From="Package\INSERE STAGES\Executa Pacote Carga Apolice Cobertura VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\INSERE STAGES\Executa Pacote Carga Apolice Cosseguro VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{BDB406E7-9731-4B0C-A126-435167714290}"
+          DTS:From="Package\INSERE STAGES\Executa Pacote Carga Apolice Cosseguro VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\INSERE STAGES\Executa Pacote Apolice Franquia" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{9BB1EB8E-AE75-4934-B6FC-B9CCBAA75E4F}"
+          DTS:From="Package\INSERE STAGES\Execute Pacote Carga_PremioPagamento_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\INSERE STAGES\Executa Pacote Carga PremioCobertura_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{36DBB10A-0E0F-496C-8050-955ABFF9F563}"
+          DTS:From="Package\INSERE STAGES\Executa Pacote Carga PremioCobertura_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\INSERE STAGES\Executa Pacote ForcaVendasIntermediario_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\INSERE STAGES 1"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{4F9AC014-BD40-4409-BC9C-A81E1AD926DD}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE STAGES 1">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Carga Beneficiario"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{158d966e-9939-4ce7-b45a-bd885b0b81c3}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Beneficiario"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Beneficiario_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Carga Certificado"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9015030d-747b-4ff4-8ac3-e4bfc12bd131}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Certificado"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Certificado.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Carga Cobertura Sinistro_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{37de1f50-3afd-4974-b683-1f4ed0e5b8d8}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Cobertura Sinistro_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Sinistro_Cobertura_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Carga Historico Sinistro_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{e4b59f5b-b754-404c-b216-e5d5dfa1bbd4}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Historico Sinistro_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Sinistro_Historico_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Carga Pagamento Sinistro_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{08f4b5a4-11a7-49b4-8e20-bbe875dede6d}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Pagamento Sinistro_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Sinistro_Pagamento_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Carga Sinistro_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{bdb202c1-4f2f-4601-a2ff-aa49795aa698}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Carga Sinistro_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Sinistro_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\INSERE STAGES 1\Executa Pacote Endosso_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{7e57afdd-6e1b-4ff2-9a22-b0db442d3bce}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Executa Pacote Endosso_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>SSIS_SRO_Carga_Endosso_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{664D3564-19D5-4DD3-928D-E5220BACB6C6}"
+          DTS:From="Package\INSERE STAGES 1\Executa Pacote Carga Beneficiario"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\INSERE STAGES 1\Executa Pacote Carga Certificado" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{8C9B091A-64C7-4CB9-A301-30EAF4C6BCE7}"
+          DTS:From="Package\INSERE STAGES 1\Executa Pacote Carga Certificado"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\INSERE STAGES 1\Executa Pacote Endosso_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{48759992-B20D-4407-AD27-FC8A14F5D1CE}"
+          DTS:From="Package\INSERE STAGES 1\Executa Pacote Endosso_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\INSERE STAGES 1\Executa Pacote Carga Sinistro_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{871D8F3A-F59D-4733-B5E6-25B4EF600318}"
+          DTS:From="Package\INSERE STAGES 1\Executa Pacote Carga Sinistro_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\INSERE STAGES 1\Executa Pacote Carga Cobertura Sinistro_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{5634367C-5F03-4C37-A7C1-579C09E91906}"
+          DTS:From="Package\INSERE STAGES 1\Executa Pacote Carga Cobertura Sinistro_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\INSERE STAGES 1\Executa Pacote Carga Pagamento Sinistro_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{69ADC214-FC0B-43F5-9A6B-7ED2F3766F2B}"
+          DTS:From="Package\INSERE STAGES 1\Executa Pacote Carga Pagamento Sinistro_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\INSERE STAGES 1\Executa Pacote Carga Historico Sinistro_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="208,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote Apolice_VG"
+          TopLeft="75.4861094399045,10.2722212756011" />
+        <NodeLayout
+          Size="288,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote Carga Apolice Cosseguro VG"
+          TopLeft="32.1111099769672,141.233330939015" />
+        <NodeLayout
+          Size="284,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote Carga PremioCobertura_VG"
+          TopLeft="33.2291656251376,420.827774067489" />
+        <NodeLayout
+          Size="232,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote Apolice Franquia"
+          TopLeft="61.1230143885174,208.1500054124" />
+        <NodeLayout
+          Size="206.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote Premio_VG"
+          TopLeft="74.8958316709226,279.336105353254" />
+        <NodeLayout
+          Size="292,42.6666666666667"
+          Id="Package\INSERE STAGES\Execute Pacote Carga_PremioPagamento_VG"
+          TopLeft="26.923610431763,346.549995114505" />
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint]"
+          TopLeft="177.676089696387,250.816672079067">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.519433274187"
+              Start="0,0"
+              End="0,21.019433274187">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.019433274187" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint 1]"
+          TopLeft="175.576387718009,322.00277201992">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.5472230945846"
+              Start="0,0"
+              End="0,17.0472230945846">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.0472230945846" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint 4]"
+          TopLeft="176.617062182742,183.899997605682">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.2500078067182"
+              Start="0,0"
+              End="0,16.7500078067182">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7500078067182" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint 5]"
+          TopLeft="174.07638802845,389.216661781172">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.6111122863169"
+              Start="0,0"
+              End="0,24.1111122863169">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.1111122863169" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="285.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote Carga Apolice Cobertura VG"
+          TopLeft="36.7013877956198,75.716670963268" />
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint 2]"
+          TopLeft="179.427081951096,52.9388879422678">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.7777830210003"
+              Start="0,0"
+              End="0,15.2777830210003">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.2777830210003" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint 3]"
+          TopLeft="177.739582219627,118.383337629935">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.8499933090804"
+              Start="0,0"
+              End="0,15.3499933090804">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.3499933090804" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="297.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGES\Executa Pacote ForcaVendasIntermediario_VG"
+          TopLeft="25.6111174813574,489.022220093939" />
+        <EdgeLayout
+          Id="Package\INSERE STAGES.PrecedenceConstraints[Constraint 6]"
+          TopLeft="174.753474886581,463.494440734155">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.5277793597838"
+              Start="0,0"
+              End="0,18.0277793597838">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.0277793597838" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="369.333333333334,549.333333333334"
+          Size="369.333333333334,592.666666666667"
+          Id="Package\INSERE STAGES"
+          TopLeft="104.428569954421,59.6666656980914" />
+        <NodeLayout
+          Size="240,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Carga Beneficiario"
+          TopLeft="40.5555558453003,21.0000006973743" />
+        <NodeLayout
+          Size="234.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Carga Certificado"
+          TopLeft="48.1944446203608,91.1666679451862" />
+        <NodeLayout
+          Size="213.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Endosso_VG"
+          TopLeft="60.6944444340964,159.888890774382" />
+        <EdgeLayout
+          Id="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint]"
+          TopLeft="163.041666899497,63.666667364041">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.5000005811453"
+              Start="0,0"
+              End="0,20.0000005811453">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.0000005811453" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 1]"
+          TopLeft="166.444444527229,133.833334611853">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.0555561625294"
+              Start="0,0"
+              End="0,18.5555561625294">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5555561625294" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="240,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Carga Sinistro_VG"
+          TopLeft="47.8402707964802,235.638890290096" />
+        <EdgeLayout
+          Id="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 2]"
+          TopLeft="167.600690948622,202.555557441049">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.0833328490468"
+              Start="0,0"
+              End="0,25.5833328490468">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5833328490468" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="289.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Carga Cobertura Sinistro_VG"
+          TopLeft="30.5555559943117,305.372224212323" />
+        <NodeLayout
+          Size="286,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Carga Pagamento Sinistro_VG"
+          TopLeft="35.555555919806,381.172224692736" />
+        <NodeLayout
+          Size="284,42.6666666666667"
+          Id="Package\INSERE STAGES 1\Executa Pacote Carga Historico Sinistro_VG"
+          TopLeft="37.2222225616375,463.038891731336" />
+        <EdgeLayout
+          Id="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 3]"
+          TopLeft="171.531246728729,278.305556956762">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.0666672555604"
+              Start="0,0"
+              End="0,19.5666672555604">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.5666672555604" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 4]"
+          TopLeft="176.888889290392,348.038890878989">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.1333338137469"
+              Start="0,0"
+              End="0,25.6333338137469">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6333338137469" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\INSERE STAGES 1.PrecedenceConstraints[Constraint 5]"
+          TopLeft="178.888889240722,423.838891359403">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.200000371933"
+              Start="0,0"
+              End="0,31.700000371933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.700000371933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="353.333333333334,547.333333333334"
+          Size="353.333333333334,590.666666666667"
+          Id="Package\INSERE STAGES 1"
+          TopLeft="550.138881320341,61.4444425589509" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

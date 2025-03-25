@@ -1,0 +1,1375 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2022 3:18:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{0C941A94-007C-4FEB-AA80-662F6F96BF87}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="SSIS_SRO_Carga_PremioPagamento_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{418C6A8C-6124-4426-A762-5A9CEE0DED05}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_PAGAMENTO_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{14914E04-D65A-402D-A7E6-45A375F4F4FA}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_PAGAMENTO_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:Disabled="True"
+          DTS:DTSID="{554C2351-901F-4B28-8F8C-FB84CCF9190F}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE SRO_PAGAMENTO_VG"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[SRO_PAGAMENTO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_APOLICE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NR_APOLICE"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_ENDOSSO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="NR_ENDOSSO"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_ENDOSSO]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FL_SISTEMA_ORIGEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="FL_SISTEMA_ORIGEM"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[FL_SISTEMA_ORIGEM]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                          cachedDataType="dbDate"
+                          cachedName="DT_CARGA"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_CARGA]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[VL_PAGAMENTO]"
+                          cachedDataType="numeric"
+                          cachedName="VL_PAGAMENTO"
+                          cachedPrecision="15"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PAGAMENTO]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_PAGAMENTO]"
+                          cachedDataType="dbDate"
+                          cachedName="DT_PAGAMENTO"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_PAGAMENTO]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[NR_SEQUENCIA]"
+                          cachedDataType="numeric"
+                          cachedName="NR_SEQUENCIA"
+                          cachedPrecision="3"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_SEQUENCIA]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_SEQUENCIA]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DS_TIPO_PAGAMENTO]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="DS_TIPO_PAGAMENTO"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DS_TIPO_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_TIPO_PAGAMENTO]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[DT_PREMIO]"
+                          cachedDataType="dbDate"
+                          cachedName="DT_PREMIO"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_PREMIO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_PREMIO]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="FL_SISTEMA_ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbDate"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGAMENTO]"
+                          dataType="numeric"
+                          name="VL_PAGAMENTO"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_PAGAMENTO]"
+                          dataType="dbDate"
+                          name="DT_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[NR_SEQUENCIA]"
+                          dataType="numeric"
+                          name="NR_SEQUENCIA"
+                          precision="3" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DS_TIPO_PAGAMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_TIPO_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[DT_PREMIO]"
+                          dataType="dbDate"
+                          name="DT_PREMIO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_PAGAMENTO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_APOLICE]"
+                          name="NR_APOLICE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_ENDOSSO]"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_ENDOSSO]"
+                          name="NR_ENDOSSO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          length="20"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[FL_SISTEMA_ORIGEM]"
+                          name="FL_SISTEMA_ORIGEM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_CARGA]"
+                          name="DT_CARGA"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PAGAMENTO]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VL_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[VL_PAGAMENTO]"
+                          name="VL_PAGAMENTO"
+                          precision="15"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_PAGAMENTO]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_PAGAMENTO]"
+                          name="DT_PAGAMENTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_SEQUENCIA]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_SEQUENCIA]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[NR_SEQUENCIA]"
+                          name="NR_SEQUENCIA"
+                          precision="3"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_TIPO_PAGAMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DS_TIPO_PAGAMENTO]"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DS_TIPO_PAGAMENTO]"
+                          name="DS_TIPO_PAGAMENTO"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_PREMIO]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_PREMIO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].Columns[DT_PREMIO]"
+                          name="DT_PREMIO"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="FL_SISTEMA_ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_CARGA]"
+                          dataType="dbDate"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VL_PAGAMENTO]"
+                          dataType="numeric"
+                          name="VL_PAGAMENTO"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_PAGAMENTO]"
+                          dataType="dbDate"
+                          name="DT_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NR_SEQUENCIA]"
+                          dataType="numeric"
+                          name="NR_SEQUENCIA"
+                          precision="3" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DS_TIPO_PAGAMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_TIPO_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DT_PREMIO]"
+                          dataType="dbDate"
+                          name="DT_PREMIO" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_APOLICE]"
+                          name="NR_APOLICE" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_ENDOSSO]"
+                          name="NR_ENDOSSO" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FL_SISTEMA_ORIGEM]"
+                          name="FL_SISTEMA_ORIGEM" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                          dataType="dbDate"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_CARGA]"
+                          name="DT_CARGA" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VL_PAGAMENTO]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VL_PAGAMENTO]"
+                          name="VL_PAGAMENTO"
+                          precision="15"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_PAGAMENTO]"
+                          dataType="dbDate"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_PAGAMENTO]"
+                          name="DT_PAGAMENTO" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_SEQUENCIA]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NR_SEQUENCIA]"
+                          name="NR_SEQUENCIA"
+                          precision="3" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DS_TIPO_PAGAMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DS_TIPO_PAGAMENTO]"
+                          name="DS_TIPO_PAGAMENTO" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_PREMIO]"
+                          dataType="dbDate"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DT_PREMIO]"
+                          name="DT_PREMIO" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{0E98137D-3E34-4CA5-A3AA-EEAD9401E958}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="ADD COLUNA"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          name="DT_CARGA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FLG_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="20"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FLG_SISTEMA_ORIGEM]"
+                          name="FLG_SISTEMA_ORIGEM"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,20,1252)"I4PRO"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,20,1252)"I4PRO"</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="datalakevw_tb_pagamento_premio"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from datalakevw_tb_pagamento_premio</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número da apólice]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número da apólice]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número da apólice]"
+                          name="Número da apólice"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número do endosso]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número do endosso]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número do endosso]"
+                          name="Número do endosso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número do certificado]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número do certificado]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número do certificado]"
+                          name="Número do certificado"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Valor do pagamento]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Valor do pagamento]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Valor do pagamento]"
+                          name="Valor do pagamento"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Data do pagamento]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Data do pagamento]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Data do pagamento]"
+                          name="Data do pagamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número da parcela]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número da parcela]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número da parcela]"
+                          name="Número da parcela"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Descrição do tipo de pagamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Descrição do tipo de pagamento]"
+                          length="200"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Descrição do tipo de pagamento]"
+                          name="Descrição do tipo de pagamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Data da aplicação do prêmio]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Data da aplicação do prêmio]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Data da aplicação do prêmio]"
+                          name="Data da aplicação do prêmio"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número da apólice]"
+                          dataType="numeric"
+                          name="Número da apólice"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número do endosso]"
+                          dataType="i4"
+                          name="Número do endosso" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número do certificado]"
+                          dataType="i8"
+                          name="Número do certificado" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Valor do pagamento]"
+                          dataType="numeric"
+                          name="Valor do pagamento"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Data do pagamento]"
+                          dataType="dbTimeStamp"
+                          name="Data do pagamento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Número da parcela]"
+                          dataType="i4"
+                          name="Número da parcela" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Descrição do tipo de pagamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          name="Descrição do tipo de pagamento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].ExternalColumns[Data da aplicação do prêmio]"
+                          dataType="dbTimeStamp"
+                          name="Data da aplicação do prêmio" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número da apólice]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número da apólice]"
+                          name="Número da apólice"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número do endosso]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número do endosso]"
+                          name="Número do endosso" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número do certificado]"
+                          dataType="i8"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número do certificado]"
+                          name="Número do certificado" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Valor do pagamento]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Valor do pagamento]"
+                          name="Valor do pagamento"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Data do pagamento]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Data do pagamento]"
+                          name="Data do pagamento" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número da parcela]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Número da parcela]"
+                          name="Número da parcela" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Descrição do tipo de pagamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="200"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Descrição do tipo de pagamento]"
+                          name="Descrição do tipo de pagamento" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Data da aplicação do prêmio]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[Data da aplicação do prêmio]"
+                          name="Data da aplicação do prêmio" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_SRO_PAGAMENTO_VG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_PAGAMENTO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Número da apólice]"
+                          cachedDataType="numeric"
+                          cachedName="Número da apólice"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número da apólice]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Número do endosso]"
+                          cachedDataType="i4"
+                          cachedName="Número do endosso"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número do endosso]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Valor do pagamento]"
+                          cachedDataType="numeric"
+                          cachedName="Valor do pagamento"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Valor do pagamento]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Data do pagamento]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data do pagamento"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Data do pagamento]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Número da parcela]"
+                          cachedDataType="i4"
+                          cachedName="Número da parcela"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SEQUENCIA]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Número da parcela]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Descrição do tipo de pagamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="200"
+                          cachedName="Descrição do tipo de pagamento"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_TIPO_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Descrição do tipo de pagamento]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[Data da aplicação do prêmio]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="Data da aplicação do prêmio"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PREMIO]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output].Columns[Data da aplicação do prêmio]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[FLG_SISTEMA_ORIGEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="FLG_SISTEMA_ORIGEM"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[FLG_SISTEMA_ORIGEM]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_CARGA"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_ENDOSSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="FL_SISTEMA_ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbDate"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGAMENTO]"
+                          dataType="numeric"
+                          name="VL_PAGAMENTO"
+                          precision="15"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PAGAMENTO]"
+                          dataType="dbDate"
+                          name="DT_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SEQUENCIA]"
+                          dataType="numeric"
+                          name="NR_SEQUENCIA"
+                          precision="3" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_TIPO_PAGAMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DS_TIPO_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PREMIO]"
+                          dataType="dbDate"
+                          name="DT_PREMIO" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE.Paths[Derived Column Output]"
+                  endId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_PAGAMENTO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PAGAMENTO_VG\TRUNCATE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6CF609B2-0796-4DC7-8370-8B445BBAB755}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE STAGE"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE STAGE.ST_SRO_PAGAMENTO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_PAGAMENTO_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{65F4A144-8422-49D2-9B6C-C0D4E2B6D2A3}"
+          DTS:From="Package\SRO_PAGAMENTO_VG\TRUNCATE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_PAGAMENTO_VG\INSERE STAGE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG"
+          TopLeft="27.2499943189324,170.099995885491" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE STAGE"
+          TopLeft="67.3749924097209,98.0499963155389" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\TRUNCATE STAGE"
+          TopLeft="52.9999992921948,17.1833378778893" />
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="139.520829184291,59.8500045445559">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.1999917709829"
+              Start="0,0"
+              End="0,30.6999917709829">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.6999917709829" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="276,234.666666666667"
+          Size="276,277.333333333334"
+          Id="Package\SRO_PAGAMENTO_VG"
+          TopLeft="52.7678563565546,34.9654760778447" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source"
+          TopLeft="294,58" />
+        <NodeLayout
+          Size="172,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination"
+          TopLeft="278,204" />
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG.Paths[OLE DB Source Output]"
+          TopLeft="366.666666666667,100.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,103.333333333333"
+              Start="0,0"
+              End="0,95.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,95.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PAGAMENTO_VG\INSERE SRO_PAGAMENTO_VG\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\SRO_PAGAMENTO_VG\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="204,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG"
+          TopLeft="131.250002849847,167.916666802268" />
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ADD COLUNA"
+          TopLeft="164.999997541308,95.3333316286406" />
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio"
+          TopLeft="116.666669882834,21.2333344646295" />
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="238.166667045404,63.9000011312961">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.4333304973444"
+              Start="0,0"
+              End="0,23.9333304973444">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.9333304973444" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_VG\INSERE STAGE.Paths[Derived Column Output]"
+          TopLeft="235.125000195578,137.999998295307">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.9166685069608"
+              Start="0,0"
+              End="0,22.4166685069608">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.4166685069608" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PAGAMENTO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PAGAMENTO_VG\INSERE STAGE\datalakevw_tb_pagamento_premio">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

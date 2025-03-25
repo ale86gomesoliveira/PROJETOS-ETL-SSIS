@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PRUDASD7.PRUDASD7.srvsro"
+  DTS:DTSID="{1409BF3E-A5B9-466E-8C44-A826379682D0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=PRUDASD7;User ID=srvsro;Initial Catalog=PRUDASD7;Provider=IBMDA400.DataSource.1;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOvFYt3fhO0u/pCwU5Y/ODAAAAAACAAAAAAADZgAAwAAAABAAAAA4qm7LQeZq5ZTE3PveuuSOAAAAAASAAACgAAAAEAAAAGBXO2h8//ZCuvT5ck8z3nR4AAAAeVB0nKq+X4Tp+xPFlkmrjFcnOwLaob1JrSdlMe+MQyaz21YBR8SXWq9qW+BtsIvN+5rHf9J5gRHmN725V5wygahYIT1wiz+YjiodjswDfEekvK+G1nz1/6A8yHPf/xNmo7Sjlkq0uGWeAcdOhUs0rN4ejgsAi6QvFAAAACigHL7Fx2z3K3sI2EB4kCWLCYG0</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

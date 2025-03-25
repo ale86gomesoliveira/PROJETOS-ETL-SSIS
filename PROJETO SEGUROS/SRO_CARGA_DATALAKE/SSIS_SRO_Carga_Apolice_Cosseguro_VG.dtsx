@@ -1,0 +1,797 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="11/9/2021 12:27:17 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{0144EC99-81F2-47C6-9313-1A6FBA2469E2}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.170"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_Apolice_Cosseguro_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{8EA064D6-AB3C-4A54-8B96-A7AF5E508E92}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_APOLICE_COSSEGURO_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{03DBDB0C-5333-4FCA-9550-E639E4EFF4D0}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_APOLICE_COSSEGURO_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{EA94FECE-D81C-4B51-9342-38E8C0B40802}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE SRO_APOLICE_COSSEGURO_VG"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="ADD COLUNA"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]"
+                          name="DT_CARGA"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Destino SRO_Apolice_Cosseguro_vg"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_APOLICE_COSSEGURO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[Cd_apolice_lider]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="30"
+                          cachedName="Cd_apolice_lider"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE_SEGURA_LIDER]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Cd_apolice_lider]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[Cd_apolice]"
+                          cachedDataType="numeric"
+                          cachedName="Cd_apolice"
+                          cachedPrecision="15"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Cd_apolice]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[cd_tp_apolice]"
+                          cachedDataType="i4"
+                          cachedName="cd_tp_apolice"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[TP_APOLICE_COSSEG]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[cd_tp_apolice]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[Vl_cedido]"
+                          cachedDataType="numeric"
+                          cachedName="Vl_cedido"
+                          cachedPrecision="38"
+                          cachedScale="8"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COSSEG_CEDIDO]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_cedido]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[Vl_retido]"
+                          cachedDataType="numeric"
+                          cachedName="Vl_retido"
+                          cachedPrecision="38"
+                          cachedScale="8"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COSSEG_RETIDO]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_retido]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[Vl_total]"
+                          cachedDataType="numeric"
+                          cachedName="Vl_total"
+                          cachedPrecision="38"
+                          cachedScale="8"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COSSEG_TOTAL]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_total]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[SUSEP_cedido]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="SUSEP_cedido"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP_COSSEGURADORA]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[SUSEP_cedido]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[SUSEP_lider]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="SUSEP_lider"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP_SEGURA_LIDER]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[SUSEP_lider]" />
+                        <inputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].Columns[DT_CARGA]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_CARGA"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Output].Columns[DT_CARGA]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE_SEGURA_LIDER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE_SEGURA_LIDER" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NR_APOLICE" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[TP_APOLICE_COSSEG]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="TP_APOLICE_COSSEG" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COSSEG_CEDIDO]"
+                          dataType="numeric"
+                          name="VL_PREMIO_COSSEG_CEDIDO"
+                          precision="13"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COSSEG_RETIDO]"
+                          dataType="numeric"
+                          name="VL_PREMIO_COSSEG_RETIDO"
+                          precision="13"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_COSSEG_TOTAL]"
+                          dataType="numeric"
+                          name="VL_PREMIO_COSSEG_TOTAL"
+                          precision="13"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP_COSSEGURADORA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CD_SUSEP_COSSEGURADORA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[CD_SUSEP_SEGURA_LIDER]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CD_SUSEP_SEGURA_LIDER" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="DT_CARGA" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Origem datalakevw_tb_cosseguro_apolice"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT * FROM datalakevw_tb_cosseguro_apolice</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Cd_apolice_lider]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Cd_apolice_lider]"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Cd_apolice_lider]"
+                          name="Cd_apolice_lider"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Cd_apolice]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Cd_apolice]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Cd_apolice]"
+                          name="Cd_apolice"
+                          precision="15"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[cd_tp_apolice]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[cd_tp_apolice]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[cd_tp_apolice]"
+                          name="cd_tp_apolice"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_cedido]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Vl_cedido]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_cedido]"
+                          name="Vl_cedido"
+                          precision="38"
+                          scale="8"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_retido]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Vl_retido]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_retido]"
+                          name="Vl_retido"
+                          precision="38"
+                          scale="8"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_total]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Vl_total]"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[Vl_total]"
+                          name="Vl_total"
+                          precision="38"
+                          scale="8"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[SUSEP_cedido]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[SUSEP_cedido]"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[SUSEP_cedido]"
+                          name="SUSEP_cedido"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[SUSEP_lider]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[SUSEP_lider]"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].Columns[SUSEP_lider]"
+                          name="SUSEP_lider"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Cd_apolice_lider]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          name="Cd_apolice_lider" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Cd_apolice]"
+                          dataType="numeric"
+                          name="Cd_apolice"
+                          precision="15" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[cd_tp_apolice]"
+                          dataType="i4"
+                          name="cd_tp_apolice" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Vl_cedido]"
+                          dataType="numeric"
+                          name="Vl_cedido"
+                          precision="38"
+                          scale="8" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Vl_retido]"
+                          dataType="numeric"
+                          name="Vl_retido"
+                          precision="38"
+                          scale="8" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[Vl_total]"
+                          dataType="numeric"
+                          name="Vl_total"
+                          precision="38"
+                          scale="8" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[SUSEP_cedido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SUSEP_cedido" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output].ExternalColumns[SUSEP_lider]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="SUSEP_lider" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Cd_apolice_lider]"
+                          codePage="1252"
+                          dataType="str"
+                          length="30"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Cd_apolice_lider]"
+                          name="Cd_apolice_lider" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Cd_apolice]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Cd_apolice]"
+                          name="Cd_apolice"
+                          precision="15" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[cd_tp_apolice]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[cd_tp_apolice]"
+                          name="cd_tp_apolice" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Vl_cedido]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Vl_cedido]"
+                          name="Vl_cedido"
+                          precision="38"
+                          scale="8" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Vl_retido]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Vl_retido]"
+                          name="Vl_retido"
+                          precision="38"
+                          scale="8" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Vl_total]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[Vl_total]"
+                          name="Vl_total"
+                          precision="38"
+                          scale="8" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[SUSEP_cedido]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[SUSEP_cedido]"
+                          name="SUSEP_cedido" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[SUSEP_lider]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[SUSEP_lider]"
+                          name="SUSEP_lider" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG.Paths[Derived Column Output]"
+                  endId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_APOLICE_COSSEGURO_VG\TRUNCATE TABLE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{6AAAD3A8-C6F6-4287-A36C-B84BAFF071CB}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE TABLE STAGE"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE stage.ST_SRO_APOLICE_COSSEGURO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_APOLICE_COSSEGURO_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{44E40FB6-7A95-4D7C-A99A-76981533CF1F}"
+          DTS:From="Package\SRO_APOLICE_COSSEGURO_VG\TRUNCATE TABLE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="233.333333333334,42.6666666666667"
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG"
+          TopLeft="14.0416691719241,97.1958345547069" />
+        <NodeLayout
+          Size="201.333333333334,42.6666666666667"
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\TRUNCATE TABLE STAGE"
+          TopLeft="27.5104124345818,15.0875009133666" />
+        <EdgeLayout
+          Id="Package\SRO_APOLICE_COSSEGURO_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="129.44270746992,57.7541675800332">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.4416669746737"
+              Start="0,0"
+              End="0,31.9416669746737">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.9416669746737" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="272.666666666667,190.666666666667"
+          Size="272.666666666667,233.333333333334"
+          Id="Package\SRO_APOLICE_COSSEGURO_VG"
+          TopLeft="25.2708347722269,7.88333329071605" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="249.333333333334,42.6666666666667"
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg"
+          TopLeft="68.4166669584807,173.433333093126" />
+        <NodeLayout
+          Size="144,42.6666666666667"
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\ADD COLUNA"
+          TopLeft="117.083331588656,101.733331597646" />
+        <NodeLayout
+          Size="277.333333333334,42.6666666666667"
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice"
+          TopLeft="51.833334637186,32.8666672710578" />
+        <EdgeLayout
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG.Paths[OLE DB Source Output]"
+          TopLeft="189.791666446254,75.5333339377245">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.1999976599217"
+              Start="0,0"
+              End="0,18.6999976599217">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6999976599217" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG.Paths[Derived Column Output]"
+          TopLeft="191.083332606902,144.399998264313">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.0333348288137"
+              Start="0,0"
+              End="0,21.5333348288137">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5333348288137" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Destino SRO_Apolice_Cosseguro_vg">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_APOLICE_COSSEGURO_VG\INSERE STAGE SRO_APOLICE_COSSEGURO_VG\Origem datalakevw_tb_cosseguro_apolice">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

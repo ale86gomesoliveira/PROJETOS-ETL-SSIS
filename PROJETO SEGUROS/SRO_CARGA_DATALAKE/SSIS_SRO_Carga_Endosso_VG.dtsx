@@ -1,0 +1,1167 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/26/2022 2:35:48 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP202"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{F9AA2753-9D2B-4233-A54D-9F989BA7DDBB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="3072"
+  DTS:ObjectName="SSIS_SRO_Carga_Endosso_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{4243127B-9698-4DA7-89EF-BB0481E20E7B}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\INSERE STAGE ENDOSSO"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{778B95DD-2A8A-4F66-AF27-975C3CA8E46D}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="INSERE STAGE ENDOSSO"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              localeId="1046"
+              name="Destino ST_SRO_ENDOSSO_VG"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[stage].[ST_SRO_ENDOSSO_VG]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Connections[OleDbConnection]"
+                  connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[nr_endosso]"
+                      cachedDataType="i4"
+                      cachedName="nr_endosso"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_endosso]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[cd_apolice]"
+                      cachedDataType="numeric"
+                      cachedName="cd_apolice"
+                      cachedPrecision="15"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_apolice]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[nr_proposta]"
+                      cachedDataType="i8"
+                      cachedName="nr_proposta"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PROPOSTA]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_proposta]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Data de protocolo da proposta do endosso]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Data de protocolo da proposta do endosso"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PROTOCOLO_PROPOSTA]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de protocolo da proposta do endosso]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Data da assinatura da proposta do endosso]"
+                      cachedDataType="i4"
+                      cachedName="Data da assinatura da proposta do endosso"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ASSINATURA_PROPOSTA]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data da assinatura da proposta do endosso]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[dt_inicio_vigencia_endosso]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dt_inicio_vigencia_endosso"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_inicio_vigencia_endosso]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[dt_fim_vigencia_endosso]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="dt_fim_vigencia_endosso"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_fim_vigencia_endosso]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Descrição do documento que justifica a alteração]"
+                      cachedDataType="i4"
+                      cachedName="Descrição do documento que justifica a alteração"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_DOCUMENTO]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Descrição do documento que justifica a alteração]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[nr_filial]"
+                      cachedDataType="i4"
+                      cachedName="nr_filial"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_RAMO_FILIAL]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_filial]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Número da cobertura]"
+                      cachedDataType="i4"
+                      cachedName="Número da cobertura"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_COBERTURA]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Número da cobertura]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[cd_codigo_lp]"
+                      cachedDataType="i4"
+                      cachedName="cd_codigo_lp"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_LP]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_codigo_lp]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Data da alteração do prêmio]"
+                      cachedDataType="i4"
+                      cachedName="Data da alteração do prêmio"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ALTERACAO_PREMIO]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data da alteração do prêmio]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Descrição da alteração do valor da apólice]"
+                      cachedDataType="i4"
+                      cachedName="Descrição da alteração do valor da apólice"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_ALTERACAO_APOLICE_VL]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Descrição da alteração do valor da apólice]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Valor anterior da apólice]"
+                      cachedDataType="numeric"
+                      cachedName="Valor anterior da apólice"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_ANTERIOR]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor anterior da apólice]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Valor corrente da apólice]"
+                      cachedDataType="numeric"
+                      cachedName="Valor corrente da apólice"
+                      cachedPrecision="19"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_CORRENTE]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor corrente da apólice]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Valor corrente do prêmio anualizado]"
+                      cachedDataType="i4"
+                      cachedName="Valor corrente do prêmio anualizado"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_APOLICE_CORRENTE]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor corrente do prêmio anualizado]" />
+                    <inputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].Columns[Valor anterior do prêmio anualizado]"
+                      cachedDataType="i4"
+                      cachedName="Valor anterior do prêmio anualizado"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_APOLICE_ANTERIOR]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor anterior do prêmio anualizado]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_ENDOSSO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NR_ENDOSSO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_APOLICE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="NR_APOLICE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_LP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="CD_LP" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_PROPOSTA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NR_PROPOSTA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PROTOCOLO_PROPOSTA]"
+                      dataType="dbTimeStamp"
+                      name="DT_PROTOCOLO_PROPOSTA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ASSINATURA_PROPOSTA]"
+                      dataType="dbTimeStamp"
+                      name="DT_ASSINATURA_PROPOSTA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_INI_VIGENCIA]"
+                      dataType="dbTimeStamp"
+                      name="DT_INI_VIGENCIA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_FIM_VIGENCIA]"
+                      dataType="dbTimeStamp"
+                      name="DT_FIM_VIGENCIA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_ALTERACAO_PREMIO]"
+                      dataType="dbDate"
+                      name="DT_ALTERACAO_PREMIO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_ALTERACAO_APOLICE_VL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="DS_ALTERACAO_APOLICE_VL" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DS_DOCUMENTO]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="DS_DOCUMENTO" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_ANTERIOR]"
+                      dataType="numeric"
+                      name="VL_PREMIO_ANTERIOR"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PREMIO_CORRENTE]"
+                      dataType="numeric"
+                      name="VL_PREMIO_CORRENTE"
+                      precision="13"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_APOLICE_ANTERIOR]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="VL_APOLICE_ANTERIOR" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_APOLICE_CORRENTE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="VL_APOLICE_CORRENTE" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_COBERTURA]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="NR_COBERTURA" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_RAMO_FILIAL]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="NM_RAMO_FILIAL" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              localeId="1046"
+              name="Origem datalakevw_tb_endosso"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT * FROM datalakevw_tb_endosso</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Connections[OleDbConnection]"
+                  connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_apolice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_apolice]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_apolice]"
+                      name="cd_apolice"
+                      precision="15"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_endosso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nr_endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_endosso]"
+                      name="nr_endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_tipo_endosso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_tipo_endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_tipo_endosso]"
+                      name="cd_tipo_endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_tp_origem]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_tp_origem]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_tp_origem]"
+                      name="cd_tp_origem"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_tp_apolice]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_tp_apolice]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_tp_apolice]"
+                      name="cd_tp_apolice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_premio_cosseguro_reido]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_premio_cosseguro_reido]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_premio_cosseguro_reido]"
+                      name="vl_premio_cosseguro_reido"
+                      precision="20"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_total_premio_cosseguro]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_total_premio_cosseguro]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_total_premio_cosseguro]"
+                      name="vl_total_premio_cosseguro"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_premio_comercial]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_premio_comercial]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_premio_comercial]"
+                      name="vl_premio_comercial"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nm_moeda]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nm_moeda]"
+                      length="50"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nm_moeda]"
+                      name="nm_moeda"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_is_total]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_is_total]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[vl_is_total]"
+                      name="vl_is_total"
+                      precision="38"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Cd_apolice_congenere]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Cd_apolice_congenere]"
+                      length="30"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Cd_apolice_congenere]"
+                      name="Cd_apolice_congenere"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Cd_susep_re]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Cd_susep_re]"
+                      length="20"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Cd_susep_re]"
+                      name="Cd_susep_re"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_proposta]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[dt_proposta]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_proposta]"
+                      name="dt_proposta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_filial]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nr_filial]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_filial]"
+                      name="nr_filial"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_proposta]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nr_proposta]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[nr_proposta]"
+                      name="nr_proposta"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_inicio_vigencia_endosso]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[dt_inicio_vigencia_endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_inicio_vigencia_endosso]"
+                      name="dt_inicio_vigencia_endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_fim_vigencia_endosso]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[dt_fim_vigencia_endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[dt_fim_vigencia_endosso]"
+                      name="dt_fim_vigencia_endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_codigo_lp]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_codigo_lp]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[cd_codigo_lp]"
+                      name="cd_codigo_lp"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de protocolo da proposta do endosso]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data de protocolo da proposta do endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de protocolo da proposta do endosso]"
+                      name="Data de protocolo da proposta do endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data da assinatura da proposta do endosso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data da assinatura da proposta do endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data da assinatura da proposta do endosso]"
+                      name="Data da assinatura da proposta do endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de início de vigência do endosso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data de início de vigência do endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de início de vigência do endosso]"
+                      name="Data de início de vigência do endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de fim de vigência do endosso]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data de fim de vigência do endosso]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data de fim de vigência do endosso]"
+                      name="Data de fim de vigência do endosso"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data da alteração do prêmio]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data da alteração do prêmio]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Data da alteração do prêmio]"
+                      name="Data da alteração do prêmio"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Descrição da alteração do valor da apólice]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Descrição da alteração do valor da apólice]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Descrição da alteração do valor da apólice]"
+                      name="Descrição da alteração do valor da apólice"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Descrição do documento que justifica a alteração]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Descrição do documento que justifica a alteração]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Descrição do documento que justifica a alteração]"
+                      name="Descrição do documento que justifica a alteração"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor anterior do prêmio anualizado]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor anterior do prêmio anualizado]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor anterior do prêmio anualizado]"
+                      name="Valor anterior do prêmio anualizado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor corrente do prêmio anualizado]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor corrente do prêmio anualizado]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor corrente do prêmio anualizado]"
+                      name="Valor corrente do prêmio anualizado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor anterior da apólice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor anterior da apólice]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor anterior da apólice]"
+                      name="Valor anterior da apólice"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor corrente da apólice]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor corrente da apólice]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Valor corrente da apólice]"
+                      name="Valor corrente da apólice"
+                      precision="19"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Número da cobertura]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Número da cobertura]"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].Columns[Número da cobertura]"
+                      name="Número da cobertura"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_apolice]"
+                      dataType="numeric"
+                      name="cd_apolice"
+                      precision="15" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nr_endosso]"
+                      dataType="i4"
+                      name="nr_endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_tipo_endosso]"
+                      dataType="i4"
+                      name="cd_tipo_endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_tp_origem]"
+                      dataType="i4"
+                      name="cd_tp_origem" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_tp_apolice]"
+                      dataType="i4"
+                      name="cd_tp_apolice" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_premio_cosseguro_reido]"
+                      dataType="numeric"
+                      name="vl_premio_cosseguro_reido"
+                      precision="20"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_total_premio_cosseguro]"
+                      dataType="numeric"
+                      name="vl_total_premio_cosseguro"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_premio_comercial]"
+                      dataType="numeric"
+                      name="vl_premio_comercial"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nm_moeda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="nm_moeda" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[vl_is_total]"
+                      dataType="numeric"
+                      name="vl_is_total"
+                      precision="38"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Cd_apolice_congenere]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="Cd_apolice_congenere" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Cd_susep_re]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Cd_susep_re" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[dt_proposta]"
+                      dataType="dbTimeStamp"
+                      name="dt_proposta" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nr_filial]"
+                      dataType="i4"
+                      name="nr_filial" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[nr_proposta]"
+                      dataType="i8"
+                      name="nr_proposta" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[dt_inicio_vigencia_endosso]"
+                      dataType="dbTimeStamp"
+                      name="dt_inicio_vigencia_endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[dt_fim_vigencia_endosso]"
+                      dataType="dbTimeStamp"
+                      name="dt_fim_vigencia_endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[cd_codigo_lp]"
+                      dataType="i4"
+                      name="cd_codigo_lp" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data de protocolo da proposta do endosso]"
+                      dataType="dbTimeStamp"
+                      name="Data de protocolo da proposta do endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data da assinatura da proposta do endosso]"
+                      dataType="i4"
+                      name="Data da assinatura da proposta do endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data de início de vigência do endosso]"
+                      dataType="i4"
+                      name="Data de início de vigência do endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data de fim de vigência do endosso]"
+                      dataType="i4"
+                      name="Data de fim de vigência do endosso" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Data da alteração do prêmio]"
+                      dataType="i4"
+                      name="Data da alteração do prêmio" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Descrição da alteração do valor da apólice]"
+                      dataType="i4"
+                      name="Descrição da alteração do valor da apólice" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Descrição do documento que justifica a alteração]"
+                      dataType="i4"
+                      name="Descrição do documento que justifica a alteração" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor anterior do prêmio anualizado]"
+                      dataType="i4"
+                      name="Valor anterior do prêmio anualizado" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor corrente do prêmio anualizado]"
+                      dataType="i4"
+                      name="Valor corrente do prêmio anualizado" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor anterior da apólice]"
+                      dataType="numeric"
+                      name="Valor anterior da apólice"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Valor corrente da apólice]"
+                      dataType="numeric"
+                      name="Valor corrente da apólice"
+                      precision="19"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output].ExternalColumns[Número da cobertura]"
+                      dataType="i4"
+                      name="Número da cobertura" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_apolice]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_apolice]"
+                      name="cd_apolice"
+                      precision="15" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nr_endosso]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nr_endosso]"
+                      name="nr_endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nr_proposta]"
+                      dataType="i8"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nr_proposta]"
+                      name="nr_proposta" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[dt_inicio_vigencia_endosso]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[dt_inicio_vigencia_endosso]"
+                      name="dt_inicio_vigencia_endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[dt_fim_vigencia_endosso]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[dt_fim_vigencia_endosso]"
+                      name="dt_fim_vigencia_endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_tipo_endosso]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_tipo_endosso]"
+                      name="cd_tipo_endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_tp_origem]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_tp_origem]"
+                      name="cd_tp_origem" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_tp_apolice]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_tp_apolice]"
+                      name="cd_tp_apolice" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_premio_cosseguro_reido]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_premio_cosseguro_reido]"
+                      name="vl_premio_cosseguro_reido"
+                      precision="20"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_total_premio_cosseguro]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_total_premio_cosseguro]"
+                      name="vl_total_premio_cosseguro"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_premio_comercial]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_premio_comercial]"
+                      name="vl_premio_comercial"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nm_moeda]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nm_moeda]"
+                      name="nm_moeda" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_is_total]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[vl_is_total]"
+                      name="vl_is_total"
+                      precision="38"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Cd_apolice_congenere]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Cd_apolice_congenere]"
+                      name="Cd_apolice_congenere" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Cd_susep_re]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Cd_susep_re]"
+                      name="Cd_susep_re" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[dt_proposta]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[dt_proposta]"
+                      name="dt_proposta" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nr_filial]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[nr_filial]"
+                      name="nr_filial" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_codigo_lp]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[cd_codigo_lp]"
+                      name="cd_codigo_lp" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data de protocolo da proposta do endosso]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data de protocolo da proposta do endosso]"
+                      name="Data de protocolo da proposta do endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data da assinatura da proposta do endosso]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data da assinatura da proposta do endosso]"
+                      name="Data da assinatura da proposta do endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data de início de vigência do endosso]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data de início de vigência do endosso]"
+                      name="Data de início de vigência do endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data de fim de vigência do endosso]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data de fim de vigência do endosso]"
+                      name="Data de fim de vigência do endosso" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data da alteração do prêmio]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Data da alteração do prêmio]"
+                      name="Data da alteração do prêmio" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Descrição da alteração do valor da apólice]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Descrição da alteração do valor da apólice]"
+                      name="Descrição da alteração do valor da apólice" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Descrição do documento que justifica a alteração]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Descrição do documento que justifica a alteração]"
+                      name="Descrição do documento que justifica a alteração" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor anterior do prêmio anualizado]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor anterior do prêmio anualizado]"
+                      name="Valor anterior do prêmio anualizado" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor corrente do prêmio anualizado]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor corrente do prêmio anualizado]"
+                      name="Valor corrente do prêmio anualizado" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor anterior da apólice]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor anterior da apólice]"
+                      name="Valor anterior da apólice"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor corrente da apólice]"
+                      dataType="numeric"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Valor corrente da apólice]"
+                      name="Valor corrente da apólice"
+                      precision="19"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Número da cobertura]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[Número da cobertura]"
+                      name="Número da cobertura" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\INSERE STAGE ENDOSSO.Paths[OLE DB Source Output]"
+              endId="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\TRUNCATE STAGE"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{1A41CDA3-44C2-42C5-A88B-36F99E4BEFCB}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="TRUNCATE STAGE"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE stage.ST_SRO_ENDOSSO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{DEE99B41-425C-4346-9755-181B5BEA0D39}"
+      DTS:From="Package\TRUNCATE STAGE"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\INSERE STAGE ENDOSSO" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="200.666666666667,42.6666666666667"
+          Id="Package\INSERE STAGE ENDOSSO"
+          TopLeft="88.333332017064,153.616663919787" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\TRUNCATE STAGE"
+          TopLeft="106.249998416752,47.4499991515279" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="189.124998550241,90.1166658181946">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.4999981015924"
+              Start="0,0"
+              End="0,55.9999981015924">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.9999981015924" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\INSERE STAGE ENDOSSO">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="229.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso"
+          TopLeft="77.5833322592075,40.3833327095708" />
+        <NodeLayout
+          Size="229.333333333334,42.6666666666667"
+          Id="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG"
+          TopLeft="75.7083327341826,132.783331593772" />
+        <EdgeLayout
+          Id="Package\INSERE STAGE ENDOSSO.Paths[OLE DB Source Output]"
+          TopLeft="191.312499163362,83.0499993762374">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.7333322175349"
+              Start="0,0"
+              End="0,42.2333322175349">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.2333322175349" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE STAGE ENDOSSO\Destino ST_SRO_ENDOSSO_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\INSERE STAGE ENDOSSO\Origem datalakevw_tb_endosso">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

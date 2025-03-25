@@ -1,0 +1,1108 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2022 5:23:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{989B9634-5B3B-4F64-B1A5-870F5CA7DCFD}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_Sinistro_Pagamento_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{689D2C55-8CD1-409D-B80D-C0284A6C1A80}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_PAGAMENTO_SINISTRO_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{753F4E45-890E-47B7-B5A4-871B40769D67}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_PAGAMENTO_SINISTRO_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{BD9430CB-0EBA-4DD5-81EE-B1899C468C4B}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add Coluna"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="5"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                          name="Flg_Origem_Sistema"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">"I4Pro"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">"I4Pro"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]"
+                          name="DT_Carga"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados"
+                  componentClassID="Microsoft.DataConvert"
+                  contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Data Conversion"
+                  name="Conversão de tipo de dados"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Inputs[Data Conversion Input]"
+                      name="Data Conversion Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Inputs[Data Conversion Input].Columns[Flg_Origem_Sistema]"
+                          cachedDataType="wstr"
+                          cachedLength="5"
+                          cachedName="Flg_Origem_Sistema"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Output]"
+                      exclusionGroup="1"
+                      name="Data Conversion Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Output].Columns[Copy of Flg_Origem_Sistema]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          length="100"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Output].Columns[Copy of Flg_Origem_Sistema]"
+                          name="Copy of Flg_Origem_Sistema"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.Int32"
+                              description="Specifies the input column used as the source of data for the conversion."
+                              name="SourceInputColumnLineageID">#{Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]}</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Data Conversion Error Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Inputs[Data Conversion Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="datalakevw_tb_pagamento_sinistro"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT TOP 100 * FROM datalakevw_tb_pagamento_sinistro</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[nr_sinistro]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nr_sinistro]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[nr_sinistro]"
+                          name="nr_sinistro"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_pagamento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_pagamento]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_pagamento]"
+                          name="id_pagamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_meio_pagamento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_meio_pagamento]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_meio_pagamento]"
+                          name="id_meio_pagamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[nm_meio_pagamento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nm_meio_pagamento]"
+                          length="40"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[nm_meio_pagamento]"
+                          name="nm_meio_pagamento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_beneficiario]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_sin_beneficiario]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_beneficiario]"
+                          name="id_sin_beneficiario"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_pessoa_favorecido]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_pessoa_favorecido]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_pessoa_favorecido]"
+                          name="id_pessoa_favorecido"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_movto_estorno]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_sin_movto_estorno]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_movto_estorno]"
+                          name="id_sin_movto_estorno"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[cd_moeda]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[cd_moeda]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[cd_moeda]"
+                          name="cd_moeda"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[vl_capital_moeda]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_moeda]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[vl_capital_moeda]"
+                          name="vl_capital_moeda"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_pagto]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_pagto]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_pagto]"
+                          name="dt_pagto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[fl_pagamento_avulso]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[fl_pagamento_avulso]"
+                          length="1"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[fl_pagamento_avulso]"
+                          name="fl_pagamento_avulso"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[fl_pagamento_moeda_estrangeira]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[fl_pagamento_moeda_estrangeira]"
+                          length="1"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[fl_pagamento_moeda_estrangeira]"
+                          name="fl_pagamento_moeda_estrangeira"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_recebimento_documentos]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_recebimento_documentos]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_recebimento_documentos]"
+                          name="dt_recebimento_documentos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_solicitacao_documentos]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_solicitacao_documentos]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_solicitacao_documentos]"
+                          name="dt_solicitacao_documentos"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[vl_pagamento]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[vl_pagamento]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[vl_pagamento]"
+                          name="vl_pagamento"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nr_sinistro]"
+                          dataType="i8"
+                          name="nr_sinistro" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_pagamento]"
+                          dataType="i4"
+                          name="id_pagamento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_meio_pagamento]"
+                          dataType="i4"
+                          name="id_meio_pagamento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nm_meio_pagamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="nm_meio_pagamento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_sin_beneficiario]"
+                          dataType="i4"
+                          name="id_sin_beneficiario" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_pessoa_favorecido]"
+                          dataType="i4"
+                          name="id_pessoa_favorecido" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_sin_movto_estorno]"
+                          dataType="i4"
+                          name="id_sin_movto_estorno" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[cd_moeda]"
+                          dataType="i4"
+                          name="cd_moeda" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[vl_capital_moeda]"
+                          dataType="numeric"
+                          name="vl_capital_moeda"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_pagto]"
+                          dataType="dbTimeStamp"
+                          name="dt_pagto" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[fl_pagamento_avulso]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="fl_pagamento_avulso" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[fl_pagamento_moeda_estrangeira]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="fl_pagamento_moeda_estrangeira" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_recebimento_documentos]"
+                          dataType="dbTimeStamp"
+                          name="dt_recebimento_documentos" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_solicitacao_documentos]"
+                          dataType="dbTimeStamp"
+                          name="dt_solicitacao_documentos" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].ExternalColumns[vl_pagamento]"
+                          dataType="numeric"
+                          name="vl_pagamento"
+                          precision="19"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[nr_sinistro]"
+                          dataType="i8"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[nr_sinistro]"
+                          name="nr_sinistro" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_pagamento]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_pagamento]"
+                          name="id_pagamento" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_meio_pagamento]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_meio_pagamento]"
+                          name="id_meio_pagamento" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[nm_meio_pagamento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[nm_meio_pagamento]"
+                          name="nm_meio_pagamento" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_sin_beneficiario]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_sin_beneficiario]"
+                          name="id_sin_beneficiario" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_pessoa_favorecido]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_pessoa_favorecido]"
+                          name="id_pessoa_favorecido" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_sin_movto_estorno]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[id_sin_movto_estorno]"
+                          name="id_sin_movto_estorno" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[cd_moeda]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[cd_moeda]"
+                          name="cd_moeda" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[vl_capital_moeda]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[vl_capital_moeda]"
+                          name="vl_capital_moeda"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_pagto]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_pagto]"
+                          name="dt_pagto" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[fl_pagamento_avulso]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[fl_pagamento_avulso]"
+                          name="fl_pagamento_avulso" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[fl_pagamento_moeda_estrangeira]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[fl_pagamento_moeda_estrangeira]"
+                          name="fl_pagamento_moeda_estrangeira" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_recebimento_documentos]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_recebimento_documentos]"
+                          name="dt_recebimento_documentos" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_solicitacao_documentos]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_solicitacao_documentos]"
+                          name="dt_solicitacao_documentos" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[vl_pagamento]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[vl_pagamento]"
+                          name="vl_pagamento"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_SRO_PAGAMENTO_SINISTRO_VG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_PAGAMENTO_SINISTRO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_sinistro]"
+                          cachedDataType="i8"
+                          cachedName="nr_sinistro"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SINISTRO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[nr_sinistro]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[id_pagamento]"
+                          cachedDataType="i4"
+                          cachedName="id_pagamento"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_pagamento]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nm_meio_pagamento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="nm_meio_pagamento"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_MEIO_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[nm_meio_pagamento]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[cd_moeda]"
+                          cachedDataType="i4"
+                          cachedName="cd_moeda"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_MOEDA]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[cd_moeda]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_capital_moeda]"
+                          cachedDataType="numeric"
+                          cachedName="vl_capital_moeda"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_CAPITAL_MOEDA]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[vl_capital_moeda]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[fl_pagamento_avulso]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="fl_pagamento_avulso"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_PAGAMENTO_AVULSO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[fl_pagamento_avulso]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[fl_pagamento_moeda_estrangeira]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="fl_pagamento_moeda_estrangeira"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_PAGAMENTO_MOEDA_ESTRANGEIRA]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[fl_pagamento_moeda_estrangeira]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[id_sin_beneficiario]"
+                          cachedDataType="i4"
+                          cachedName="id_sin_beneficiario"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_BENEFICIARIO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_beneficiario]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[id_pessoa_favorecido]"
+                          cachedDataType="i4"
+                          cachedName="id_pessoa_favorecido"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_PESSOA_FAVORECIDA]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_pessoa_favorecido]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[id_sin_movto_estorno]"
+                          cachedDataType="i4"
+                          cachedName="id_sin_movto_estorno"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_MOVIMENTO_ESTORNO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_movto_estorno]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_pagamento]"
+                          cachedDataType="numeric"
+                          cachedName="vl_pagamento"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[vl_pagamento]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dt_pagto]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="dt_pagto"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PAGAMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_pagto]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dt_recebimento_documentos]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="dt_recebimento_documentos"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_RECEBIMENTO_DOCUMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_recebimento_documentos]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dt_solicitacao_documentos]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="dt_solicitacao_documentos"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_SOLICITACAO_DOCUMENTO]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output].Columns[dt_solicitacao_documentos]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[DT_Carga]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_Carga"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]" />
+                        <inputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[Copy of Flg_Origem_Sistema]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Copy of Flg_Origem_Sistema"
+                          externalMetadataColumnId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Output].Columns[Copy of Flg_Origem_Sistema]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SINISTRO]"
+                          dataType="i8"
+                          name="NR_SINISTRO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbDate"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_PAGAMENTO]"
+                          dataType="i4"
+                          name="ID_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_BENEFICIARIO]"
+                          dataType="i4"
+                          name="ID_BENEFICIARIO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[ID_PESSOA_FAVORECIDA]"
+                          dataType="i4"
+                          name="ID_PESSOA_FAVORECIDA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_MOVIMENTO_ESTORNO]"
+                          dataType="i4"
+                          name="NR_MOVIMENTO_ESTORNO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_PAGO]"
+                          dataType="numeric"
+                          name="VL_PAGO"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_MOEDA]"
+                          dataType="i4"
+                          name="CD_MOEDA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_CAPITAL_MOEDA]"
+                          dataType="numeric"
+                          name="VL_CAPITAL_MOEDA"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_PAGAMENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_PAGAMENTO_AVULSO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="FL_PAGAMENTO_AVULSO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_PAGAMENTO_MOEDA_ESTRANGEIRA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="FL_PAGAMENTO_MOEDA_ESTRANGEIRA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_RECEBIMENTO_DOCUMENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_RECEBIMENTO_DOCUMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_SOLICITACAO_DOCUMENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_SOLICITACAO_DOCUMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_MEIO_PAGAMENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_MEIO_PAGAMENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="FL_SISTEMA_ORIGEM" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE.Paths[Data Conversion Output]"
+                  endId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG.Inputs[OLE DB Destination Input]"
+                  name="Data Conversion Output"
+                  startId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Outputs[Data Conversion Output]" />
+                <path
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE.Paths[Derived Column Output]"
+                  endId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados.Inputs[Data Conversion Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_PAGAMENTO_SINISTRO_VG\TRUNCATE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{29E2E108-B6EF-4727-B33C-3488ABE5C9B1}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE STAGE"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE STAGE.ST_SRO_PAGAMENTO_SINISTRO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_PAGAMENTO_SINISTRO_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{C8D7731A-312C-4DD2-B40B-1F1DB4FDBCFA}"
+          DTS:From="Package\SRO_PAGAMENTO_SINISTRO_VG\TRUNCATE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE"
+          TopLeft="53.9583243833232,89.0333367272217" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\TRUNCATE STAGE"
+          TopLeft="39.7499914504588,17.5500046840309" />
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="126.187491250224,60.2166713506976">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.8166653765241"
+              Start="0,0"
+              End="0,21.3166653765241">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.3166653765241" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="260.666666666667,186.666666666667"
+          Size="260.666666666667,230"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG"
+          TopLeft="26.4583329390738,54.0166708625356" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="245.333333333334,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro"
+          TopLeft="238.374998705462,33.2499991282821" />
+        <NodeLayout
+          Size="133.333333333334,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Add Coluna"
+          TopLeft="290,121.200000139475" />
+        <NodeLayout
+          Size="257.333333333334,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG"
+          TopLeft="232,283" />
+        <NodeLayout
+          Size="210.666666666667,42.6666666666667"
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\Conversão de tipo de dados"
+          TopLeft="254,209" />
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="358.854166019398,75.9166657949488">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.2833343445262"
+              Start="0,0"
+              End="0,37.7833343445262">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.7833343445262" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE.Paths[Derived Column Output]"
+          TopLeft="358,163.866666806142">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.1333331938583"
+              Start="0,0"
+              End="0,37.6333331938583">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6333331938583" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE.Paths[Data Conversion Output]"
+          TopLeft="360,251.666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31.3333333333333"
+              Start="0,0"
+              End="0,23.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_pagamento_sinistro">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_PAGAMENTO_SINISTRO_VG\INSERE STAGE\ST_SRO_PAGAMENTO_SINISTRO_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

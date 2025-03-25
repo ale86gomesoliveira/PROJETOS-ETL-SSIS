@@ -1,0 +1,1022 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/25/2022 5:23:05 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{E5B691EC-CB80-4A9A-92CC-FAD3BE81A5C3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="SSIS_SRO_Carga_Sinistro_Historico_VG"
+  DTS:PackageType="5"
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{00BA0470-1778-452C-9E7D-3134BDBDB34F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\SRO_HISTORICO_SINISTRO_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{8EA16998-2796-4254-AB1A-E87AE033027B}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="SRO_HISTORICO_SINISTRO_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{C24D9ED6-A48B-4529-9D93-D7A0F6247F30}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE STAGE"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add Coluna"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          length="10"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]"
+                          name="Flg_Origem_Sistema"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">(DT_STR,10,1252)"I4Pro"</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">(DT_STR,10,1252)"I4Pro"</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]"
+                          name="DT_Carga"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">[GETDATE]()</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">GETDATE()</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="datalakevw_tb_historico_sinistro"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select
+    id_sin_movto            = csm.id_sin_movto,
+	nr_sinistro				= cs.nr_sinistro,
+	dt_evento				= csm.dt_movimento,
+	cd_evento				= csm.cd_evento,
+	nm_evento				= cev.nm_evento,
+	cd_status				= csm.cd_status,
+	nm_status				= cstatus.nm_status,
+	dv_juros				= case when ISNULL(csm.dv_aplica_juros,0) = 1		then 'S' else 'N' end,
+	dv_correcao_monetaria	= case when ISNULL(csm.dv_correcao_monetaria,0) = 1	then 'S' else 'N' end,
+	dv_multa				= case when ISNULL(csm.dv_multa,0) = 1				then 'S' else 'N' end,
+	vl_operacao				= csm.vl_operacao,
+	Nm_Evento_Grupo         = ge.nm_grp_evento,
+	dv_credito				= cev.dv_credito,
+	dv_outra_despesa		= case  when ISNULL(csm.dv_aplica_juros,0) = 0 
+									and ISNULL(csm.dv_correcao_monetaria,0) = 0
+									and ISNULL(csm.dv_multa,0) = 0
+									and cev.cd_grp_evento = 1200 Then 1 
+							  else 0 end 
+from corp_sinistro cs
+left join corp_sin_movto csm
+  on csm.nr_sinistro = cs.nr_sinistro
+left join corp_evento cev
+  on cev.cd_evento = csm.cd_evento
+left join corp_status cstatus
+  on cstatus.cd_status = csm.cd_status
+left join corp_grp_evento ge on cev.cd_grp_evento = ge.cd_grp_evento</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Connections[OleDbConnection]"
+                      connectionManagerID="{0142EF85-8E58-437A-B169-83153BD2F961}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZIDBD002 I4PRO_Teste]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nr_sinistro]"
+                          dataType="i8"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nr_sinistro]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nr_sinistro]"
+                          name="nr_sinistro"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dt_evento]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_evento]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dt_evento]"
+                          name="dt_evento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[cd_evento]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[cd_evento]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[cd_evento]"
+                          name="cd_evento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nm_evento]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nm_evento]"
+                          length="50"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nm_evento]"
+                          name="nm_evento"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[cd_status]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[cd_status]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[cd_status]"
+                          name="cd_status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nm_status]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nm_status]"
+                          length="50"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nm_status]"
+                          name="nm_status"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_juros]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_juros]"
+                          length="1"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_juros]"
+                          name="dv_juros"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_correcao_monetaria]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_correcao_monetaria]"
+                          length="1"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_correcao_monetaria]"
+                          name="dv_correcao_monetaria"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_multa]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_multa]"
+                          length="1"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_multa]"
+                          name="dv_multa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[vl_operacao]"
+                          dataType="numeric"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[vl_operacao]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[vl_operacao]"
+                          name="vl_operacao"
+                          precision="19"
+                          scale="2"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_credito]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_credito]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_credito]"
+                          name="dv_credito"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_movto]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_sin_movto]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[id_sin_movto]"
+                          name="id_sin_movto"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_outra_despesa]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_outra_despesa]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_outra_despesa]"
+                          name="dv_outra_despesa"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[Nm_Evento_Grupo]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[Nm_Evento_Grupo]"
+                          length="40"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[Nm_Evento_Grupo]"
+                          name="Nm_Evento_Grupo"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nr_sinistro]"
+                          dataType="i8"
+                          name="nr_sinistro" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dt_evento]"
+                          dataType="dbTimeStamp"
+                          name="dt_evento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[cd_evento]"
+                          dataType="i4"
+                          name="cd_evento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nm_evento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nm_evento" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[cd_status]"
+                          dataType="i4"
+                          name="cd_status" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[nm_status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="nm_status" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_juros]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="dv_juros" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_correcao_monetaria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="dv_correcao_monetaria" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_multa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="dv_multa" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[vl_operacao]"
+                          dataType="numeric"
+                          name="vl_operacao"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_credito]"
+                          dataType="bool"
+                          name="dv_credito" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[id_sin_movto]"
+                          dataType="i4"
+                          name="id_sin_movto" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[dv_outra_despesa]"
+                          dataType="i4"
+                          name="dv_outra_despesa" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].ExternalColumns[Nm_Evento_Grupo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          name="Nm_Evento_Grupo" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[id_sin_movto]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[id_sin_movto]"
+                          name="id_sin_movto" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[nr_sinistro]"
+                          dataType="i8"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[nr_sinistro]"
+                          name="nr_sinistro" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_evento]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dt_evento]"
+                          name="dt_evento" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[cd_evento]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[cd_evento]"
+                          name="cd_evento" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[nm_evento]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[nm_evento]"
+                          name="nm_evento" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[cd_status]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[cd_status]"
+                          name="cd_status" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[nm_status]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[nm_status]"
+                          name="nm_status" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_juros]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_juros]"
+                          name="dv_juros" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_correcao_monetaria]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_correcao_monetaria]"
+                          name="dv_correcao_monetaria" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_multa]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_multa]"
+                          name="dv_multa" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[vl_operacao]"
+                          dataType="numeric"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[vl_operacao]"
+                          name="vl_operacao"
+                          precision="19"
+                          scale="2" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[Nm_Evento_Grupo]"
+                          codePage="1252"
+                          dataType="str"
+                          length="40"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[Nm_Evento_Grupo]"
+                          name="Nm_Evento_Grupo" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_credito]"
+                          dataType="bool"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_credito]"
+                          name="dv_credito" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_outra_despesa]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[dv_outra_despesa]"
+                          name="dv_outra_despesa" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_SRO_HISTORICO_SINISTRO_VG"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[stage].[ST_SRO_HISTORICO_SINISTRO_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Connections[OleDbConnection]"
+                      connectionManagerID="{96636EBC-34C0-43F4-9C57-0863174495B1}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 SRO]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nr_sinistro]"
+                          cachedDataType="i8"
+                          cachedName="nr_sinistro"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SINISTRO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nr_sinistro]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dt_evento]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="dt_evento"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_EVENTO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dt_evento]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[cd_evento]"
+                          cachedDataType="i4"
+                          cachedName="cd_evento"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_EVENTO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[cd_evento]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nm_evento]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nm_evento"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_EVENTO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nm_evento]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[nm_status]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="nm_status"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_STATUS]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[nm_status]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dv_juros]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="dv_juros"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_JUROS]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_juros]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dv_correcao_monetaria]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="dv_correcao_monetaria"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_CORRECAO_MONETARIA]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_correcao_monetaria]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dv_multa]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="dv_multa"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_MULTA]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_multa]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[vl_operacao]"
+                          cachedDataType="numeric"
+                          cachedName="vl_operacao"
+                          cachedPrecision="19"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_OPERACAO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[vl_operacao]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dv_credito]"
+                          cachedDataType="bool"
+                          cachedName="dv_credito"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_CREDITO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_credito]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[cd_status]"
+                          cachedDataType="i4"
+                          cachedName="cd_status"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_STATUS]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[cd_status]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[DT_Carga]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="DT_Carga"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[DT_Carga]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[dv_outra_despesa]"
+                          cachedDataType="i4"
+                          cachedName="dv_outra_despesa"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_OUTROS]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[dv_outra_despesa]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[Nm_Evento_Grupo]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="40"
+                          cachedName="Nm_Evento_Grupo"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_EVENTO_GRUPO]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output].Columns[Nm_Evento_Grupo]" />
+                        <inputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].Columns[Flg_Origem_Sistema]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Flg_Origem_Sistema"
+                          externalMetadataColumnId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output].Columns[Flg_Origem_Sistema]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NR_SINISTRO]"
+                          dataType="i8"
+                          name="NR_SINISTRO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[FL_SISTEMA_ORIGEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="FL_SISTEMA_ORIGEM" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_CARGA]"
+                          dataType="dbTimeStamp"
+                          name="DT_CARGA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DT_EVENTO]"
+                          dataType="dbTimeStamp"
+                          name="DT_EVENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_EVENTO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_EVENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_STATUS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_STATUS" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[VL_OPERACAO]"
+                          dataType="numeric"
+                          name="VL_OPERACAO"
+                          precision="19"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_MULTA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DV_MULTA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_JUROS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DV_JUROS" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_CORRECAO_MONETARIA]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DV_CORRECAO_MONETARIA" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[NM_EVENTO_GRUPO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="NM_EVENTO_GRUPO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_CREDITO]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="DV_CREDITO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_EVENTO]"
+                          dataType="i4"
+                          name="CD_EVENTO" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[DV_OUTROS]"
+                          dataType="i4"
+                          name="DV_OUTROS" />
+                        <externalMetadataColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input].ExternalColumns[CD_STATUS]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="CD_STATUS" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE.Paths[Derived Column Output]"
+                  endId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG.Inputs[OLE DB Destination Input]"
+                  name="Derived Column Output"
+                  startId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+                  endId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna.Inputs[Derived Column Input]"
+                  name="OLE DB Source Output"
+                  startId="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro.Outputs[OLE DB Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\SRO_HISTORICO_SINISTRO_VG\TRUNCATE STAGE"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{84A6352B-5E6F-4755-9AC9-E4BE84881676}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="TRUNCATE STAGE"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{96636EBC-34C0-43F4-9C57-0863174495B1}"
+              SQLTask:BypassPrepare="False"
+              SQLTask:SqlStatementSource="TRUNCATE TABLE STAGE.ST_SRO_HISTORICO_SINISTRO_VG" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\SRO_HISTORICO_SINISTRO_VG.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F61EFD58-0A34-4A68-BCB4-1D2C5AFB86A0}"
+          DTS:From="Package\SRO_HISTORICO_SINISTRO_VG\TRUNCATE STAGE"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE"
+          TopLeft="42.3749994505199,72.9333325894673" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\TRUNCATE STAGE"
+          TopLeft="36.9999951571227,4.10000378906722" />
+        <EdgeLayout
+          Id="Package\SRO_HISTORICO_SINISTRO_VG.PrecedenceConstraints[Constraint]"
+          TopLeft="119.020830637155,46.7666704557339">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.1666621337334"
+              Start="0,0"
+              End="0,18.6666621337334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6666621337334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="255.333333333334,172"
+          Size="255.333333333334,214.666666666667"
+          Id="Package\SRO_HISTORICO_SINISTRO_VG"
+          TopLeft="53.3333355685075,28.1666661630074" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="170.666666666667,42.6666666666667"
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\Add Coluna"
+          TopLeft="183.791668085381,117.533330993255" />
+        <NodeLayout
+          Size="252,42.6666666666667"
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG"
+          TopLeft="146.541667954996,218.633332535227" />
+        <NodeLayout
+          Size="232,42.6666666666667"
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro"
+          TopLeft="156.291668085381,14.41666645358" />
+        <EdgeLayout
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE.Paths[Derived Column Output]"
+          TopLeft="270.833334686855,160.199997659922">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,58.4333348753051"
+              Start="0,0"
+              End="0,50.9333348753051">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.9333348753051" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE.Paths[OLE DB Source Output]"
+          TopLeft="270.708334752048,57.0833331202467">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.4499978730086"
+              Start="0,0"
+              End="0,52.9499978730086">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.9499978730086" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\ST_SRO_HISTORICO_SINISTRO_VG">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\SRO_HISTORICO_SINISTRO_VG\INSERE STAGE\datalakevw_tb_historico_sinistro">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
