@@ -1,0 +1,2294 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2022 3:18:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{508493C1-8A83-4119-938C-BB9CB4447996}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="ST_mas_tb_act_account_to_party"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="278"
+  DTS:VersionGUID="{9662F516-79DC-4D0C-8466-AE5106625249}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ORIGEM mas_tb_act_party_to_customer"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{F763A055-564D-4432-A6D0-B2143F8AB864}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ORIGEM mas_tb_act_party_to_customer">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{32CD3954-DF8B-4DF4-968B-7BAF33E857F4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="mas_tb_act_party_to_customer"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="checksum"
+                  version="9">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Security.Cryptography;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+    private SHA1 sha1 = new SHA1CryptoServiceProvider(); // used to create SHA1 hash
+
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        string fieldsString = "";
+
+        // loop over each input column
+        foreach (IDTSInputColumn100 field in ComponentMetaData.InputCollection[0].InputColumnCollection)
+        {
+            // remove underscore from input field name
+            string fieldName = field.Name.Replace("_", "").Replace(" ", "").ToString();
+
+            // Check if + _IsNull is False and then add value to string.
+            if (Row.GetType().GetProperty(fieldName + "_IsNull").GetValue(Row, null).ToString() == "False")
+            {
+                fieldsString = fieldsString + Row.GetType().GetProperty(fieldName).GetValue(Row, null).ToString();
+            }
+
+            // Add seperator after each field.
+            fieldsString = fieldsString + "|";
+        }
+
+        byte[] hashBytes = sha1.ComputeHash(System.Text.UTF8Encoding.UTF8.GetBytes(fieldsString));
+        // convert the byte stream to a string
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        for (int i = 0; i < hashBytes.Length; i++)
+        {
+            sb.Append(hashBytes[i].ToString("X2"));
+        }
+        // hash is defined as DT_STR 64)
+        Row.checksum = sb.ToString(); // add the result to the output
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String SOURCESYSTEMCD
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool SOURCESYSTEMCD_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String checksum
+    {
+        set
+        {
+            this[1] = value;
+        }
+    }
+    public bool checksum_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(1);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Settings.get_Default():SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Sett" +
+    "ings")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:CodeName>
+		<msb:DisplayName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:DisplayName>
+		<msb:ProjectId>{87F6BD8C-A5D6-400E-8150-3716F965E1C7}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_c40d51a70f0e45a2bad8ac325a752145.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_c40d51a70f0e45a2bad8ac325a752145.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{0B20F60D-F921-4ABA-9E9D-93878749877C}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_c40d51a70f0e45a2bad8ac325a752145</RootNamespace><AssemblyName>SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA</AssemblyName><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptComponent" IconIndex="0" /><ProjectClient><HostIdentifier>SSIS_SC120</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDADL6CWQAAAAAAAAAAOAAIiALATAAABgAAAAIAAAAAAAAkjYA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAEA2AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAmBYAAAAgAAAAGAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAaAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAB0
+NgAAAAAAAEgAAAACAAUA5CIAAKQSAAABAAAAAAAAAIg1AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBAAyAQAAAQAAEXIBAABwCgIoEAAACm8RAAAKFowgAAAB
+bxIAAApvEwAACm8UAAAKDTiQAAAACW8VAAAKdCMAAAFvFgAACnIDAABwcgEAAHBvFwAACnIHAABw
+cgEAAHBvFwAACm8YAAAKEwQDbxkAAAoRBHILAABwKBoAAApvGwAACgMUbxwAAApvGAAACnIbAABw
+KB0AAAosIAYDbxkAAAoRBG8bAAAKAxRvHAAACm8YAAAKKBoAAAoKBnInAABwKBoAAAoKCW8eAAAK
+OmX////eFAl1EQAAARMFEQUsBxEFbx8AAArcAnsBAAAEKCAAAAoGbyEAAApvIgAACgtzIwAACgwW
+EwYrHwgHEQaPKQAAAXIrAABwKCQAAApvJQAACiYRBhdYEwYRBgeOaTLaAwhvGAAACm8GAAAGKgAA
+ARAAAAIAJwCiyQAUAAAAAEoCcyYAAAp9AQAABAIoCgAABioqAgMEBSgnAAAKKlICeygAAAoCeykA
+AAoWlG8qAAAKKiICFigrAAAKKiYCFwMoLAAACipaAywIAhcoLQAACipyMQAAcHMuAAAKeh4CKC8A
+AAoqHgIoMAAACip+AigxAAAKAgJzDgAABn0CAAAEAgJzDwAABn0DAAAEKpIEcs4AAHAabzIAAAos
+FQIFAgMoMwAACg4EcwMAAAZvDAAABipKKwcCA28NAAAGA28IAAAGLfEqBio6Aig0AAAKAgN9BAAA
+BCo6Aig0AAAKAgN9BQAABCoeAig0AAAKKq5+BgAABC0ect4AAHDQBwAAAig1AAAKbzYAAApzNwAA
+CoAGAAAEfgYAAAQqGn4HAAAEKh4CgAcAAAQqGn4IAAAEKh4CKDgAAAoqLnMVAAAGgAgAAAQqAEJT
+SkIBAAEAAAAAAAwAAAB2NC4wLjMwMzE5AAAAAAUAbAAAAEAGAAAjfgAArAYAAHwIAAAjU3RyaW5n
+cwAAAAAoDwAAUAEAACNVUwB4EAAAEAAAACNHVUlEAAAAiBAAABwCAAAjQmxvYgAAAAAAAAACAAAB
+VxWiAQkBAAAA+gEzABYAAAEAAAAuAAAACAAAAAgAAAAWAAAADwAAADgAAAAQAAAAAQAAAAMAAAAH
+AAAACAAAAAEAAAAFAAAAAQAAAAAA4AMBAAAAAAAGAMICOwYGAFYDOwYGAA4CKAYPAK8GAAAGADsC
+swQGAKUCswQGAIYCswQGAD0DswQGAOICswQGAPsCswQGAFICswQGAG0CkQMKABYDUAEGAG4AOggG
+AI0FDwgGAAEGNQcGAA0BUAQKALcFUAEOAKgFUAEKADcFUAEKAJgHUAEGAFsHUAQGAPEBKAYGAMgF
+WwYGAB4FngQSAMEBygMSACICygMSAKEBiQQGANYBOwYWAAEA2AUWAEoA2AUGAHgAUAQWAGEA2AUW
+AC0A2AUWABoA2AUGALcDUAQGAHQBUAQGACoFswQGAIgDDwgGAFcEOggGAHQDUAQGAHMFOggGAPME
+UAQGAA0FUAQGABkBUAQGAFsIswQAAAAAhwAAAAAAAQABAAEAEAB+BAAAEAABAAEAAQAQAJsFAABJ
+AAIAAwABABAAegcAAFUAAgAKAAEAEABIBwAAWQAEAA4AAQAQAO0GAABZAAUADwAAABAAYga+BlkA
+BgAQAAABEAAlB74GcQAIABQAAQBzAO4ABgBIB/IABgDtBvYAAQCIB/oAAQCIB/oAEQByBP4AEQCR
+AQIBEQD9AAYBUCAAAAAAxgAbCAoBAQCgIQAAAACGGBsGBgACALMhAAAAAIYYGwaVAAIAviEAAAAA
+hgi0AEkABQDTIQAAAACGCAgEcwAFANwhAAAAAIYIZQQQAAUA5iEAAAAAhggiBBABBgD9IQAAAACG
+ADIIcwAHAAUiAAAAAIYAYgdzAAcADSIAAAAAhhgbBgYABwAtIgAAAADGAPkHFQEHAFIiAAAAAMYB
+8gcKAQsAZSIAAAAAxgEbCAoBDABnIgAAAACGGBsGHwENAHYiAAAAAIYYGwYfAQ4AhSIAAAAAgxgb
+BgYADwCNIgAAAACTCMQFJQEPALkiAAAAAJMIeQEqAQ8AwCIAAAAAkwiFAS8BDwDIIgAAAACWCG4H
+NQEQAM8iAAAAAIYYGwYGABAA1yIAAAAAkRghBjoBEAAAAAEANggAAAEAvQUAAAIAAAcAAAMARQUA
+AAEAggMAAAEAggMAAAEAxwAAAAIARgEAAAMAvQUAAAQARQUAAAEAvQUAAAEANggAAAEAngcAAAEA
+ngcAAAEAggMJABsGAQARABsGBgAZABsGCgApABsGEAAxABsGEAA5ABsGEABBABsGEABJABsGEABR
+ABsGEABZABsGEABhABsGEABpABsGBgC5ABsGBgDZABsGFQDpABsGBgCpAM8AKQDxAN8ELgD5AD4E
+MwAJAcUEOgARAQ0GQACBAKgHRQAZAT0BSQAhAfUATQCxAKsDSQCxAHEBUwAhAVQHWQApAXAIXwAx
+AXkDZgAhAWQIbQCBAAYIcwCJALkBBgA5AX4AdwA5AfcGfQBBAb4DgwB5ABsGBgBJAasDigB5AO4A
+jwBRARsGBgCRABsGlQCRAL0FnwCRAAAHowCZALQDpwCRAC8ErACRAEcEsQCRADYEAQBZARsGEACR
+ADIIcwCRAGIHcwCpABsGBgAhAS4HtwCpABQHvwCxABsGBgApASsBxQApAVcIzgDBABsG1ADhABsG
+BgAuAAsAVQEuABMAXgEuABsAfQEuACMAhgEuACsArwEuADMArwEuADsArwEuAEMAhgEuAEsAtQEu
+AFMArwEuAFsAzAFDAGMAFAKpAHMAfQHJAHMAfQHjAGsAFAIBAXsAFAIbAAMAAQAHAAUACAAHAAAA
+uAA+AQAADARCAQAAaQQ+AQAAJgRCAQAAyAVGAQAAmQFLAQAAcgdQAQIABAADAAIABQAFAAEABgAH
+AAEABwAJAAIAEQALAAIAEgANAAEAEwANAAIAFAAPAASAAAABAAAAFCFBVwAAAAAAAJAAAAAEAAAA
+AAAAAAAAAADcAOUAAAAAAAwAAAAAAAAAAAAAAOUAtAcAAAAADAAAAAAAAAAAAAAA5QDRBwAAAAAE
+AAAAAAAAAAAAAADcAFAEAAAAAAwAAAAAAAAAAAAAAOUATwUAAAAAAAAAAAEAAABsBgAAAAAASURU
+U0NvbXBvbmVudE1ldGFEYXRhMTAwAElEVFNJbnB1dENvbHVtbjEwMABJRFRTSW5wdXRDb2x1bW5D
+b2xsZWN0aW9uMTAwAElEVFNJbnB1dENvbGxlY3Rpb24xMDAASURUU0lucHV0MTAwAFNIQTEAc2hh
+MQBJbnQzMgBnZXRfVVRGOAA8TW9kdWxlPgBTQ18wQzIzRkVFN0IzQ0I0N0VDQUU5QUZCMzhCRTVC
+N0VCQQBnZXRfU09VUkNFU1lTVEVNQ0QASW5wdXRJRABnZXRfQ29tcG9uZW50TWV0YURhdGEAbXNj
+b3JsaWIAQXBwZW5kAFJlcGxhY2UAZGVmYXVsdEluc3RhbmNlAElEaXNwb3NhYmxlAFJ1bnRpbWVU
+eXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAGdldF9OYW1lAElucHV0TmFtZQBNaWNyb3NvZnQu
+U3FsU2VydmVyLkR0cy5QaXBlbGluZQBHZXRUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJl
+c291cmNlQ3VsdHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAEVkaXRvckJyb3dz
+YWJsZVN0YXRlAENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVB
+dHRyaWJ1dGUARGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNz
+ZW1ibHlUaXRsZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFt
+ZXdvcmtBdHRyaWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVz
+Y3JpcHRpb25BdHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJs
+eVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENv
+bXBvbmVudEVudHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRp
+bWVDb21wYXRpYmlsaXR5QXR0cmlidXRlAEJ5dGUAR2V0VmFsdWUAdmFsdWUARW5jb2RpbmcAU3lz
+dGVtLlJ1bnRpbWUuVmVyc2lvbmluZwBUb1N0cmluZwBHZXRTdHJpbmcAQ29tcHV0ZUhhc2gAU3lz
+dGVtLkNvbXBvbmVudE1vZGVsAFNDXzBDMjNGRUU3QjNDQjQ3RUNBRTlBRkIzOEJFNUI3RUJBLmRs
+bABnZXRfU09VUkNFU1lTVEVNQ0RfSXNOdWxsAHNldF9jaGVja3N1bV9Jc051bGwAU2V0TnVsbABn
+ZXRfSXRlbQBzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRobQBzZXRfY2hlY2tzdW0AcmVzb3Vy
+Y2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0uR2xvYmFsaXphdGlv
+bgBTeXN0ZW0uUmVmbGVjdGlvbgBnZXRfSW5wdXRDb2x1bW5Db2xsZWN0aW9uAGdldF9JbnB1dENv
+bGxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21wYXJpc29uAEN1bHR1
+cmVJbmZvAFByb3BlcnR5SW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABNaWNyb3NvZnQuU3Fs
+U2VydmVyLkRUU1BpcGVsaW5lV3JhcABTSEExQ3J5cHRvU2VydmljZVByb3ZpZGVyAFN0cmluZ0J1
+aWxkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZlcgBnZXRfUmVzb3Vy
+Y2VNYW5hZ2VyAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lLldyYXBwZXIASUVudW1l
+cmF0b3IAR2V0RW51bWVyYXRvcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdub3N0aWNzAFN5c3Rl
+bS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBTQ19jNDBkNTFhNzBm
+MGU0NWEyYmFkOGFjMzI1YTc1MjE0NS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5yZXNvdXJjZXMARGVi
+dWdnaW5nTW9kZXMAU0NfYzQwZDUxYTcwZjBlNDVhMmJhZDhhYzMyNWE3NTIxNDUuUHJvcGVydGll
+cwBWYXJpYWJsZXMAR2V0Qnl0ZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRDb2x1bW5JbmRleGVz
+AFNldHRpbmdzAEVxdWFscwBTeXN0ZW0uQ29sbGVjdGlvbnMAQ29ubmVjdGlvbnMAQ29uY2F0AE9i
+amVjdABFbmRPZlJvd3NldABnZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBhcmVudENvbXBvbmVu
+dABTY3JpcHRDb21wb25lbnQAZ2V0X0N1cnJlbnQATWljcm9zb2Z0LlNxbFNlcnZlci5UeFNjcmlw
+dABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJvY2Vzc0lucHV0AE1v
+dmVOZXh0AFN5c3RlbS5UZXh0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4dFJvdwBTeXN0ZW0u
+U2VjdXJpdHkuQ3J5cHRvZ3JhcGh5AGdldF9Bc3NlbWJseQBvcF9FcXVhbGl0eQBHZXRQcm9wZXJ0
+eQAAAQADXwAAAyAAAA9fAEkAcwBOAHUAbABsAAALRgBhAGwAcwBlAAADfAAABVgAMgAAgJtJAHMA
+TgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0ACAAYgBlACAAcwBlAHQAIAB0
+AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBsAHUAZQAgAHQAbwAgAHQA
+aABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4AcAB1AHQAIAAwAABxUwBD
+AF8AYwA0ADAAZAA1ADEAYQA3ADAAZgAwAGUANAA1AGEAMgBiAGEAZAA4AGEAYwAzADIANQBhADcA
+NQAyADEANAA1AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8AdQByAGMAZQBzAABURpo/
+FxeeQbkaY4x290FHAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFpDQcHDh0FEj0SQQ4SRQgEIAAS
+eQQgABJ9BiABEoCFHAUgABKAiQQgABJBAyAAHAMgAA4FIAIODg4FIAASgJUFAAIODg4GIAESgJkO
+BiACHBwdHAUAAgIODgMgAAIFAAASgJ0FIAEdBQ4GIAEdBR0FBCABDg4FIAESPQ4JIAMBEk0dCBJR
+AwYSTQMGHQgEIAEOCAQgAQIIBSACAQgcByACAg4RgLEFIAEdCAgIAAESgJURgLUFIAASgLkHIAIB
+DhKAuQi3elxWGTTgiQiJhF3NgIDMkQMGEjkDBhIUAwYSGAMGElUDBhJhAwYSZQMGEiAFIAEBEgwE
+IAEBAgkgBAEIDhJNElEFIAEBElUEAAASYQQAABJlBQABARJlBAAAEiADAAABAygADgMoAAIECAAS
+YQQIABJlBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAA
+AAAAKAEAI1NDX2M0MGQ1MWE3MGYwZTQ1YTJiYWQ4YWMzMjVhNzUyMTQ1AAAFAQAAAAAWAQARQ29w
+eXJpZ2h0IEAgIDIwMjIAAEcBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuMAEAVA4URnJhbWV3
+b3JrRGlzcGxheU5hbWUQLk5FVCBGcmFtZXdvcmsgNAQBAAAAAAAAtAAAAM7K774BAAAAkQAAAGxT
+eXN0ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4w
+LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVt
+LlJlc291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAGg2AAAA
+AAAAAAAAAII2AAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0NgAAAAAAAAAAAAAAAF9Db3JEbGxN
+YWluAG1zY29yZWUuZGxsAAAAAAD/JQAgABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAEAEAAAABgAAIAAAAAAAAAAAAAAAAAAAAEAAQAAADAAAIAAAAAAAAAAAAAAAAAAAAEAAAAAAEgA
+AABYQAAAGgQAAAAAAAAAAAAAGgQ0AAAAVgBTAF8AVgBFAFIAUwBJAE8ATgBfAEkATgBGAE8AAAAA
+AL0E7/4AAAEAAAABAEFXFCEAAAEAQVcUIT8AAAAAAAAABAAAAAIAAAAAAAAAAAAAAAAAAABEAAAA
+AQBWAGEAcgBGAGkAbABlAEkAbgBmAG8AAAAAACQABAAAAFQAcgBhAG4AcwBsAGEAdABpAG8AbgAA
+AAAAAACwBHoDAAABAFMAdAByAGkAbgBnAEYAaQBsAGUASQBuAGYAbwAAAFYDAAABADAAMAAwADAA
+MAA0AGIAMAAAABoAAQABAEMAbwBtAG0AZQBuAHQAcwAAAAAAAAAiAAEAAQBDAG8AbQBwAGEAbgB5
+AE4AYQBtAGUAAAAAAAAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAA
+UwBDAF8AYwA0ADAAZAA1ADEAYQA3ADAAZgAwAGUANAA1AGEAMgBiAGEAZAA4AGEAYwAzADIANQBh
+ADcANQAyADEANAA1AAAAPgAPAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADgA
+NAA2ADgALgAyADIAMwAzADcAAAAAAHAAKAABAEkAbgB0AGUAcgBuAGEAbABOAGEAbQBlAAAAUwBD
+AF8AMABDADIAMwBGAEUARQA3AEIAMwBDAEIANAA3AEUAQwBBAEUAOQBBAEYAQgAzADgAQgBFADUA
+QgA3AEUAQgBBAC4AZABsAGwAAABIABIAAQBMAGUAZwBhAGwAQwBvAHAAeQByAGkAZwBoAHQAAABD
+AG8AcAB5AHIAaQBnAGgAdAAgAEAAIAAgADIAMAAyADIAAAAqAAEAAQBMAGUAZwBhAGwAVAByAGEA
+ZABlAG0AYQByAGsAcwAAAAAAAAAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBt
+AGUAAABTAEMAXwAwAEMAMgAzAEYARQBFADcAQgAzAEMAQgA0ADcARQBDAEEARQA5AEEARgBCADMA
+OABCAEUANQBCADcARQBCAEEALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAA
+AAAAUwBDAF8AYwA0ADAAZAA1ADEAYQA3ADAAZgAwAGUANAA1AGEAMgBiAGEAZAA4AGEAYwAzADIA
+NQBhADcANQAyADEANAA1AAAAQgAPAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAu
+ADAALgA4ADQANgA4AC4AMgAyADMAMwA3AAAAAABGAA8AAQBBAHMAcwBlAG0AYgBsAHkAIABWAGUA
+cgBzAGkAbwBuAAAAMQAuADAALgA4ADQANgA4AC4AMgAyADMAMwA3AAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMAAADAAAAJQ2AAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_0c23fee7b3cb47ecae9afb38be5b7eba</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">f78adda7abf37a60e1e19eeaee07111f</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataShaChecksum"
+                      typeConverter="NOTBROWSABLE">60f84b33fd16fc40bb02b4e558de3aa7804ac48e</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Inputs[Input 0].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0].Columns[checksum]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0].Columns[checksum]"
+                          name="checksum" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+                  description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+                  name="Comando OLE DB"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[ST_mas_tb_act_party_to_customer]
+   SET 
+      [EFFECTIVE_DT] = ?
+      ,[EXPIRY_DT] = ?
+      ,[RELATIONSHIP_TYPE_NM] = ?
+      ,[SOURCE_SYSTEM_CD] = ?
+      ,[UPDATE_SCD_DT] = ?     
+ WHERE
+	[PARTY_KEY_ID] = ?
+	and [ACCOUNT_NR] = ?
+	and [PARTY_FIRST_KEY_ID] = ?
+	and [PARTY_SECONDARY_KEY_ID] = ?
+	and [CHECKSUM_SCD_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                      errorOrTruncationOperation="Execução de Comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Comando OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0].Columns[checksum]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[PARTY_SECONDARY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_SECONDARY_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[PARTY_FIRST_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="PARTY_FIRST_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ACCOUNT_NR"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[EFFECTIVE_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[EXPIRY_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPIRY_DT"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[RELATIONSHIP_TYPE_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="RELATIONSHIP_TYPE_NM"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[INSERT_SCD_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          dataType="dbTimeStamp"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          dataType="dbTimeStamp"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          dataType="dbTimeStamp"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_8]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Outputs[Saída de Comando OLE DB]"
+                      exclusionGroup="1"
+                      name="Saída de Comando OLE DB"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Comando OLE DB"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_mas_tb_act_party_to_customer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EFFECTIVE_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EXPIRY_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPIRY_DT"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RELATIONSHIP_TYPE_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="RELATIONSHIP_TYPE_NM"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PARTY_FIRST_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="PARTY_FIRST_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PARTY_SECONDARY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_SECONDARY_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_SCD_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0].Columns[checksum]" />
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ACCOUNT_NR"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NR]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="ACCOUNT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CHECKSUM_SCD_ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT DISTINCT * FROM (
+select distinct
+	a.PRIMARY_PARTY_KEY_ID as PARTY_KEY_ID,
+	b.PARTY_KEY_ID as PARTY_FIRST_KEY_ID,
+	a.PRIMARY_PARTY_KEY_ID as PARTY_SECONDARY_KEY_ID,
+	c.ACCOUNT_NR as ACCOUNT_NR,
+	c.EFFECTIVE_DT as EFFECTIVE_DT,
+	c.EXPIRATION_DT as EXPIRY_DT,
+	'BENEFICIARY' as RELATIONSHIP_TYPE_NM,
+	'SONIC' as SOURCE_SYSTEM_CD,
+	GETDATE() AS INSERT_SCD_DT
+from ST_mas_tb_act_account_BN a 
+	left join ST_mas_tb_act_account c
+		on a.account_nr = c.account_nr
+	left join ST_mas_tb_act_account_owner b
+		on b.PARTY_KEY_ID = c.PRIMARY_PARTY_KEY_ID
+
+UNION 
+
+select distinct
+	a.PRIMARY_PARTY_KEY_ID as PARTY_KEY_ID,
+	a.PRIMARY_PARTY_KEY_ID as PARTY_FIRST_KEY_ID,
+	a.PRIMARY_PARTY_KEY_ID as PARTY_SECONDARY_KEY_ID,
+	c.ACCOUNT_NR as ACCOUNT_NR,
+	c.EFFECTIVE_DT as EFFECTIVE_DT,
+	c.EXPIRATION_DT as EXPIRY_DT,
+	'CUSTOMER' as RELATIONSHIP_TYPE_NM,
+	'SONIC' as SOURCE_SYSTEM_CD,
+	GETDATE() AS INSERT_SCD_DT
+from ST_mas_tb_act_account_BN a 
+	left join ST_mas_tb_act_account_owner b
+		on a.PRIMARY_PARTY_KEY_ID = b.PARTY_KEY_ID
+	left join ST_mas_tb_act_account c
+		on a.account_nr = c.account_nr
+) AS ORIGEM</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          length="5"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_KEY_ID]"
+                          length="8000"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]"
+                          name="PARTY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]"
+                          name="EXPIRY_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          length="11"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          name="RELATIONSHIP_TYPE_NM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          length="20"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]"
+                          name="PARTY_FIRST_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          length="8000"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          name="PARTY_SECONDARY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NR]"
+                          length="8000"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]"
+                          name="ACCOUNT_NR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbDate"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="ACCOUNT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_KEY_ID]"
+                          name="PARTY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EXPIRY_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EXPIRY_DT]"
+                          name="EXPIRY_DT" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_FIRST_KEY_ID]"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NR]"
+                          name="ACCOUNT_NR" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="Pesquisa"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_mas_tb_act_party_to_customer]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_mas_tb_act_party_to_customer]) [refTable]
+where [refTable].[PARTY_KEY_ID] = ? and [refTable].[PARTY_FIRST_KEY_ID] = ? and [refTable].[PARTY_SECONDARY_KEY_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PARTY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PARTY_FIRST_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PARTY_SECONDARY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACCOUNT_NR" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EFFECTIVE_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPIRY_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RELATIONSHIP_TYPE_NM" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_SYSTEM_CD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\869:invalid};#{Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\870:invalid};#{Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\871:invalid};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_KEY_ID"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PARTY_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa].Columns[PARTY_FIRST_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="20"
+                          cachedName="PARTY_FIRST_KEY_ID"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PARTY_FIRST_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa].Columns[PARTY_SECONDARY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_SECONDARY_KEY_ID"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PARTY_SECONDARY_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="Pesquisa 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_mas_tb_act_account_to_party]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_mas_tb_act_account_to_party]) [refTable]
+where [refTable].[ACCOUNT_KEY_ID] = ? and [refTable].[PARTY_KEY_ID] = ? and [refTable].[CHECKSUM_SCD_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PARTY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACCOUNT_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EFFECTIVE_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPIRY_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RELATIONSHIP_TYPE_NM" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_SYSTEM_CD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\872:invalid};#{Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\873:invalid};#{Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0].Columns[checksum]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="ACCOUNT_NR"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ACCOUNT_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0].Columns[checksum]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CHECKSUM_SCD_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8000"
+                          cachedName="PARTY_KEY_ID"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PARTY_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[OLE DB Source Output]"
+                  endId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Inputs[Input 0]"
+                  name="OLE DB Source Output"
+                  startId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Output 0]"
+                  endId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Inputs[Entrada de Pesquisa]"
+                  name="Output 0"
+                  startId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum.Outputs[Output 0]" />
+                <path
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Saída de Correspondência de Pesquisa]"
+                  endId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Saída Sem Correspondência de Pesquisa]"
+                  endId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  startId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1.Outputs[Saída Sem Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Saída Sem Correspondência de Pesquisa1]"
+                  endId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  startId="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa.Outputs[Saída Sem Correspondência de Pesquisa]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="227.2,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer"
+          TopLeft="27.5892831706346,21.5188686653301" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="268,118.4"
+          Size="268,161.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer"
+          TopLeft="60.1130929556203,61.5588228580718" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="129.6,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1"
+          TopLeft="436.904756164064,234.569931155527" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source"
+          TopLeft="68.0000011580331,27.5294121507955" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination"
+          TopLeft="74.8571441319526,119.905884034576" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\checksum"
+          TopLeft="433.196433263584,19.3176433678604" />
+        <NodeLayout
+          Size="119.2,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa"
+          TopLeft="439.333333343267,124.036270884462" />
+        <NodeLayout
+          Size="161.6,41.6"
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Comando OLE DB"
+          TopLeft="61.0952330198205,240.168619797397" />
+        <EdgeLayout
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Saída Sem Correspondência de Pesquisa1]"
+          TopLeft="439.333333343267,142.771077459519">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-194.076189211315,0"
+              Start="0,0"
+              End="-186.576189211315,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-186.576189211315,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-182.882118043158,5,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Saída Sem Correspondência de Pesquisa]"
+          TopLeft="436.904756164064,258.169275476462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-214.209523144244,0"
+              Start="0,0"
+              End="-206.709523144244,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-206.709523144244,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-192.948785009622,5,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="500.319044753666,165.636270884462">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,68.933660271065"
+              Start="0,0"
+              End="0,61.433660271065">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,61.433660271065" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.3740234375,24.6191738855325,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[Output 0]"
+          TopLeft="497.264883303426,60.9176433678604">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,63.1186275166015"
+              Start="0,0"
+              End="0,55.6186275166015">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.6186275166015" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer.Paths[OLE DB Source Output]"
+          TopLeft="217.600001158033,48.3294121507955">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="215.596432105551,-8.21176878293511"
+              Start="0,0"
+              End="208.096432105551,-8.21176878293511">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="103.798216052775,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="103.798216052775,0"
+                    Point2="107.798216052775,0"
+                    Point3="107.798216052775,-4" />
+                  <mssgle:LineSegment
+                    End="107.798216052775,-4.21176878293511" />
+                  <mssgle:CubicBezierSegment
+                    Point1="107.798216052775,-4.21176878293511"
+                    Point2="107.798216052775,-8.21176878293511"
+                    Point3="111.798216052775,-8.21176878293511" />
+                  <mssgle:LineSegment
+                    End="208.096432105551,-8.21176878293511" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_mas_tb_act_account_to_party]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM mas_tb_act_party_to_customer\mas_tb_act_party_to_customer\Pesquisa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_mas_tb_act_party_to_customer]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

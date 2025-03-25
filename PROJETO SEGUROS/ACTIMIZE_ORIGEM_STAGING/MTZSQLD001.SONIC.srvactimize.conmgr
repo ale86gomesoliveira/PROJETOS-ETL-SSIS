@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MTZSQLD001.SONIC.srvactimize"
+  DTS:DTSID="{C3534DB6-9B42-4E3B-B67D-752AC9EA8F58}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::pSONIC_DATABASE]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::pSONIC_PASS]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::pSONIC_SERVER]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::pSONIC_USER]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=MTZSQLD001;User ID=srvactimize;Initial Catalog=Sonic;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="WaDm8LW1KQ=="
+        p4:IV="HrFejGCpE/I=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">Y2KYjZDjYLK+DDo6XsWlqzeWLdVtmCS+/Y29bOgNdIkyRffNAbR2tu3hKvAG40V0zxufmz2Rv3vplZO7WjU1pIySOnuTdkn4JiH0CpREJHTHr8uTwoOcO1zx1h9tb/tP7R2k8e559i/E3x3V0sMN8+2YC2BBF+v+PHzK/8rIWEs=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

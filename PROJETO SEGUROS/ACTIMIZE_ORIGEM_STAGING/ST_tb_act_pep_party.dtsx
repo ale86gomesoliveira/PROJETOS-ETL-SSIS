@@ -1,0 +1,2496 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/16/2022 11:32:58 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{02EC8979-F381-4B4D-8941-3441109F11AB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ST_tb_act_pep_party"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{7E109C50-0EE7-41D9-AC2C-1387AAA64526}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\tb_act_pep_party"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D3583375-3C4D-464C-B109-D9583BB90D5A}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="tb_act_pep_party">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\tb_act_pep_party\INSERE tb_act_pep_party"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{B5D884FA-2616-4370-8CA3-4F4B00B8D0D1}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="INSERE tb_act_pep_party"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="checksum"
+                  version="9">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Security.Cryptography;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+    private SHA1 sha1 = new SHA1CryptoServiceProvider(); // used to create SHA1 hash
+
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        string fieldsString = "";
+
+        // loop over each input column
+        foreach (IDTSInputColumn100 field in ComponentMetaData.InputCollection[0].InputColumnCollection)
+        {
+            // remove underscore from input field name
+            string fieldName = field.Name.Replace("_", "").Replace(" ", "").ToString();
+
+            // Check if + _IsNull is False and then add value to string.
+            if (Row.GetType().GetProperty(fieldName + "_IsNull").GetValue(Row, null).ToString() == "False")
+            {
+                fieldsString = fieldsString + Row.GetType().GetProperty(fieldName).GetValue(Row, null).ToString();
+            }
+
+            // Add seperator after each field.
+            fieldsString = fieldsString + "|";
+        }
+
+        byte[] hashBytes = sha1.ComputeHash(System.Text.UTF8Encoding.UTF8.GetBytes(fieldsString));
+        // convert the byte stream to a string
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        for (int i = 0; i < hashBytes.Length; i++)
+        {
+            sb.Append(hashBytes[i].ToString("X2"));
+        }
+        // hash is defined as DT_STR 64)
+        Row.checksum = sb.ToString(); // add the result to the output
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String CONTROLID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool CONTROLID_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String VERIFICATIONCD
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool VERIFICATIONCD_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public Int32 NUMBERCD
+    {
+        get
+        {
+            return Buffer.GetInt32(BufferColumnIndexes[2]);
+        }
+    }
+    public bool NUMBERCD_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String PERSONIDENTIFICATIONTX
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool PERSONIDENTIFICATIONTX_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public String PERSONTP
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[4]);
+        }
+    }
+    public bool PERSONTP_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public String PERSONCOMPANYNM
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[5]);
+        }
+    }
+    public bool PERSONCOMPANYNM_IsNull
+    {
+        get
+        {
+            return IsNull(5);
+        }
+    }
+
+    public String BIRTHDATEDT
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[6]);
+        }
+    }
+    public bool BIRTHDATEDT_IsNull
+    {
+        get
+        {
+            return IsNull(6);
+        }
+    }
+
+    public String GENDERCD
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[7]);
+        }
+    }
+    public bool GENDERCD_IsNull
+    {
+        get
+        {
+            return IsNull(7);
+        }
+    }
+
+    public String BRANCHCD
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[8]);
+        }
+    }
+    public bool BRANCHCD_IsNull
+    {
+        get
+        {
+            return IsNull(8);
+        }
+    }
+
+    public String checksum
+    {
+        set
+        {
+            this[9] = value;
+        }
+    }
+    public bool checksum_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(9);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Settings.get_Default():SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Sett" +
+    "ings")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:Language>msBuild</msb:Language>
+		<msb:CodeName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:CodeName>
+		<msb:DisplayName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:DisplayName>
+		<msb:ProjectId>{87F6BD8C-A5D6-400E-8150-3716F965E1C7}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_c40d51a70f0e45a2bad8ac325a752145.csproj"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_c40d51a70f0e45a2bad8ac325a752145.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{0B20F60D-F921-4ABA-9E9D-93878749877C}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_c40d51a70f0e45a2bad8ac325a752145</RootNamespace><AssemblyName>SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA</AssemblyName><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptComponent" IconIndex="0" /><ProjectClient><HostIdentifier>SSIS_SC120</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDABZl+mIAAAAAAAAAAOAAIiALATAAABwAAAAIAAAAAAAAejoA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAACg6AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAgBoAAAAgAAAAHAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAeAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAJAAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAABc
+OgAAAAAAAEgAAAACAAUA2CMAAJgVAAABAAAAAAAAAHA5AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBAAyAQAAAQAAEXIBAABwCgIoEAAACm8RAAAKFowgAAAB
+bxIAAApvEwAACm8UAAAKDTiQAAAACW8VAAAKdCMAAAFvFgAACnIDAABwcgEAAHBvFwAACnIHAABw
+cgEAAHBvFwAACm8YAAAKEwQDbxkAAAoRBHILAABwKBoAAApvGwAACgMUbxwAAApvGAAACnIbAABw
+KB0AAAosIAYDbxkAAAoRBG8bAAAKAxRvHAAACm8YAAAKKBoAAAoKBnInAABwKBoAAAoKCW8eAAAK
+OmX////eFAl1EQAAARMFEQUsBxEFbx8AAArcAnsBAAAEKCAAAAoGbyEAAApvIgAACgtzIwAACgwW
+EwYrHwgHEQaPKQAAAXIrAABwKCQAAApvJQAACiYRBhdYEwYRBgeOaTLaAwhvGAAACm8WAAAGKgAA
+ARAAAAIAJwCiyQAUAAAAAEoCcyYAAAp9AQAABAIoGgAABioqAgMEBSgnAAAKKlICeygAAAoCeykA
+AAoWlG8qAAAKKiICFigrAAAKKlICeygAAAoCeykAAAoXlG8qAAAKKiICFygrAAAKKlICeygAAAoC
+eykAAAoYlG8sAAAKKiICGCgrAAAKKlICeygAAAoCeykAAAoZlG8qAAAKKiICGSgrAAAKKlICeygA
+AAoCeykAAAoalG8qAAAKKiICGigrAAAKKlICeygAAAoCeykAAAoblG8qAAAKKiICGygrAAAKKlIC
+eygAAAoCeykAAAoclG8qAAAKKiICHCgrAAAKKlICeygAAAoCeykAAAodlG8qAAAKKiICHSgrAAAK
+KlICeygAAAoCeykAAAoelG8qAAAKKiICHigrAAAKKioCHwkDKC0AAAoqXgMsCQIfCSguAAAKKnIx
+AABwcy8AAAp6HgIoMAAACioeAigxAAAKKn4CKDIAAAoCAnMeAAAGfQIAAAQCAnMfAAAGfQMAAAQq
+kgRyzgAAcBpvMwAACiwVAgUCAyg0AAAKDgRzAwAABm8cAAAGKkorBwIDbx0AAAYDbxgAAAYt8SoG
+KjoCKDUAAAoCA30EAAAEKjoCKDUAAAoCA30FAAAEKh4CKDUAAAoqrn4GAAAELR5y3gAAcNAHAAAC
+KDYAAApvNwAACnM4AAAKgAYAAAR+BgAABCoafgcAAAQqHgKABwAABCoafggAAAQqHgIoOQAACiou
+cyUAAAaACAAABCoAAABCU0pCAQABAAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAADoBwAAI34A
+AFQIAAC8CQAAI1N0cmluZ3MAAAAAEBIAAFABAAAjVVMAYBMAABAAAAAjR1VJRAAAAHATAAAoAgAA
+I0Jsb2IAAAAAAAAAAgAAAVcVogEJAQAAAPoBMwAWAAABAAAALgAAAAgAAAAIAAAAJgAAAA8AAAA5
+AAAAEAAAAAEAAAADAAAAFwAAABgAAAABAAAABQAAAAEAAAAAAGQEAQAAAAAABgBGA3gHBgDaA3gH
+BgCSAmUHDwDsBwAABgC/AvAFBgApA/AFBgAKA/AFBgDBA/AFBgBmA/AFBgB/A/AFBgDWAvAFBgDx
+AhUECgCaA9QBBgBuAHcJBgDKBkwJBgA+B3IIBgCRAY0FCgD0BtQBDgDlBtQBCgB0BtQBCgDVCNQB
+BgCYCI0FBgB1AmUHBgAFB5gHBgBbBtsFEgBFAk4EEgCmAk4EEgAlAsYFBgBaAngHFgABABUHFgBK
+ABUHBgB7AI0FFgBhABUHFgAtABUHFgAaABUHBgA7BI0FBgD4AY0FBgBnBvAFBgAMBEwJBgCUBXcJ
+BgD4A40FBgCwBncJBgAwBo0FBgBKBo0FBgCdAY0FBgCYCfAFAAAAAIoAAAAAAAEAAQABABAAuwUA
+ABAAAQABAAEAEADYBgAASQACAAMAAQAQALcIAABVAAIAGgABABAAhQgAAFkABAAeAAEAEAAqCAAA
+WQAFAB8AAAAQAJ8H+wdZAAYAIAAAARAAYgj7B3EACAAkAAEAcwDzAAYAhQj3AAYAKgj7AAEAxQj/
+AAEAxQj/ABEArwUDAREAFQIHAREAgQELAVAgAAAAAMYAWAkPAQEAoCEAAAAAhhhYBwYAAgCzIQAA
+AACGGFgHlQACAL4hAAAAAIYI8QBJAAUA0yEAAAAAhgjiBHMABQDcIQAAAACGCMQASQAFAPEhAAAA
+AIYIoARzAAUA+iEAAAAAhgjXABUBBQAPIgAAAACGCLoEcwAFABgiAAAAAIYIOAFJAAUALSIAAAAA
+hgg9BXMABQA2IgAAAACGCBsBSQAFAEsiAAAAAIYIEgVzAAUAVCIAAAAAhggHAUkABQBpIgAAAACG
+CPcEcwAFAHIiAAAAAIYIKAFJAAUAhyIAAAAAhggmBXMABQCQIgAAAACGCOQASQAFAKUiAAAAAIYI
+zgRzAAUAriIAAAAAhgi3AEkABQDDIgAAAACGCIwEcwAFAMwiAAAAAIYIogUQAAUA1yIAAAAAhghf
+BRkBBgDvIgAAAACGAG8JcwAHAPciAAAAAIYAnwhzAAcA/yIAAAAAhhhYBwYABwAfIwAAAADGADYJ
+HgEHAEQjAAAAAMYBLwkPAQsAVyMAAAAAxgFYCQ8BDABZIwAAAACGGFgHKAENAGgjAAAAAIYYWAco
+AQ4AdyMAAAAAgxhYBwYADwB/IwAAAACTCAEHLgEPAKsjAAAAAJMI/QEzAQ8AsiMAAAAAkwgJAjgB
+DwC6IwAAAACWCKsIPgEQAMEjAAAAAIYYWAcGABAAySMAAAAAkRheB0MBEAAAAAEAcwkAAAEA+gYA
+AAIAPQgAAAMAggYAAAEABgQAAAEABgQAAAEA/wAAAAIAygEAAAMA+gYAAAQAggYAAAEA+gYAAAEA
+cwkAAAEA2wgAAAEA2wgAAAEABgQJAFgHAQARAFgHBgAZAFgHCgApAFgHEAAxAFgHEAA5AFgHEABB
+AFgHEABJAFgHEABRAFgHEABZAFgHEABhAFgHEABpAFgHBgC5AFgHBgDZAFgHFQDpAFgHBgCpAFMB
+KQDxABwGLgD5AHsFMwAJAQIGOgARAUoHQACBAOUIRQAZAcEBSQAhAXkBTQCxAC8ESQCxAPUBUwAh
+AZEIWQApAa0JXwAxAf0DZgAhAaEJbQCBAEMJcwCJAD0CBgA5AYEAdwA5ATQIfQBBAUIEgwB5AFgH
+BgBJAS8EigB5AHIBjwBRAVgHBgCRAFgHlQCRAPoGnwCRAD0IowCZADgEpwCRAGwFrACZAHgAsQCR
+AIQFtgCRAHMFAQBZAVgHEACRAG8JcwCRAJ8IcwCpAFgHBgAhAWsIvACpAFEIxACxAFgHBgApAa8B
+ygApAZQJ0wDBAFgH2QDhAFgHBgAuAAsAYgEuABMAawEuABsAigEuACMAkwEuACsAvAEuADMAvAEu
+ADsAvAEuAEMAkwEuAEsAwgEuAFMAvAEuAFsA2QFDAGMAIQLjAGsAIQIBAXsAIQKpAnMAigHJAnMA
+igEbAAMAAQAHABUACAAXAAAA9QBHAQAA5gRLAQAAyABHAQAApARLAQAA2wBPAQAAvgRLAQAAPAFH
+AQAAQQVLAQAAHwFHAQAAFgVLAQAACwFHAQAA+wRLAQAALAFHAQAAKgVLAQAA6ABHAQAA0gRLAQAA
+uwBHAQAAkARLAQAApgVHAQAAYwVLAQAABQdTAQAAHQJYAQAArwhdAQIABAADAAIABQAFAAIABgAH
+AAIABwAJAAIACAALAAIACQANAAIACgAPAAIACwARAAIADAATAAIADQAVAAIADgAXAAIADwAZAAIA
+EAAbAAIAEQAdAAIAEgAfAAIAEwAhAAIAFAAjAAIAFQAlAAEAFgAnAAEAFwApAAIAIQArAAIAIgAt
+AAEAIwAtAAIAJAAvAASAAAABAAAARiAyVwAAAAAAAJMAAAAEAAAAAAAAAAAAAADhAGkBAAAAAAwA
+AAAAAAAAAAAAAOoA8QgAAAAADAAAAAAAAAAAAAAA6gAOCQAAAAAEAAAAAAAAAAAAAADhAI0FAAAA
+AAwAAAAAAAAAAAAAAOoAjAYAAAAAAAAAAAEAAACpBwAAAAAAAABJRFRTQ29tcG9uZW50TWV0YURh
+dGExMDAASURUU0lucHV0Q29sdW1uMTAwAElEVFNJbnB1dENvbHVtbkNvbGxlY3Rpb24xMDAASURU
+U0lucHV0Q29sbGVjdGlvbjEwMABJRFRTSW5wdXQxMDAAU0hBMQBzaGExAEdldEludDMyAGdldF9V
+VEY4ADxNb2R1bGU+AFNDXzBDMjNGRUU3QjNDQjQ3RUNBRTlBRkIzOEJFNUI3RUJBAGdldF9CUkFO
+Q0hDRABnZXRfVkVSSUZJQ0FUSU9OQ0QAZ2V0X05VTUJFUkNEAGdldF9HRU5ERVJDRABnZXRfQ09O
+VFJPTElEAElucHV0SUQAZ2V0X1BFUlNPTkNPTVBBTllOTQBnZXRfUEVSU09OVFAAZ2V0X0JJUlRI
+REFURURUAGdldF9QRVJTT05JREVOVElGSUNBVElPTlRYAGdldF9Db21wb25lbnRNZXRhRGF0YQBt
+c2NvcmxpYgBBcHBlbmQAUmVwbGFjZQBkZWZhdWx0SW5zdGFuY2UASURpc3Bvc2FibGUAUnVudGlt
+ZVR5cGVIYW5kbGUAR2V0VHlwZUZyb21IYW5kbGUAZ2V0X05hbWUASW5wdXROYW1lAE1pY3Jvc29m
+dC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lAEdldFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUA
+cmVzb3VyY2VDdWx0dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UARWRpdG9yQnJv
+d3NhYmxlU3RhdGUAQ29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29k
+ZUF0dHJpYnV0ZQBEZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBB
+c3NlbWJseVRpdGxlQXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZy
+YW1ld29ya0F0dHJpYnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlE
+ZXNjcmlwdGlvbkF0dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2Vt
+Ymx5UHJvZHVjdEF0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0
+Q29tcG9uZW50RW50cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVu
+dGltZUNvbXBhdGliaWxpdHlBdHRyaWJ1dGUAQnl0ZQBHZXRWYWx1ZQB2YWx1ZQBFbmNvZGluZwBT
+eXN0ZW0uUnVudGltZS5WZXJzaW9uaW5nAFRvU3RyaW5nAEdldFN0cmluZwBDb21wdXRlSGFzaABT
+eXN0ZW0uQ29tcG9uZW50TW9kZWwAU0NfMEMyM0ZFRTdCM0NCNDdFQ0FFOUFGQjM4QkU1QjdFQkEu
+ZGxsAGdldF9CUkFOQ0hDRF9Jc051bGwAZ2V0X1ZFUklGSUNBVElPTkNEX0lzTnVsbABnZXRfTlVN
+QkVSQ0RfSXNOdWxsAGdldF9HRU5ERVJDRF9Jc051bGwAZ2V0X0NPTlRST0xJRF9Jc051bGwAZ2V0
+X1BFUlNPTkNPTVBBTllOTV9Jc051bGwAZ2V0X1BFUlNPTlRQX0lzTnVsbABnZXRfQklSVEhEQVRF
+RFRfSXNOdWxsAGdldF9QRVJTT05JREVOVElGSUNBVElPTlRYX0lzTnVsbABzZXRfY2hlY2tzdW1f
+SXNOdWxsAFNldE51bGwAZ2V0X0l0ZW0Ac2V0X0l0ZW0AU3lzdGVtAEhhc2hBbGdvcml0aG0Ac2V0
+X2NoZWNrc3VtAHJlc291cmNlTWFuAFNjcmlwdE1haW4AU3lzdGVtLkNvbmZpZ3VyYXRpb24AU3lz
+dGVtLkdsb2JhbGl6YXRpb24AU3lzdGVtLlJlZmxlY3Rpb24AZ2V0X0lucHV0Q29sdW1uQ29sbGVj
+dGlvbgBnZXRfSW5wdXRDb2xsZWN0aW9uAEludmFsaWRPcGVyYXRpb25FeGNlcHRpb24AU3RyaW5n
+Q29tcGFyaXNvbgBDdWx0dXJlSW5mbwBQcm9wZXJ0eUluZm8AT3V0cHV0TmFtZU1hcABPdXRwdXRN
+YXAATWljcm9zb2Z0LlNxbFNlcnZlci5EVFNQaXBlbGluZVdyYXAAU0hBMUNyeXB0b1NlcnZpY2VQ
+cm92aWRlcgBTdHJpbmdCdWlsZGVyAElucHV0MEJ1ZmZlcgBQaXBlbGluZUJ1ZmZlcgBTY3JpcHRC
+dWZmZXIAZ2V0X1Jlc291cmNlTWFuYWdlcgBNaWNyb3NvZnQuU3FsU2VydmVyLkR0cy5QaXBlbGlu
+ZS5XcmFwcGVyAElFbnVtZXJhdG9yAEdldEVudW1lcmF0b3IALmN0b3IALmNjdG9yAFN5c3RlbS5E
+aWFnbm9zdGljcwBTeXN0ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFN5c3RlbS5SZXNvdXJj
+ZXMAU0NfYzQwZDUxYTcwZjBlNDVhMmJhZDhhYzMyNWE3NTIxNDUuUHJvcGVydGllcy5SZXNvdXJj
+ZXMucmVzb3VyY2VzAERlYnVnZ2luZ01vZGVzAFNDX2M0MGQ1MWE3MGYwZTQ1YTJiYWQ4YWMzMjVh
+NzUyMTQ1LlByb3BlcnRpZXMAVmFyaWFibGVzAEdldEJ5dGVzAEJ1ZmZlckNvbHVtbkluZGV4ZXMA
+R2V0Q29sdW1uSW5kZXhlcwBTZXR0aW5ncwBFcXVhbHMAU3lzdGVtLkNvbGxlY3Rpb25zAENvbm5l
+Y3Rpb25zAENvbmNhdABPYmplY3QARW5kT2ZSb3dzZXQAZ2V0X0RlZmF1bHQAVXNlckNvbXBvbmVu
+dABQYXJlbnRDb21wb25lbnQAU2NyaXB0Q29tcG9uZW50AGdldF9DdXJyZW50AE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuVHhTY3JpcHQATWljcm9zb2Z0LlNxbFNlcnZlci5QaXBlbGluZUhvc3QASW5wdXQw
+X1Byb2Nlc3NJbnB1dABNb3ZlTmV4dABTeXN0ZW0uVGV4dABJbnB1dDBfUHJvY2Vzc0lucHV0Um93
+AE5leHRSb3cAU3lzdGVtLlNlY3VyaXR5LkNyeXB0b2dyYXBoeQBnZXRfQXNzZW1ibHkAb3BfRXF1
+YWxpdHkAR2V0UHJvcGVydHkAAAAAAAEAA18AAAMgAAAPXwBJAHMATgB1AGwAbAAAC0YAYQBsAHMA
+ZQAAA3wAAAVYADIAAICbSQBzAE4AdQBsAGwAIABwAHIAbwBwAGUAcgB0AHkAIABjAGEAbgBuAG8A
+dAAgAGIAZQAgAHMAZQB0ACAAdABvACAARgBhAGwAcwBlAC4AIABBAHMAcwBpAGcAbgAgAGEAIAB2
+AGEAbAB1AGUAIAB0AG8AIAB0AGgAZQAgAGMAbwBsAHUAbQBuACAAaQBuAHMAdABlAGEAZAAuAAAP
+SQBuAHAAdQB0ACAAMAAAcVMAQwBfAGMANAAwAGQANQAxAGEANwAwAGYAMABlADQANQBhADIAYgBh
+AGQAOABhAGMAMwAyADUAYQA3ADUAMgAxADQANQAuAFAAcgBvAHAAZQByAHQAaQBlAHMALgBSAGUA
+cwBvAHUAcgBjAGUAcwAATgJVLZDpEkWEE0euDAsAXQAEIAEBCAMgAAEFIAEBEREEIAEBDgUgAQER
+aQ0HBw4dBRI9EkEOEkUIBCAAEnkEIAASfQYgARKAhRwFIAASgIkEIAASQQMgABwDIAAOBSACDg4O
+BSAAEoCVBQACDg4OBiABEoCZDgYgAhwcHRwFAAICDg4DIAACBQAAEoCdBSABHQUOBiABHQUdBQQg
+AQ4OBSABEj0OCSADARJNHQgSUQMGEk0DBh0IBCABDggEIAECCAQgAQgIBSACAQgcByACAg4RgLEF
+IAEdCAgIAAESgJURgLUFIAASgLkHIAIBDhKAuQi3elxWGTTgiQiJhF3NgIDMkQMGEjkDBhIUAwYS
+GAMGElUDBhJhAwYSZQMGEiAFIAEBEgwDIAAIBCABAQIJIAQBCA4STRJRBSABARJVBAAAEmEEAAAS
+ZQUAAQESZQQAABIgAwAAAQMoAA4DKAACAygACAQIABJhBAgAEmUECAASIAgBAAgAAAAAAB4BAAEA
+VAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEIAQACAAAAAAAoAQAjU0NfYzQwZDUxYTcwZjBlNDVh
+MmJhZDhhYzMyNWE3NTIxNDUAAAUBAAAAABYBABFDb3B5cmlnaHQgQCAgMjAyMgAARwEAGi5ORVRG
+cmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRGcmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1l
+d29yayA0BAEAAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVtLlJlc291cmNlcy5SZXNvdXJjZVJl
+YWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNL
+ZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNvdXJjZXMuUnVudGltZVJlc291cmNl
+U2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAABQOgAAAAAAAAAAAABqOgAAACAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAXDoAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBtc2NvcmVlLmRsbAAAAAAA/yUAIAAQ
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+ABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAA
+WEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9
+BO/+AAABAAAAAQAyV0YgAAABADJXRiA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
+VgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAA
+AAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAwADAA
+NABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4AeQBO
+AGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAAAFMA
+QwBfAGMANAAwAGQANQAxAGEANwAwAGYAMABlADQANQBhADIAYgBhAGQAOABhAGMAMwAyADUAYQA3
+ADUAMgAxADQANQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA4ADIA
+NgAyAC4AMgAyADMAMgAyAAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMAQwBf
+ADAAQwAyADMARgBFAEUANwBCADMAQwBCADQANwBFAEMAQQBFADkAQQBGAEIAMwA4AEIARQA1AEIA
+NwBFAEIAQQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAAQwBv
+AHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAyAAAAKgABAAEATABlAGcAYQBsAFQAcgBhAGQA
+ZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEAbQBl
+AAAAUwBDAF8AMABDADIAMwBGAEUARQA3AEIAMwBDAEIANAA3AEUAQwBBAEUAOQBBAEYAQgAzADgA
+QgBFADUAQgA3AEUAQgBBAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUAAAAA
+AFMAQwBfAGMANAAwAGQANQAxAGEANwAwAGYAMABlADQANQBhADIAYgBhAGQAOABhAGMAMwAyADUA
+YQA3ADUAMgAxADQANQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEALgAw
+AC4AOAAyADYAMgAuADIAMgAzADIAMgAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBlAHIA
+cwBpAG8AbgAAADEALgAwAC4AOAAyADYAMgAuADIAMgAzADIAMgAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAAB8OgAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_0c23fee7b3cb47ecae9afb38be5b7eba</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">f78adda7abf37a60e1e19eeaee07111f</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataShaChecksum"
+                      typeConverter="NOTBROWSABLE">f7baf74d035c39fdc61f098e064521d4292d5699</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="CONTROL_ID"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="VERIFICATION_CD"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[NUMBER_CD]"
+                          cachedDataType="i4"
+                          cachedName="NUMBER_CD"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[PERSON_IDENTIFICATION_TX]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="PERSON_IDENTIFICATION_TX"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_IDENTIFICATION_TX]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[PERSON_TP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="PERSON_TP"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_TP]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[PERSON_COMPANY_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="PERSON_COMPANY_NM"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[BIRTH_DATE_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="BIRTH_DATE_DT"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_DT]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[GENDER_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="GENDER_CD"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[GENDER_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0].Columns[BRANCH_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="BRANCH_CD"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Outputs[Output 0].Columns[checksum]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Outputs[Output 0].Columns[checksum]"
+                          name="checksum" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_tb_act_pep_party]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_tb_act_pep_party]) [refTable]
+where [refTable].[Control_id] = ? and [refTable].[Verification_Cd] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Control_id" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Branch_Cd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Verification_Cd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Number_Cd" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Person_identification_tx" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Person_Tp" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Person_Company_Nm" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Birth_Date_Dt" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Gender_Cd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]};#{Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 Actimize SRVACTIMIZE]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input].Columns[CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="CONTROL_ID"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Control_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input].Columns[VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="VERIFICATION_CD"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Verification_Cd</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_tb_act_pep_party]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_tb_act_pep_party]) [refTable]
+where [refTable].[Control_id] = ? and [refTable].[Verification_Cd] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Control_id" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Branch_Cd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Verification_Cd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Number_Cd" dataType="DT_I8" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Person_identification_tx" dataType="DT_STR" length="20" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Person_Tp" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Person_Company_Nm" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Birth_Date_Dt" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Gender_Cd" dataType="DT_STR" length="10" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]};#{Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 Actimize SRVACTIMIZE]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input].Columns[CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="CONTROL_ID"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Control_id</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input].Columns[VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="VERIFICATION_CD"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">Verification_Cd</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE Actimize.dbo.ST_tb_act_pep_party
+SET
+	  [Branch_Cd] =?,
+      [Number_Cd] =?,
+      [Person_identification_tx] =?,
+      [Person_Tp] =?,
+      [Person_Company_Nm] =?,
+      [Birth_Date_Dt] =?,
+      [Gender_Cd]=?,
+      [UPDATE_SCD_DT] =?,
+      [CHECKSUM_SCD_ID]=?
+   WHERE
+	[Control_id]=? AND
+	[Verification_Cd]=?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 Actimize SRVACTIMIZE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[BRANCH_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="BRANCH_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[NUMBER_CD]"
+                          cachedDataType="i4"
+                          cachedName="NUMBER_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[PERSON_IDENTIFICATION_TX]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="PERSON_IDENTIFICATION_TX"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_IDENTIFICATION_TX]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[PERSON_TP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="PERSON_TP"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_TP]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[PERSON_COMPANY_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="PERSON_COMPANY_NM"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[BIRTH_DATE_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="BIRTH_DATE_DT"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_DT]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[GENDER_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="GENDER_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[GENDER_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[INSERT_SCD_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Outputs[Output 0].Columns[checksum]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="VERIFICATION_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].Columns[CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="CONTROL_ID"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i8"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="dbDate"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="dbTimeStamp"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Param_10">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT
+DISTINCT
+TRIM(CD_CONTROLE) AS Control_Id,
+CD_FILIAL AS Branch_Cd,
+Cd_Verificador AS Verification_Cd,
+Cd_Nosso_Numero AS Number_Cd,
+TRIM(Cd_Identificacao) AS person_Identification_tx,
+TP_PESSOA AS Person_Tp,
+TRIM(DS_NOME) AS Person_Company_Nm,
+DT_NASCIMENTO AS Birth_Date_Dt,
+CD_SEXO AS Gender_Cd,
+VARCHAR_FORMAT(CURRENT TIMESTAMP,'YYYY-MM-DD HH24:MM:SS') AS INSERT_SCD_DT
+FROM DBTCTO.TB_PEP PEP</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{38904B1C-D32F-4A9B-92A5-2CEB6661514B}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[PRUDASD7.PRUDASD7.srvactimiz]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTROL_ID]"
+                          length="9"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]"
+                          name="CONTROL_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BRANCH_CD]"
+                          length="4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]"
+                          name="BRANCH_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VERIFICATION_CD]"
+                          length="2"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]"
+                          name="VERIFICATION_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_CD]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NUMBER_CD]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_CD]"
+                          name="NUMBER_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_IDENTIFICATION_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_IDENTIFICATION_TX]"
+                          length="15"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_IDENTIFICATION_TX]"
+                          name="PERSON_IDENTIFICATION_TX"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_TP]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_TP]"
+                          length="1"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_TP]"
+                          name="PERSON_TP"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_COMPANY_NM]"
+                          length="100"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]"
+                          name="PERSON_COMPANY_NM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE_DT]"
+                          length="10"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_DT]"
+                          name="BIRTH_DATE_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[GENDER_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GENDER_CD]"
+                          length="1"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[GENDER_CD]"
+                          name="GENDER_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          length="255"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          name="CONTROL_ID" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          name="BRANCH_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          name="VERIFICATION_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NUMBER_CD]"
+                          dataType="i4"
+                          name="NUMBER_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_IDENTIFICATION_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          name="PERSON_IDENTIFICATION_TX" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_TP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="PERSON_TP" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="PERSON_COMPANY_NM" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[BIRTH_DATE_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="BIRTH_DATE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GENDER_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          name="GENDER_CD" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="INSERT_SCD_DT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTROL_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="9"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CONTROL_ID]"
+                          name="CONTROL_ID" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BRANCH_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BRANCH_CD]"
+                          name="BRANCH_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VERIFICATION_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="2"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[VERIFICATION_CD]"
+                          name="VERIFICATION_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NUMBER_CD]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NUMBER_CD]"
+                          name="NUMBER_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_IDENTIFICATION_TX]"
+                          codePage="1252"
+                          dataType="str"
+                          length="15"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_IDENTIFICATION_TX]"
+                          name="PERSON_IDENTIFICATION_TX" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_TP]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_TP]"
+                          name="PERSON_TP" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_COMPANY_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PERSON_COMPANY_NM]"
+                          name="PERSON_COMPANY_NM" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[BIRTH_DATE_DT]"
+                          name="BIRTH_DATE_DT" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GENDER_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="1"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GENDER_CD]"
+                          name="GENDER_CD" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="ST_tb_act_pep_party"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_tb_act_pep_party]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD001 Actimize SRVACTIMIZE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[VERIFICATION_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="2"
+                          cachedName="VERIFICATION_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Verification_Cd]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[VERIFICATION_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[BRANCH_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="4"
+                          cachedName="BRANCH_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Branch_Cd]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BRANCH_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[CONTROL_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="9"
+                          cachedName="CONTROL_ID"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Control_id]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[CONTROL_ID]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[NUMBER_CD]"
+                          cachedDataType="i4"
+                          cachedName="NUMBER_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Number_Cd]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[NUMBER_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[PERSON_IDENTIFICATION_TX]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="15"
+                          cachedName="PERSON_IDENTIFICATION_TX"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Person_identification_tx]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_IDENTIFICATION_TX]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[PERSON_TP]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="PERSON_TP"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Person_Tp]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_TP]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[PERSON_COMPANY_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="PERSON_COMPANY_NM"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Person_Company_Nm]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[PERSON_COMPANY_NM]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[BIRTH_DATE_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="BIRTH_DATE_DT"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Birth_Date_Dt]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[BIRTH_DATE_DT]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[GENDER_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="1"
+                          cachedName="GENDER_CD"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Gender_Cd]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[GENDER_CD]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[INSERT_SCD_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                        <inputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Outputs[Output 0].Columns[checksum]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Branch_Cd]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Branch_Cd" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Verification_Cd]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Verification_Cd" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Control_id]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Control_id" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Number_Cd]"
+                          dataType="i8"
+                          name="Number_Cd" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Person_identification_tx]"
+                          codePage="1252"
+                          dataType="str"
+                          length="20"
+                          name="Person_identification_tx" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Person_Tp]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Person_Tp" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Person_Company_Nm]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Person_Company_Nm" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Birth_Date_Dt]"
+                          dataType="dbDate"
+                          name="Birth_Date_Dt" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[Gender_Cd]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Gender_Cd" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CHECKSUM_SCD_ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Lookup Match Output]"
+                  endId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Lookup No Match Output]"
+                  endId="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Lookup No Match Output1]"
+                  endId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[OLE DB Source Output]"
+                  endId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Inputs[Input 0]"
+                  name="OLE DB Source Output"
+                  startId="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Output 0]"
+                  endId="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup.Inputs[Lookup Input]"
+                  name="Output 0"
+                  startId="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum.Outputs[Output 0]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="200,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party"
+          TopLeft="22.300002520424,28.6529431841368" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="240,126"
+          Size="240,169"
+          Id="Package\tb_act_pep_party"
+          TopLeft="58.857143859474,72.8000010209925" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\tb_act_pep_party\INSERE tb_act_pep_party">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="179,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party"
+          TopLeft="28.0714284449204,130.935295456091" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Command"
+          TopLeft="35.4285720319164,245.929415213773" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup"
+          TopLeft="444.571436142435,133.364707752743" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party\checksum"
+          TopLeft="434.071435869956,25.1470572534319" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source"
+          TopLeft="46.2857150739553,29.976471008644" />
+        <NodeLayout
+          Size="122,42"
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1"
+          TopLeft="439.428578911996,241.647062212538" />
+        <EdgeLayout
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Output 0]"
+          TopLeft="498.721436006196,66.7470572534318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.6176504993107"
+              Start="0,0"
+              End="0,59.1176504993107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.1176504993107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[OLE DB Source Output]"
+          TopLeft="195.885715073955,48.3617641310379">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="238.185720796001,0"
+              Start="0,0"
+              End="230.685720796001,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="230.685720796001,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Lookup No Match Output1]"
+          TopLeft="439.428578911996,264.588238713156">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-239.200006880079,0"
+              Start="0,0"
+              End="-231.700006880079,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-231.700006880079,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-171.656390158789,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Lookup No Match Output]"
+          TopLeft="444.571436142435,152.950001604417">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-237.300007697515,0"
+              Start="0,0"
+              End="-229.800007697515,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-229.800007697515,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-170.706390567507,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\tb_act_pep_party\INSERE tb_act_pep_party.Paths[Lookup Match Output]"
+          TopLeft="500.600007527215,174.964707752743">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66.6823544597956"
+              Start="0,0"
+              End="0,59.1823544597956">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,59.1823544597956" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,23.7864897298978,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\tb_act_pep_party\INSERE tb_act_pep_party\ST_tb_act_pep_party">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_tb_act_pep_party]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\tb_act_pep_party\INSERE tb_act_pep_party\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\tb_act_pep_party\INSERE tb_act_pep_party\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_tb_act_pep_party]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

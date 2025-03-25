@@ -1,0 +1,2200 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/21/2022 3:18:04 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{974D3D91-76B6-4E88-898D-2A4C8B79592A}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="ST_ili_tb_act_account_to_party_VI"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="258"
+  DTS:VersionGUID="{9CBD041F-780D-45E1-A070-18A9DC0B49AC}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{0680C547-78BA-45E4-9121-715ECB96D323}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="ORIGEM ST_ili_tb_act_account_to_party_VI">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{70860259-E4EE-4F4C-90BF-35FCC395381E}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_ili_tb_act_account_to_party_VI"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="checksum"
+                  version="9">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Security.Cryptography;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+    private SHA1 sha1 = new SHA1CryptoServiceProvider(); // used to create SHA1 hash
+
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        string fieldsString = "";
+
+        // loop over each input column
+        foreach (IDTSInputColumn100 field in ComponentMetaData.InputCollection[0].InputColumnCollection)
+        {
+            // remove underscore from input field name
+            string fieldName = field.Name.Replace("_", "").Replace(" ", "").ToString();
+
+            // Check if + _IsNull is False and then add value to string.
+            if (Row.GetType().GetProperty(fieldName + "_IsNull").GetValue(Row, null).ToString() == "False")
+            {
+                fieldsString = fieldsString + Row.GetType().GetProperty(fieldName).GetValue(Row, null).ToString();
+            }
+
+            // Add seperator after each field.
+            fieldsString = fieldsString + "|";
+        }
+
+        byte[] hashBytes = sha1.ComputeHash(System.Text.UTF8Encoding.UTF8.GetBytes(fieldsString));
+        // convert the byte stream to a string
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        for (int i = 0; i < hashBytes.Length; i++)
+        {
+            sb.Append(hashBytes[i].ToString("X2"));
+        }
+        // hash is defined as DT_STR 64)
+        Row.checksum = sb.ToString(); // add the result to the output
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String EXPIRATIONDT
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[0]);
+        }
+    }
+    public bool EXPIRATIONDT_IsNull
+    {
+        get
+        {
+            return IsNull(0);
+        }
+    }
+
+    public String PRIMARYPARTYKEYID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[1]);
+        }
+    }
+    public bool PRIMARYPARTYKEYID_IsNull
+    {
+        get
+        {
+            return IsNull(1);
+        }
+    }
+
+    public String ACCOUNTKEYID
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[2]);
+        }
+    }
+    public bool ACCOUNTKEYID_IsNull
+    {
+        get
+        {
+            return IsNull(2);
+        }
+    }
+
+    public String RELATIONSHIPTYPE
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[3]);
+        }
+    }
+    public bool RELATIONSHIPTYPE_IsNull
+    {
+        get
+        {
+            return IsNull(3);
+        }
+    }
+
+    public String SOURCESYSTEM
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[4]);
+        }
+    }
+    public bool SOURCESYSTEM_IsNull
+    {
+        get
+        {
+            return IsNull(4);
+        }
+    }
+
+    public String EFFECTIVEDT
+    {
+        get
+        {
+            return Buffer.GetString(BufferColumnIndexes[5]);
+        }
+    }
+    public bool EFFECTIVEDT_IsNull
+    {
+        get
+        {
+            return IsNull(5);
+        }
+    }
+
+    public String checksum
+    {
+        set
+        {
+            this[6] = value;
+        }
+    }
+    public bool checksum_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(6);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Settings.get_Default():SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Sett" +
+    "ings")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:DisplayName>
+		<msb:ProjectId>{87F6BD8C-A5D6-400E-8150-3716F965E1C7}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_c40d51a70f0e45a2bad8ac325a752145.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_c40d51a70f0e45a2bad8ac325a752145.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{0B20F60D-F921-4ABA-9E9D-93878749877C}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_c40d51a70f0e45a2bad8ac325a752145</RootNamespace><AssemblyName>SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA</AssemblyName><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptComponent" IconIndex="0" /><ProjectClient><HostIdentifier>SSIS_SC120</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAHOB6mMAAAAAAAAAAOAAIiALATAAABoAAAAIAAAAAAAACjkA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAALg4AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAEBkAAAAgAAAAGgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAcAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADs
+OAAAAAAAAEgAAAACAAUAfCMAAIQUAAABAAAAAAAAAAA4AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBAAyAQAAAQAAEXIBAABwCgIoEAAACm8RAAAKFowgAAAB
+bxIAAApvEwAACm8UAAAKDTiQAAAACW8VAAAKdCMAAAFvFgAACnIDAABwcgEAAHBvFwAACnIHAABw
+cgEAAHBvFwAACm8YAAAKEwQDbxkAAAoRBHILAABwKBoAAApvGwAACgMUbxwAAApvGAAACnIbAABw
+KB0AAAosIAYDbxkAAAoRBG8bAAAKAxRvHAAACm8YAAAKKBoAAAoKBnInAABwKBoAAAoKCW8eAAAK
+OmX////eFAl1EQAAARMFEQUsBxEFbx8AAArcAnsBAAAEKCAAAAoGbyEAAApvIgAACgtzIwAACgwW
+EwYrHwgHEQaPKQAAAXIrAABwKCQAAApvJQAACiYRBhdYEwYRBgeOaTLaAwhvGAAACm8QAAAGKgAA
+ARAAAAIAJwCiyQAUAAAAAEoCcyYAAAp9AQAABAIoFAAABioqAgMEBSgnAAAKKlICeygAAAoCeykA
+AAoWlG8qAAAKKiICFigrAAAKKlICeygAAAoCeykAAAoXlG8qAAAKKiICFygrAAAKKlICeygAAAoC
+eykAAAoYlG8qAAAKKiICGCgrAAAKKlICeygAAAoCeykAAAoZlG8qAAAKKiICGSgrAAAKKlICeygA
+AAoCeykAAAoalG8qAAAKKiICGigrAAAKKlICeygAAAoCeykAAAoblG8qAAAKKiICGygrAAAKKiYC
+HAMoLAAACipaAywIAhwoLQAACipyMQAAcHMuAAAKeh4CKC8AAAoqHgIoMAAACip+AigxAAAKAgJz
+GAAABn0CAAAEAgJzGQAABn0DAAAEKpIEcs4AAHAabzIAAAosFQIFAgMoMwAACg4EcwMAAAZvFgAA
+BipKKwcCA28XAAAGA28SAAAGLfEqBio6Aig0AAAKAgN9BAAABCo6Aig0AAAKAgN9BQAABCoeAig0
+AAAKKq5+BgAABC0ect4AAHDQBwAAAig1AAAKbzYAAApzNwAACoAGAAAEfgYAAAQqGn4HAAAEKh4C
+gAcAAAQqGn4IAAAEKh4CKDgAAAoqLnMfAAAGgAgAAAQqAAAAQlNKQgEAAQAAAAAADAAAAHY0LjAu
+MzAzMTkAAAAABQBsAAAARAcAACN+AACwBwAAWAkAACNTdHJpbmdzAAAAAAgRAABQAQAAI1VTAFgS
+AAAQAAAAI0dVSUQAAABoEgAAHAIAACNCbG9iAAAAAAAAAAIAAAFXFaIBCQEAAAD6ATMAFgAAAQAA
+AC4AAAAIAAAACAAAACAAAAAPAAAAOAAAABAAAAABAAAAAwAAABEAAAASAAAAAQAAAAUAAAABAAAA
+AAA7BAEAAAAAAAYAHQMUBwYAsQMUBwYAaQIBBw8AiAcAAAYAlgKMBQYAAAOMBQYA4QKMBQYAmAOM
+BQYAPQOMBQYAVgOMBQYArQKMBQYAyALsAwoAcQOrAQYAbgATCQYAZgboCAYA2gYOCAYAaAEpBQoA
+kAarAQ4AgQarAQoAEAarAQoAcQirAQYANAgpBQYATAIBBwYAoQY0BwYA9wV3BRIAHAIlBBIAfQIl
+BBIA/AFiBQYAMQIUBxYAAQCxBhYASgCxBgYAeAApBRYAYQCxBhYALQCxBhYAGgCxBgYAEgQpBQYA
+zwEpBQYAAwaMBQYA4wPoCAYAMAUTCQYAzwMpBQYATAYTCQYAzAUpBQYA5gUpBQYAdAEpBQYANAmM
+BQAAAACHAAAAAAABAAEAAQAQAFcFAAAQAAEAAQABABAAdAYAAEkAAgADAAEAEABTCAAAVQACABQA
+AQAQACEIAABZAAQAGAABABAAxgcAAFkABQAZAAAAEAA7B5cHWQAGABoAAAEQAP4HlwdxAAgAHgAB
+AHMA7gAGACEI8gAGAMYH9gABAGEI+gABAGEI+gARAEsF/gARAOwBAgERAFgBBgFQIAAAAADGAPQI
+CgEBAKAhAAAAAIYY9AYGAAIAsyEAAAAAhhj0BpUAAgC+IQAAAACGCBkBSQAFANMhAAAAAIYI4wRz
+AAUA3CEAAAAAhgjFAEkABQDxIQAAAACGCHsEcwAFAPohAAAAAIYItABJAAUADyIAAAAAhghjBHMA
+BQAYIgAAAACGCOMASQAFAC0iAAAAAIYImARzAAUANiIAAAAAhgj4AEkABQBLIgAAAACGCLQEcwAF
+AFQiAAAAAIYICQFJAAUAaSIAAAAAhgjMBHMABQByIgAAAACGCD4FEAAFAHwiAAAAAIYI+wQQAQYA
+kyIAAAAAhgALCXMABwCbIgAAAACGADsIcwAHAKMiAAAAAIYY9AYGAAcAwyIAAAAAxgDSCBUBBwDo
+IgAAAADGAcsICgELAPsiAAAAAMYB9AgKAQwA/SIAAAAAhhj0Bh8BDQAMIwAAAACGGPQGHwEOABsj
+AAAAAIMY9AYGAA8AIyMAAAAAkwidBiUBDwBPIwAAAACTCNQBKgEPAFYjAAAAAJMI4AEvAQ8AXiMA
+AAAAlghHCDUBEABlIwAAAACGGPQGBgAQAG0jAAAAAJEY+gY6ARAAAAABAA8JAAABAJYGAAACANkH
+AAADAB4GAAABAN0DAAABAN0DAAABANsAAAACAKEBAAADAJYGAAAEAB4GAAABAJYGAAABAA8JAAAB
+AHcIAAABAHcIAAABAN0DCQD0BgEAEQD0BgYAGQD0BgoAKQD0BhAAMQD0BhAAOQD0BhAAQQD0BhAA
+SQD0BhAAUQD0BhAAWQD0BhAAYQD0BhAAaQD0BgYAuQD0BgYA2QD0BhUA6QD0BgYAqQAqASkA8QC4
+BS4A+QAXBTMACQGeBToAEQHmBkAAgQCBCEUAGQGYAUkAIQFQAU0AsQAGBEkAsQDMAVMAIQEtCFkA
+KQFJCV8AMQHUA2YAIQE9CW0AgQDfCHMAiQAUAgYAOQF+AHcAOQHQB30AQQEZBIMAeQD0BgYASQEG
+BIoAeQBJAY8AUQH0BgYAkQD0BpUAkQCWBp8AkQDZB6MAmQAPBKcAkQAIBawAkQAgBbEAkQAPBQEA
+WQH0BhAAkQALCXMAkQA7CHMAqQD0BgYAIQEHCLcAqQDtB78AsQD0BgYAKQGGAcUAKQEwCc4AwQD0
+BtQA4QD0BgYALgALAFUBLgATAF4BLgAbAH0BLgAjAIYBLgArAK8BLgAzAK8BLgA7AK8BLgBDAIYB
+LgBLALUBLgBTAK8BLgBbAMwBQwBjABQC4wBrABQCAQF7ABQC6QFzAH0BCQJzAH0BGwADAAEABwAP
+AAgAEQAAAB0BPgEAAOcEQgEAAMkAPgEAAH8EQgEAALgAPgEAAGcEQgEAAOcAPgEAAJwEQgEAAPwA
+PgEAALgEQgEAAA0BPgEAANAEQgEAAEIFPgEAAP8EQgEAAKEGRgEAAPQBSwEAAEsIUAECAAQAAwAC
+AAUABQACAAYABwACAAcACQACAAgACwACAAkADQACAAoADwACAAsAEQACAAwAEwACAA0AFQACAA4A
+FwACAA8AGQABABAAGwABABEAHQACABsAHwACABwAIQABAB0AIQACAB4AIwAEgAAAAQAAAPwg4WwA
+AAAAAACQAAAABAAAAAAAAAAAAAAA3ABAAQAAAAAMAAAAAAAAAAAAAADlAI0IAAAAAAwAAAAAAAAA
+AAAAAOUAqggAAAAABAAAAAAAAAAAAAAA3AApBQAAAAAMAAAAAAAAAAAAAADlACgGAAAAAAAAAAAB
+AAAARQcAAAAAAElEVFNDb21wb25lbnRNZXRhRGF0YTEwMABJRFRTSW5wdXRDb2x1bW4xMDAASURU
+U0lucHV0Q29sdW1uQ29sbGVjdGlvbjEwMABJRFRTSW5wdXRDb2xsZWN0aW9uMTAwAElEVFNJbnB1
+dDEwMABTSEExAHNoYTEASW50MzIAZ2V0X1VURjgAPE1vZHVsZT4AU0NfMEMyM0ZFRTdCM0NCNDdF
+Q0FFOUFGQjM4QkU1QjdFQkEAZ2V0X0FDQ09VTlRLRVlJRABnZXRfUFJJTUFSWVBBUlRZS0VZSUQA
+SW5wdXRJRABnZXRfUkVMQVRJT05TSElQVFlQRQBnZXRfU09VUkNFU1lTVEVNAGdldF9FRkZFQ1RJ
+VkVEVABnZXRfRVhQSVJBVElPTkRUAGdldF9Db21wb25lbnRNZXRhRGF0YQBtc2NvcmxpYgBBcHBl
+bmQAUmVwbGFjZQBkZWZhdWx0SW5zdGFuY2UASURpc3Bvc2FibGUAUnVudGltZVR5cGVIYW5kbGUA
+R2V0VHlwZUZyb21IYW5kbGUAZ2V0X05hbWUASW5wdXROYW1lAE1pY3Jvc29mdC5TcWxTZXJ2ZXIu
+RHRzLlBpcGVsaW5lAEdldFR5cGUAZ2V0X0N1bHR1cmUAc2V0X0N1bHR1cmUAcmVzb3VyY2VDdWx0
+dXJlAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAERpc3Bvc2UARWRpdG9yQnJvd3NhYmxlU3RhdGUA
+Q29tcGlsZXJHZW5lcmF0ZWRBdHRyaWJ1dGUARGVidWdnZXJOb25Vc2VyQ29kZUF0dHJpYnV0ZQBE
+ZWJ1Z2dhYmxlQXR0cmlidXRlAEVkaXRvckJyb3dzYWJsZUF0dHJpYnV0ZQBBc3NlbWJseVRpdGxl
+QXR0cmlidXRlAEFzc2VtYmx5VHJhZGVtYXJrQXR0cmlidXRlAFRhcmdldEZyYW1ld29ya0F0dHJp
+YnV0ZQBBc3NlbWJseUNvbmZpZ3VyYXRpb25BdHRyaWJ1dGUAQXNzZW1ibHlEZXNjcmlwdGlvbkF0
+dHJpYnV0ZQBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAEFzc2VtYmx5UHJvZHVjdEF0
+dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBTU0lTU2NyaXB0Q29tcG9uZW50RW50
+cnlQb2ludEF0dHJpYnV0ZQBBc3NlbWJseUNvbXBhbnlBdHRyaWJ1dGUAUnVudGltZUNvbXBhdGli
+aWxpdHlBdHRyaWJ1dGUAQnl0ZQBHZXRWYWx1ZQB2YWx1ZQBFbmNvZGluZwBTeXN0ZW0uUnVudGlt
+ZS5WZXJzaW9uaW5nAFRvU3RyaW5nAEdldFN0cmluZwBDb21wdXRlSGFzaABTeXN0ZW0uQ29tcG9u
+ZW50TW9kZWwAU0NfMEMyM0ZFRTdCM0NCNDdFQ0FFOUFGQjM4QkU1QjdFQkEuZGxsAGdldF9BQ0NP
+VU5US0VZSURfSXNOdWxsAGdldF9QUklNQVJZUEFSVFlLRVlJRF9Jc051bGwAZ2V0X1JFTEFUSU9O
+U0hJUFRZUEVfSXNOdWxsAGdldF9TT1VSQ0VTWVNURU1fSXNOdWxsAGdldF9FRkZFQ1RJVkVEVF9J
+c051bGwAZ2V0X0VYUElSQVRJT05EVF9Jc051bGwAc2V0X2NoZWNrc3VtX0lzTnVsbABTZXROdWxs
+AGdldF9JdGVtAHNldF9JdGVtAFN5c3RlbQBIYXNoQWxnb3JpdGhtAHNldF9jaGVja3N1bQByZXNv
+dXJjZU1hbgBTY3JpcHRNYWluAFN5c3RlbS5Db25maWd1cmF0aW9uAFN5c3RlbS5HbG9iYWxpemF0
+aW9uAFN5c3RlbS5SZWZsZWN0aW9uAGdldF9JbnB1dENvbHVtbkNvbGxlY3Rpb24AZ2V0X0lucHV0
+Q29sbGVjdGlvbgBJbnZhbGlkT3BlcmF0aW9uRXhjZXB0aW9uAFN0cmluZ0NvbXBhcmlzb24AQ3Vs
+dHVyZUluZm8AUHJvcGVydHlJbmZvAE91dHB1dE5hbWVNYXAAT3V0cHV0TWFwAE1pY3Jvc29mdC5T
+cWxTZXJ2ZXIuRFRTUGlwZWxpbmVXcmFwAFNIQTFDcnlwdG9TZXJ2aWNlUHJvdmlkZXIAU3RyaW5n
+QnVpbGRlcgBJbnB1dDBCdWZmZXIAUGlwZWxpbmVCdWZmZXIAU2NyaXB0QnVmZmVyAGdldF9SZXNv
+dXJjZU1hbmFnZXIATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUGlwZWxpbmUuV3JhcHBlcgBJRW51
+bWVyYXRvcgBHZXRFbnVtZXJhdG9yAC5jdG9yAC5jY3RvcgBTeXN0ZW0uRGlhZ25vc3RpY3MAU3lz
+dGVtLlJ1bnRpbWUuQ29tcGlsZXJTZXJ2aWNlcwBTeXN0ZW0uUmVzb3VyY2VzAFNDX2M0MGQ1MWE3
+MGYwZTQ1YTJiYWQ4YWMzMjVhNzUyMTQ1LlByb3BlcnRpZXMuUmVzb3VyY2VzLnJlc291cmNlcwBE
+ZWJ1Z2dpbmdNb2RlcwBTQ19jNDBkNTFhNzBmMGU0NWEyYmFkOGFjMzI1YTc1MjE0NS5Qcm9wZXJ0
+aWVzAFZhcmlhYmxlcwBHZXRCeXRlcwBCdWZmZXJDb2x1bW5JbmRleGVzAEdldENvbHVtbkluZGV4
+ZXMAU2V0dGluZ3MARXF1YWxzAFN5c3RlbS5Db2xsZWN0aW9ucwBDb25uZWN0aW9ucwBDb25jYXQA
+T2JqZWN0AEVuZE9mUm93c2V0AGdldF9EZWZhdWx0AFVzZXJDb21wb25lbnQAUGFyZW50Q29tcG9u
+ZW50AFNjcmlwdENvbXBvbmVudABnZXRfQ3VycmVudABNaWNyb3NvZnQuU3FsU2VydmVyLlR4U2Ny
+aXB0AE1pY3Jvc29mdC5TcWxTZXJ2ZXIuUGlwZWxpbmVIb3N0AElucHV0MF9Qcm9jZXNzSW5wdXQA
+TW92ZU5leHQAU3lzdGVtLlRleHQASW5wdXQwX1Byb2Nlc3NJbnB1dFJvdwBOZXh0Um93AFN5c3Rl
+bS5TZWN1cml0eS5DcnlwdG9ncmFwaHkAZ2V0X0Fzc2VtYmx5AG9wX0VxdWFsaXR5AEdldFByb3Bl
+cnR5AAAAAAABAANfAAADIAAAD18ASQBzAE4AdQBsAGwAAAtGAGEAbABzAGUAAAN8AAAFWAAyAACA
+m0kAcwBOAHUAbABsACAAcAByAG8AcABlAHIAdAB5ACAAYwBhAG4AbgBvAHQAIABiAGUAIABzAGUA
+dAAgAHQAbwAgAEYAYQBsAHMAZQAuACAAQQBzAHMAaQBnAG4AIABhACAAdgBhAGwAdQBlACAAdABv
+ACAAdABoAGUAIABjAG8AbAB1AG0AbgAgAGkAbgBzAHQAZQBhAGQALgAAD0kAbgBwAHUAdAAgADAA
+AHFTAEMAXwBjADQAMABkADUAMQBhADcAMABmADAAZQA0ADUAYQAyAGIAYQBkADgAYQBjADMAMgA1
+AGEANwA1ADIAMQA0ADUALgBQAHIAbwBwAGUAcgB0AGkAZQBzAC4AUgBlAHMAbwB1AHIAYwBlAHMA
+ANtA05FEZ2pAgMhMb4M1FCQABCABAQgDIAABBSABARERBCABAQ4FIAEBEWkNBwcOHQUSPRJBDhJF
+CAQgABJ5BCAAEn0GIAESgIUcBSAAEoCJBCAAEkEDIAAcAyAADgUgAg4ODgUgABKAlQUAAg4ODgYg
+ARKAmQ4GIAIcHB0cBQACAg4OAyAAAgUAABKAnQUgAR0FDgYgAR0FHQUEIAEODgUgARI9DgkgAwES
+TR0IElEDBhJNAwYdCAQgAQ4IBCABAggFIAIBCBwHIAICDhGAsQUgAR0ICAgAARKAlRGAtQUgABKA
+uQcgAgEOEoC5CLd6XFYZNOCJCImEXc2AgMyRAwYSOQMGEhQDBhIYAwYSVQMGEmEDBhJlAwYSIAUg
+AQESDAQgAQECCSAEAQgOEk0SUQUgAQESVQQAABJhBAAAEmUFAAEBEmUEAAASIAMAAAEDKAAOAygA
+AgQIABJhBAgAEmUECAASIAgBAAgAAAAAAB4BAAEAVAIWV3JhcE5vbkV4Y2VwdGlvblRocm93cwEI
+AQACAAAAAAAoAQAjU0NfYzQwZDUxYTcwZjBlNDVhMmJhZDhhYzMyNWE3NTIxNDUAAAUBAAAAABYB
+ABFDb3B5cmlnaHQgQCAgMjAyMgAARwEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRG
+cmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1ld29yayA0BAEAAAAAAAC0AAAAzsrvvgEAAACR
+AAAAbFN5c3RlbS5SZXNvdXJjZXMuUmVzb3VyY2VSZWFkZXIsIG1zY29ybGliLCBWZXJzaW9uPTQu
+MC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OSNT
+eXN0ZW0uUmVzb3VyY2VzLlJ1bnRpbWVSZXNvdXJjZVNldAIAAAAAAAAAAAAAAFBBRFBBRFC0AAAA
+4DgAAAAAAAAAAAAA+jgAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOw4AAAAAAAAAAAAAAAAX0Nv
+ckRsbE1haW4AbXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AQAQAAAAGAAAgAAAAAAAAAAAAAAAAAAAAQABAAAAMAAAgAAAAAAAAAAAAAAAAAAAAQAAAAAASAAA
+AFhAAAAaBAAAAAAAAAAAAAAaBDQAAABWAFMAXwBWAEUAUgBTAEkATwBOAF8ASQBOAEYATwAAAAAA
+vQTv/gAAAQAAAAEA4Wz8IAAAAQDhbPwgPwAAAAAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAEQAAAAB
+AFYAYQByAEYAaQBsAGUASQBuAGYAbwAAAAAAJAAEAAAAVAByAGEAbgBzAGwAYQB0AGkAbwBuAAAA
+AAAAALAEegMAAAEAUwB0AHIAaQBuAGcARgBpAGwAZQBJAG4AZgBvAAAAVgMAAAEAMAAwADAAMAAw
+ADQAYgAwAAAAGgABAAEAQwBvAG0AbQBlAG4AdABzAAAAAAAAACIAAQABAEMAbwBtAHAAYQBuAHkA
+TgBhAG0AZQAAAAAAAAAAAHAAJAABAEYAaQBsAGUARABlAHMAYwByAGkAcAB0AGkAbwBuAAAAAABT
+AEMAXwBjADQAMABkADUAMQBhADcAMABmADAAZQA0ADUAYQAyAGIAYQBkADgAYQBjADMAMgA1AGEA
+NwA1ADIAMQA0ADUAAAA+AA8AAQBGAGkAbABlAFYAZQByAHMAaQBvAG4AAAAAADEALgAwAC4AOAA0
+ADQANAAuADIANwA4ADcAMwAAAAAAcAAoAAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAEMA
+XwAwAEMAMgAzAEYARQBFADcAQgAzAEMAQgA0ADcARQBDAEEARQA5AEEARgBCADMAOABCAEUANQBC
+ADcARQBCAEEALgBkAGwAbAAAAEgAEgABAEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMA
+bwBwAHkAcgBpAGcAaAB0ACAAQAAgACAAMgAwADIAMgAAACoAAQABAEwAZQBnAGEAbABUAHIAYQBk
+AGUAbQBhAHIAawBzAAAAAAAAAAAAeAAoAAEATwByAGkAZwBpAG4AYQBsAEYAaQBsAGUAbgBhAG0A
+ZQAAAFMAQwBfADAAQwAyADMARgBFAEUANwBCADMAQwBCADQANwBFAEMAQQBFADkAQQBGAEIAMwA4
+AEIARQA1AEIANwBFAEIAQQAuAGQAbABsAAAAaAAkAAEAUAByAG8AZAB1AGMAdABOAGEAbQBlAAAA
+AABTAEMAXwBjADQAMABkADUAMQBhADcAMABmADAAZQA0ADUAYQAyAGIAYQBkADgAYQBjADMAMgA1
+AGEANwA1ADIAMQA0ADUAAABCAA8AAQBQAHIAbwBkAHUAYwB0AFYAZQByAHMAaQBvAG4AAAAxAC4A
+MAAuADgANAA0ADQALgAyADcAOAA3ADMAAAAAAEYADwABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQBy
+AHMAaQBvAG4AAAAxAC4AMAAuADgANAA0ADQALgAyADcAOAA3ADMAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAADDkAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_0c23fee7b3cb47ecae9afb38be5b7eba</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">43c9771c2cd6a94247703c5de453226a</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataShaChecksum"
+                      typeConverter="NOTBROWSABLE">545b20e174a1c520d3dbb533c8bc385aacc3520b</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0].Columns[EXPIRATION_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="EXPIRATION_DT"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRATION_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0].Columns[PRIMARY_PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PRIMARY_PARTY_KEY_ID"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRIMARY_PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0].Columns[ACCOUNT_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ACCOUNT_KEY_ID"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0].Columns[RELATIONSHIP_TYPE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="RELATIONSHIP_TYPE"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0].Columns[SOURCE_SYSTEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="SOURCE_SYSTEM"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0].Columns[EFFECTIVE_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="EFFECTIVE_DT"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0].Columns[checksum]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0].Columns[checksum]"
+                          name="checksum" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+                  description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+                  name="Comando OLE DB"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="O comando SQL a ser executado."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE Actimize.dbo.ST_ili_tb_act_account_to_party_VI
+SET
+[PARTY_KEY_ID] =?, --0
+[EFFECTIVE_DT] =?, --1
+[EXPIRY_DT] =?, --2
+[RELATIONSHIP_TYPE_NM] =?, --3
+[SOURCE_SYSTEM_CD] =?, --4
+[UPDATE_SCD_DT] =?, --5
+[CHECKSUM_SCD_ID] =? --6
+ WHERE
+[ACCOUNT_KEY_ID]=?--7</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                      errorOrTruncationOperation="Execução de Comando"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="Entrada de Comando OLE DB">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[PRIMARY_PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PRIMARY_PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRIMARY_PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[EFFECTIVE_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[EXPIRATION_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="EXPIRATION_DT"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRATION_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[RELATIONSHIP_TYPE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="RELATIONSHIP_TYPE"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[SOURCE_SYSTEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="SOURCE_SYSTEM"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[INSERT_SCD_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0].Columns[checksum]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[ACCOUNT_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ACCOUNT_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                          dataType="dbTimeStamp"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                          dataType="dbTimeStamp"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                          dataType="dbTimeStamp"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_6]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_7]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Outputs[Saída de Comando OLE DB]"
+                      exclusionGroup="1"
+                      name="Saída de Comando OLE DB"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Comando OLE DB"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_ili_tb_act_account_to_party_VI]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="IgnoreFailure"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ACCOUNT_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ACCOUNT_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_KEY_ID]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="SOURCE_SYSTEM"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PRIMARY_PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PRIMARY_PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRIMARY_PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EXPIRATION_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="EXPIRATION_DT"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRATION_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RELATIONSHIP_TYPE]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="8"
+                          cachedName="RELATIONSHIP_TYPE"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_SCD_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0].Columns[checksum]" />
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EFFECTIVE_DT]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ACCOUNT_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CHECKSUM_SCD_ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+PRIMARY_PARTY_KEY_ID,
+ACCOUNT_KEY_ID,
+EFFECTIVE_DT,
+EXPIRATION_DT,
+'CUSTOMER' AS RELATIONSHIP_TYPE,
+'INGENIUM' AS SOURCE_SYSTEM,
+getdate() as INSERT_SCD_DT
+FROM [Actimize].[dbo].[ST_ili_tb_act_account_VI]</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_KEY_ID]"
+                          length="50"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]"
+                          name="ACCOUNT_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          length="10"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRATION_DT]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EXPIRATION_DT]"
+                          length="10"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRATION_DT]"
+                          name="EXPIRATION_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRIMARY_PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRIMARY_PARTY_KEY_ID]"
+                          length="50"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[PRIMARY_PARTY_KEY_ID]"
+                          name="PRIMARY_PARTY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE]"
+                          length="8"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE]"
+                          name="RELATIONSHIP_TYPE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM]"
+                          length="8"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM]"
+                          name="SOURCE_SYSTEM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversão"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="ACCOUNT_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EXPIRATION_DT]"
+                          dataType="dbDate"
+                          name="EXPIRATION_DT" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PRIMARY_PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PRIMARY_PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="RELATIONSHIP_TYPE" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          name="SOURCE_SYSTEM" />
+                        <externalMetadataColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_KEY_ID]"
+                          name="ACCOUNT_KEY_ID" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EXPIRATION_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EXPIRATION_DT]"
+                          name="EXPIRATION_DT" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRIMARY_PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PRIMARY_PARTY_KEY_ID]"
+                          name="PRIMARY_PARTY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE]"
+                          name="RELATIONSHIP_TYPE" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="8"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM]"
+                          name="SOURCE_SYSTEM" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="Pesquisa"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_ili_tb_act_account_to_party_VI]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_ili_tb_act_account_to_party_VI]) [refTable]
+where [refTable].[ACCOUNT_KEY_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PARTY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACCOUNT_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EFFECTIVE_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPIRY_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RELATIONSHIP_TYPE_NM" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_SYSTEM_CD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Inputs[Entrada de Pesquisa].Columns[ACCOUNT_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ACCOUNT_KEY_ID"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">ACCOUNT_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Pesquisa;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation;  Todos os Direitos Reservados; http://www.microsoft.com/sql/support;6"
+                  description="Une colunas adicionais aos fluxos de dados pesquisando valores de uma tabela. Por exemplo, una à coluna 'employee id' a tabela de funcionários para obter 'hire date' e 'employee name'. Essa transformação é recomendada quando a tabela de pesquisa está de acordo com a memória."
+                  name="Pesquisa 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Especifica a instrução SQL que gera a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_ili_tb_act_account_to_party_VI]</property>
+                    <property
+                      dataType="System.String"
+                      description="Especifica uma instrução SQL que usa parâmetros para gerar a tabela de pesquisa."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_ili_tb_act_account_to_party_VI]) [refTable]
+where [refTable].[ACCOUNT_KEY_ID] = ? and [refTable].[CHECKSUM_SCD_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de conexão usado para acessar o conjunto de dados de referência."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica o tipo de cache da tabela de pesquisa."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica como a transformação Pesquisa trata as linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a porcentagem do cache alocada para linhas sem entradas correspondentes no conjunto de dados de referência."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 32 bits."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Uso Máximo de Memória para o Cache de Referência em uma plataforma de 64 bits."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indica se os metadados de referência em um formato XML devem ser referenciados."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PARTY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACCOUNT_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EFFECTIVE_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPIRY_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RELATIONSHIP_TYPE_NM" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_SYSTEM_CD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Especifica a lista de identificadores de linhagem mapeados para os parâmetros usados pela instrução SQL na propriedade SQLCommand. As entradas na lista são separadas por ponto e vírgulas."
+                      name="ParameterMap">#{Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]};#{Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0].Columns[checksum]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determina se as chaves duplicadas nos dados de referência devem ser tratadas como erros quando o modo de cache cheio é usado."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      connectionManagerRefId="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:invalid"
+                      description="O gerenciador de conexões usado para acessar dados de pesquisa."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa]"
+                      name="Entrada de Pesquisa">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa].Columns[ACCOUNT_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="ACCOUNT_KEY_ID"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">ACCOUNT_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0].Columns[checksum]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Especifica a coluna na tabela de referência que uma coluna une."
+                              name="JoinToReferenceColumn">CHECKSUM_SCD_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Especifica a coluna na tabela de referência a partir da qual uma coluna é copiada."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída de Correspondência de Pesquisa]"
+                      errorOrTruncationOperation="Pesquisa"
+                      exclusionGroup="1"
+                      name="Saída de Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída Sem Correspondência de Pesquisa]"
+                      description="A saída de Pesquisa que trata as linhas sem entradas correspondentes no conjunto de dados de referência. Use essa saída quando a propriedade NoMatchBehavior estiver definida como &quot;Enviar as linhas sem entradas correspondentes para a saída sem correspondência&quot;."
+                      exclusionGroup="1"
+                      name="Saída Sem Correspondência de Pesquisa"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída de Erro de Pesquisa]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Saída de Erro de Pesquisa"
+                      synchronousInputId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída de Erro de Pesquisa].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[OLE DB Source Output]"
+                  endId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Inputs[Input 0]"
+                  name="OLE DB Source Output"
+                  startId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Output 0]"
+                  endId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Inputs[Entrada de Pesquisa]"
+                  name="Output 0"
+                  startId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum.Outputs[Output 0]" />
+                <path
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Saída de Correspondência de Pesquisa]"
+                  endId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Inputs[Entrada de Pesquisa]"
+                  name="Saída de Correspondência de Pesquisa"
+                  startId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída de Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Saída Sem Correspondência de Pesquisa]"
+                  endId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  startId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa.Outputs[Saída Sem Correspondência de Pesquisa]" />
+                <path
+                  refId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Saída Sem Correspondência de Pesquisa1]"
+                  endId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                  name="Saída Sem Correspondência de Pesquisa"
+                  startId="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1.Outputs[Saída Sem Correspondência de Pesquisa]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
+<!--Se você editar manualmente esta seção e cometer algum erro, poderá excluí-la. -->
+<!--O pacote ainda poderá ser carregado normalmente, mas as informações de layout anteriores serão perdidas e o designer reorganizará automaticamente os elementos na superfície de design.-->
+<Objects
+  Version="sql12">
+  <!--Cada nó abaixo conterá propriedades que não afetam o comportamento em tempo de execução.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="249,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI"
+          TopLeft="41.4464262807931,51.307104096724" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="346,198"
+          Size="346,241"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI"
+          TopLeft="56.541664101982,63.8999994316172" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="133,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1"
+          TopLeft="492.85714276956,242.564703814629" />
+        <NodeLayout
+          Size="157,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source"
+          TopLeft="98.1428579116354,24.0235297206364" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa"
+          TopLeft="499.85714276956,114.564703814629" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination"
+          TopLeft="97.85714276956,112.564703814629" />
+        <NodeLayout
+          Size="170,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Comando OLE DB"
+          TopLeft="112,241" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\checksum"
+          TopLeft="496.85714276956,21.564703814629" />
+        <EdgeLayout
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Saída Sem Correspondência de Pesquisa1]"
+          TopLeft="492.85714276956,262.782351907314">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-210.85714276956,0"
+              Start="0,0"
+              End="-203.35714276956,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-203.35714276956,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-191.27259482228,5,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Saída Sem Correspondência de Pesquisa]"
+          TopLeft="499.85714276956,134.564703814629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-232,0"
+              Start="0,0"
+              End="-224.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-224.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-201.8440234375,5,179.188046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Saída de Correspondência de Pesquisa]"
+          TopLeft="560.60714276956,156.564703814629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,86"
+              Start="0,0"
+              End="0,78.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,78.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-85.3740234375,33.15234375,170.748046875,12.1953125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[Output 0]"
+          TopLeft="561.60714276956,63.564703814629">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51"
+              Start="0,0"
+              End="0,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI.Paths[OLE DB Source Output]"
+          TopLeft="255.142857911635,43.7941167676327">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="241.714284857925,0"
+              Start="0,0"
+              End="234.214284857925,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="234.214284857925,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\Pesquisa">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_ili_tb_act_account_to_party_VI]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\ORIGEM ST_ili_tb_act_account_to_party_VI\ST_ili_tb_act_account_to_party_VI\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

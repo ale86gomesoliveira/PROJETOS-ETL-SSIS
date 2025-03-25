@@ -1,0 +1,1010 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeploymentModel>Project</DeploymentModel>
+  <ProductVersion>14.0.1000.169</ProductVersion>
+  <SchemaVersion>9.0.1.0</SchemaVersion>
+  <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
+  <Database>
+    <Name>Actimize_Origem_Staging.database</Name>
+    <FullPath>Actimize_Origem_Staging.database</FullPath>
+  </Database>
+  <DataSources />
+  <DataSourceViews />
+  <DeploymentModelSpecificContent>
+    <Manifest>
+      <SSIS:Project SSIS:ProtectionLevel="EncryptSensitiveWithPassword" xmlns:SSIS="www.microsoft.com/SqlServer/SSIS">
+        <SSIS:Properties>
+          <SSIS:Property SSIS:Name="ID">{0073a9c5-710c-4e55-825b-bd5c3a1e2ef2}</SSIS:Property>
+          <SSIS:Property SSIS:Name="Name">Actimize_Origem_Staging</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMajor">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+          <SSIS:Property SSIS:Name="VersionComments">
+          </SSIS:Property>
+          <SSIS:Property SSIS:Name="CreationDate">2022-08-01T18:05:27.0374121-03:00</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreatorName">PRUBRASIL\inu002</SSIS:Property>
+          <SSIS:Property SSIS:Name="CreatorComputerName">MTZRHSP203</SSIS:Property>
+          <SSIS:Property SSIS:Name="Description">
+          </SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1" SSIS:Salt="283XEgsnfA==" SSIS:IV="G3C8a5n30c4=">clRvmraem6biy2kGK/U5QnngAcGeA2Q7Hn8hIEjd5oOORloBGBBq+9VVVUubO4T2dWh0Td/tArnvlhDqj8Mgvg3/9NhSTgKlaqet9Rjxs9MYAuBRfguZhljIDJoux3F3WKWy3q/msT3N7YzBLWtAeE8/xsOwgKKTuEF8zIPYnOv5dAvZgUsx5w==</SSIS:Property>
+          <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
+        </SSIS:Properties>
+        <SSIS:Packages>
+          <SSIS:Package SSIS:Name="00_CargaCompleta.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="01_CargaCompleta_I4PRO_Party.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="02_CargaCompleta_I4PRO_Payment.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="03_CargaCompleta_Ingenium_Party.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="04_CargaCompleta_Ingenium_Payment.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="05_CargaCompleta_SAA_Party.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="06_CargaCompleta_SAA_Payment.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="07_CargaCompleta_Sonic_Party.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="09_CargaCompleta_SIGES.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_accountowner_policypayer_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_beneficiary_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_broker_distributor_agency_franchise_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_insured_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="08_CargaCompleta_Sonic_Payment.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_account_owner.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_insured.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_tb_act_pep_company_agreement.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_tb_act_pep_party.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_customer_payment_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_accountowner_policypayer_SAA.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_beneficiary_SAA.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_insured_SAA.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_vendor_payment_SAA.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_customer_payment.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_vendor_payment_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_beneficiary.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_customer_payment_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_accountowner_stipulator_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_grouplifebroker_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_insured_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_beneficiary_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_account_to_party_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_account_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_account.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_account_BN.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_account_to_party.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_mas_tb_act_party_to_customer.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_account_to_party_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_account_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_party_to_customer_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_gli_tb_act_account_BN_VG.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_party_to_customer_VI.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="ST_ili_tb_act_account_BN_VI.dtsx" SSIS:EntryPoint="1" />
+        </SSIS:Packages>
+        <SSIS:ConnectionManagers>
+          <SSIS:ConnectionManager SSIS:Name="MTZIDBD002.i4Pro_Teste.srvactimize.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="PRUDASD7.PRUDASD7.srvactimiz.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="MTZSQLD001.SONIC.srvactimize.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="MTZSQLD009.Actimize.SRVACTIMIZE.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="HOMOLOG.SRVACTIMIZE.conmgr" />
+        </SSIS:ConnectionManagers>
+        <SSIS:DeploymentInfo>
+          <SSIS:ProjectConnectionParameters>
+            <SSIS:Parameter SSIS:Name="CM.MTZIDBD002.i4Pro_Teste.srvactimize.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=MTZIDBD002;User ID=srvactimize;Initial Catalog=i4Pro_Teste;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MTZIDBD002.i4Pro_Teste.srvactimize.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.PRUDASD7.PRUDASD7.srvactimiz.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=PRUDASD7;User ID=srvactimiz;Initial Catalog=PRUDASD7;Provider=IBMDASQL.DataSource.1;Persist Security Info=True;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.PRUDASD7.PRUDASD7.srvactimiz.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MTZSQLD001.SONIC.srvactimize.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=MTZSQLD001;User ID=srvactimize;Initial Catalog=Sonic;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MTZSQLD001.SONIC.srvactimize.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MTZSQLD009 Actimize SRVACTIMIZE.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=MTZSQLD009;User ID=srvactimize;Initial Catalog=Actimize;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.MTZSQLD009 Actimize SRVACTIMIZE.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.HOMOLOG SRVACTIMIZE.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=DESENV;User ID=SRVACTIMIZE;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.HOMOLOG SRVACTIMIZE.InitialCatalog">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.HOMOLOG SRVACTIMIZE.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+          </SSIS:ProjectConnectionParameters>
+          <SSIS:PackageInfo>
+            <SSIS:PackageMetaData SSIS:Name="00_CargaCompleta.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{513485A1-D4EE-4E68-9758-97A0BDD0D806}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">00_CargaCompleta</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A0750558-7DAD-4A53-9860-59861255FE46}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="01_CargaCompleta_I4PRO_Party.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BD27A791-5908-4EF0-A6C0-D50B23B22529}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">01_CargaCompleta_Party</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F59C0F99-CC8B-4040-90F7-E6D060198C3C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="02_CargaCompleta_I4PRO_Payment.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{A9FFCBF8-F768-4D28-A844-CD398412A8F8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">02_CargaCompleta_Payment</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{018809CF-1508-4487-9606-371BD9551F33}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="03_CargaCompleta_Ingenium_Party.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{40234A94-16FB-405B-9E5B-03D799A95E12}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">03_CargaCompleta_I4PRO</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A8DC2AD0-562F-499A-A480-0C7B355460A9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="04_CargaCompleta_Ingenium_Payment.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B969F9EF-D05E-44BC-9482-221EE29E25B3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">04_CargaCompleta_Ingenium</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6855973B-97D9-47CA-A71F-E76448DB737C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="05_CargaCompleta_SAA_Party.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6659B705-C091-430A-9F73-DEFC6D0DA782}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">05_CargaCompleta_SAA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1A681173-A2AE-48FA-A1DC-1590874335E2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="06_CargaCompleta_SAA_Payment.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{4C9D9077-E76B-4C4E-BEFF-C29B5A9DBAE8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">06_CargaCompleta_Sonic</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E90036B6-A188-4539-966F-DDD080DCA12C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="07_CargaCompleta_Sonic_Party.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{79AC22B3-D5BB-4128-81CB-62721F0B4C14}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">07_CargaCompleta_SIGES</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F3A83509-DF31-47AB-A487-C31A3C015CB6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="09_CargaCompleta_SIGES.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{CC4249D2-F7D2-4A1A-BFAB-89CA04C11946}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package2</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{31A5DED4-B918-4FEB-A9BA-A6501002B208}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_accountowner_policypayer_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{65FE8B7E-65B1-4AFC-B855-FFC33D19A268}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_accountowner_policypayer_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">216</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{70FECE3C-A9E5-43B6-A31C-D305D555E965}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_beneficiary_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{F9FD3149-7995-47B9-87A1-A31AC40DA653}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_beneficiary_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">210</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8FAE43D4-D786-4315-A380-5107215F5945}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_broker_distributor_agency_franchise_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{DDF5BFDE-10FB-44B6-B3BE-C957F8F773F4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_broker_distributor_agency_franchise_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">219</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{ACD46834-98DF-4CCF-84A6-B903909F995D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_insured_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{766FDBDA-2AEF-4734-B62C-9F5B3A574DC9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_insured_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">229</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E532EAA5-E838-49A5-86A0-9516D076304D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="08_CargaCompleta_Sonic_Payment.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{885DE9FF-032D-4F83-AEA9-0BC867BA88BF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">08_CargaCompleta_Sonic_Payment</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B7DD7CC8-5836-4AB7-9867-FB2E7CE44042}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_account_owner.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{C579C6E7-2E15-4CEB-8505-46F2139E477F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_account_owner</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">214</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{99403853-41EF-4102-BE09-FAA08E93A25C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_insured.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6CF9E58E-0CEE-4B80-A79E-67E8290C5A32}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_insured</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">213</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E82C46FA-1E5A-403A-849A-A23219B30A5E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_tb_act_pep_company_agreement.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{48749099-19D1-4B29-967A-EDDCB2F0C076}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_tb_act_pep_company_agreement</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">37</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F3D20940-BEC4-465C-B06E-A9A698E34A3D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_tb_act_pep_party.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{02EC8979-F381-4B4D-8941-3441109F11AB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_tb_act_pep_party</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">57</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C7EA21B0-4AAF-4D68-9A0E-2CCC43D46F70}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_customer_payment_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{7EA1A086-F8D2-4686-88C8-59E9CB7C0744}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_customer_payment_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">105</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B7F7B061-9315-457D-92F6-66C964B082D7}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_accountowner_policypayer_SAA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{482CE61F-909B-4CC5-999A-340DC64E7F8D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_accountowner_policypayer_SAA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">78</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{23E0A3F6-1360-4349-99FC-DF71545AC369}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_beneficiary_SAA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B779C74C-1810-4B0D-A1EE-B81A7F372B56}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_beneficiary_SAA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">60</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{33690D1F-B51F-44DB-B5F5-AA6C3B43FB0E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_insured_SAA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{978E6A77-8EAE-4FD5-9BCC-1967716BCF3C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_insured_SAA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">48</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BC3CF6BA-2E3D-418B-AB60-D8830EFCE8B4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_vendor_payment_SAA.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{689F74D9-706B-4A7D-8585-8CDF34CF7A89}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_vendor_payment_SAA</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">59</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F219CBE5-680C-4AE4-A64E-3114AB282175}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_customer_payment.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{3DF8B5B6-BAAE-46EA-AE76-F2ACB4B344B2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_customer_payment</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{04CDCCE8-3AE3-4A60-A7CA-FF1B841DB944}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_vendor_payment_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{2B69D6E3-0CF1-4782-813F-9E3FCBF2A532}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_vendor_payment_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">225</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{13893884-AC16-489A-92AB-180222620EAF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_beneficiary.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{1E6F9B79-229E-4B3A-AEB9-CD715EAA9FD0}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_beneficiary</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">230</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{0F65BD75-BDE5-409E-9BEC-03BFF8C6004D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_customer_payment_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{0843B250-1478-41E7-8C8F-3DD9281503EB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_customer_payment_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8AE0F178-CDE7-4F85-A6A9-E54F8D00E759}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_accountowner_stipulator_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{16240EA9-4627-4C1D-AD02-640EB2D2D533}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_accountowner_stipulator_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">184</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{51F09F32-9BC6-4138-B1F7-BF4A8F071A0B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_grouplifebroker_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{3BB73952-7DF9-4867-8997-4322B3585CBA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_grouplifebroker_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">208</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5F45722E-56D0-4D36-A8C2-EF368945CF87}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_insured_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{C47730EF-ECF5-4AAA-B923-B3DD0FF6C4EF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_insured_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">231</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{7896254B-3D9A-4D13-81A4-69205567CE12}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_beneficiary_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B75FA996-963C-4A20-A28B-71D2304E477F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_beneficiary_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">209</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{03C474C1-5150-44B2-BAF3-89AC27BD182A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_account_to_party_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{974D3D91-76B6-4E88-898D-2A4C8B79592A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_account_to_party_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">258</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9CBD041F-780D-45E1-A070-18A9DC0B49AC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_account_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{F5B9C499-3692-4736-9E15-F4225475A734}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_account_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">253</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3605F45A-4FDF-4E1B-822B-6B476D955253}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_account.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{6A5D1B05-918E-4C72-A8D1-EFE98BB61C4D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_account</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">287</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8B920DEE-3136-494D-A91F-2F97EC0278DC}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_account_BN.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{733151D4-FFE7-452E-9B59-2897B1D93823}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_account_BN</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">298</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DB84403E-D3E8-40C2-8E4A-D13CB438FBDB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_account_to_party.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{1745BA1A-3624-401A-9129-7869050AD4C3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_account_to_party</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">267</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5EC09119-650B-4290-B57B-B7B77907097A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_mas_tb_act_party_to_customer.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{508493C1-8A83-4119-938C-BB9CB4447996}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_mas_tb_act_account_to_party</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">278</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{9662F516-79DC-4D0C-8466-AE5106625249}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_account_to_party_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9377E926-E083-40A6-81E8-62CE4CBBF356}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">70</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A8E0D2EA-8D0C-499C-8412-A9C4A7B8285F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_account_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{024F14F1-2EA1-4688-9486-2ED3C97446CA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_account_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">87</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CE6531E7-299B-4546-8042-64E5B046CFE4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_party_to_customer_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{38F0016A-4A4F-4768-A7CB-FFF7418A1759}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_party_to_customer_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A3AF2EE5-347E-4DBE-9DAD-854A8C3A6F40}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_gli_tb_act_account_BN_VG.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{517FFE7F-D84E-4B74-A07C-A4A50B55467A}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_gli_tb_act_account_BN_VG</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E1E5B007-236B-4EE3-AA47-74CFCF79FFAA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_party_to_customer_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B692FD28-058C-49E2-8F41-099F1D2E0CA3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_party_to_customer_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">296</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E226DA5D-8523-46B6-8A10-E8443F9FB07E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="ST_ili_tb_act_account_BN_VI.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B71C5F29-B6A9-4C01-85BC-40EBDDFAA366}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">ST_ili_tb_act_account_BN_VI</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">294</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A9B74F03-5CB5-483C-BAB1-97BE587B6999}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">2</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+          </SSIS:PackageInfo>
+        </SSIS:DeploymentInfo>
+      </SSIS:Project>
+    </Manifest>
+  </DeploymentModelSpecificContent>
+  <ControlFlowParts />
+  <Miscellaneous />
+  <Configurations>
+    <Configuration>
+      <Name>Development</Name>
+      <Options>
+        <OutputPath>bin</OutputPath>
+        <ConnectionMappings />
+        <ConnectionProviderMappings />
+        <ConnectionSecurityMappings />
+        <DatabaseStorageLocations />
+        <TargetServerVersion>SQLServer2014</TargetServerVersion>
+        <ParameterConfigurationValues>
+          <ConfigurationSetting>
+            <Id>LastModifiedTime</Id>
+            <Name>LastModifiedTime</Name>
+            <Value xsi:type="xsd:dateTime">2022-08-10T16:28:14.389832Z</Value>
+          </ConfigurationSetting>
+        </ParameterConfigurationValues>
+      </Options>
+    </Configuration>
+  </Configurations>
+</Project>

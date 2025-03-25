@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="MTZIDBD002.i4Pro_Teste.srvactimize"
+  DTS:DTSID="{2F8B54A5-FFDA-461E-A9C7-BD4998E18A68}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::pI4PRO_DATABASE]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::pI4PRO_PASS]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::pI4PRO_SERVER]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::pI4PRO_USER]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=MTZIDBD002;User ID=srvactimize;Initial Catalog=i4Pro_Teste;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="l//T7f+oRA=="
+        p4:IV="ZZd6GVarhnk=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">aw038v4TjJ4NA7Nn4P9SH57G251sGrvqJwnbWiuOb5CZGvgt7Z1WISFVKWnDmo73A4DvJZ5xqKcLS2yBPyYiqqTiWhjhTykoivzPr1KLLYWOdwGLNJ8WvOMUm63uJrTr0tGOd4h87XrOAo0HlDRG5Tam9+1BsePEkK1o2UqPM8o=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

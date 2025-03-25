@@ -1,0 +1,24 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="PRUDASD7.PRUDASD7.srvactimiz"
+  DTS:DTSID="{38904B1C-D32F-4A9B-92A5-2CEB6661514B}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="InitialCatalog">@[$Project::pDB2_INITIALCATALOG]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::pDB2_PASS]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::pDB2_SERVER]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::pDB2_USER]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=PRUDASD7;User ID=srvactimiz;Initial Catalog=PRUDASD7;Provider=IBMDASQL.DataSource.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="zWgUzMmNog=="
+        p4:IV="znxWIbSjfKg=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">fyoHIz8EY66uw67h/hS9kk6QZNqea2KEqMhWdFRDZNqOLkVX7sO/REYprsqjy4fpmVinG2BBLT3NVMKNwczuOT5sty4osnccr5D8wFm6F7fcHwSLbfOqMhoJ+m6TPvbeK8B7M08l32sacmDIIKafBS6mRDGtuDYhpR0VWPNUNSE=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

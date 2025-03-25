@@ -1,0 +1,485 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="8/4/2022 6:04:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP203"
+  DTS:CreatorName="PRUBRASIL\inu002"
+  DTS:DTSID="{BD27A791-5908-4EF0-A6C0-D50B23B22529}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1046"
+  DTS:ObjectName="01_CargaCompleta_Party"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{8E843CEA-FFC9-4A33-86CE-1B59918016B4}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Sequence Container"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{B81AD93E-9700-46B3-BF63-7F96C4C22252}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Sequence Container">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_accountowner_stipulator"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{F8E8DC63-4139-4C4F-9B2C-7C92210E6DB7}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_accountowner_stipulator"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_accountowner_stipulator_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_account_BN_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{0061f864-2975-440e-a4df-6067339cf911}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_account_BN_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_account_BN_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_account_to_party_V"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{cfad3fa0-7f91-441b-acaa-49db524b3e0a}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_account_to_party_V"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_account_to_party_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_account_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{d87a4518-2668-4cca-90b7-fd29bd3f41f1}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_account_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_account_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_beneficiary"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{9B8A2AA9-0756-4663-81B6-94126350E0FB}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_beneficiary"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_beneficiary_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_grouplifebroker"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{67E64073-E3D2-4F15-B2AA-5F4B865904C9}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_grouplifebroker"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_grouplifebroker_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_insured"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{B6758ED6-D44B-4386-8D91-D64278B7554D}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_insured"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_insured_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Sequence Container\ST_gli_tb_act_party_to_customer_VG"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{3e325818-a274-4125-a92e-52891e99904d}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="ST_gli_tb_act_party_to_customer_VG"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <UseProjectReference>True</UseProjectReference>
+              <PackageName>ST_gli_tb_act_party_to_customer_VG.dtsx</PackageName>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{CC0B8C19-AB27-4958-8952-E7960097EBDA}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_accountowner_stipulator"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_beneficiary" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{14B88CE4-E4C1-4A91-A7DE-13D448977891}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_beneficiary"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_grouplifebroker" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          DTS:CreationName=""
+          DTS:DTSID="{F504DABE-B81D-4E70-AE51-2D22A1CA7F4D}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_grouplifebroker"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 2"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_insured" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          DTS:CreationName=""
+          DTS:DTSID="{9537180B-7278-4791-8185-A4492FE483E9}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_insured"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 3"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_account_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          DTS:CreationName=""
+          DTS:DTSID="{E1B6AF2A-3F30-481B-A4D6-65D99B0650DA}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_account_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 4"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_account_to_party_V" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          DTS:CreationName=""
+          DTS:DTSID="{8323569D-7688-4034-9287-B834ACE2F9FA}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_account_to_party_V"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 5"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_account_BN_VG" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Sequence Container.PrecedenceConstraints[Constraint 6]"
+          DTS:CreationName=""
+          DTS:DTSID="{49AD062C-59CE-448D-BEF3-F474E6C26B2C}"
+          DTS:From="Package\Sequence Container\ST_gli_tb_act_account_BN_VG"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 6"
+          DTS:To="Package\Sequence Container\ST_gli_tb_act_party_to_customer_VG" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="242.4,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_account_to_party_V"
+          TopLeft="123.984127103066,442.807842851263" />
+        <NodeLayout
+          Size="215.2,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_account_VG"
+          TopLeft="162.079365847062,345.966012852635" />
+        <NodeLayout
+          Size="276,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_accountowner_stipulator"
+          TopLeft="117,15" />
+        <NodeLayout
+          Size="200,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_beneficiary"
+          TopLeft="166,92" />
+        <NodeLayout
+          Size="239.2,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_grouplifebroker"
+          TopLeft="143.28571425652,174.835294143386" />
+        <NodeLayout
+          Size="183.2,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_insured"
+          TopLeft="166.28571425652,261.835294143386" />
+        <NodeLayout
+          Size="263.2,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_party_to_customer_VG"
+          TopLeft="115.28571425652,612.925490871021" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="256.25,57">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="264.44285712826,133.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41.2352941433863"
+              Start="0,0"
+              End="0,33.7352941433863">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.7352941433863" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 2]"
+          TopLeft="260.28571425652,216.835294143386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 3]"
+          TopLeft="257.88571425652,303.435294143386">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="11.7936515905419,42.5307187092486"
+              Start="0,0"
+              End="11.7936515905419,35.0307187092486">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.2653593546243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.2653593546243"
+                    Point2="0,21.2653593546243"
+                    Point3="4,21.2653593546243" />
+                  <mssgle:LineSegment
+                    End="7.79365159054186,21.2653593546243" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.79365159054186,21.2653593546243"
+                    Point2="11.7936515905419,21.2653593546243"
+                    Point3="11.7936515905419,25.2653593546243" />
+                  <mssgle:LineSegment
+                    End="11.7936515905419,35.0307187092486" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 4]"
+          TopLeft="269.679365847062,387.566012852635">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-24.495238743996,55.2418299986281"
+              Start="0,0"
+              End="-24.495238743996,47.7418299986281">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.620914999314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.620914999314"
+                    Point2="0,27.620914999314"
+                    Point3="-4,27.620914999314" />
+                  <mssgle:LineSegment
+                    End="-20.495238743996,27.620914999314" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-20.495238743996,27.620914999314"
+                    Point2="-24.495238743996,27.620914999314"
+                    Point3="-24.495238743996,31.620914999314" />
+                  <mssgle:LineSegment
+                    End="-24.495238743996,47.7418299986281" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="263.2,41.6"
+          Id="Package\Sequence Container\ST_gli_tb_act_account_BN_VG"
+          TopLeft="124.428571555079,521.819605815452" />
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 5]"
+          TopLeft="245.184127103066,484.407842851263">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="10.8444444520133,37.4117629641892"
+              Start="0,0"
+              End="10.8444444520133,29.9117629641892">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7058814820946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7058814820946"
+                    Point2="0,18.7058814820946"
+                    Point3="4,18.7058814820946" />
+                  <mssgle:LineSegment
+                    End="6.84444445201333,18.7058814820946" />
+                  <mssgle:CubicBezierSegment
+                    Point1="6.84444445201333,18.7058814820946"
+                    Point2="10.8444444520133,18.7058814820946"
+                    Point3="10.8444444520133,22.7058814820946" />
+                  <mssgle:LineSegment
+                    End="10.8444444520133,29.9117629641892" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Sequence Container.PrecedenceConstraints[Constraint 6]"
+          TopLeft="256.028571555079,563.419605815452">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9.14285729855914,49.5058850555686"
+              Start="0,0"
+              End="-9.14285729855914,42.0058850555686">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.7529425277843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.7529425277843"
+                    Point2="0,24.7529425277843"
+                    Point3="-4,24.7529425277843" />
+                  <mssgle:LineSegment
+                    End="-5.14285729855914,24.7529425277843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5.14285729855914,24.7529425277843"
+                    Point2="-9.14285729855914,24.7529425277843"
+                    Point3="-9.14285729855914,28.7529425277843" />
+                  <mssgle:LineSegment
+                    End="-9.14285729855914,42.0058850555686" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="513.6,768.8"
+          Size="513.6,812"
+          Id="Package\Sequence Container"
+          TopLeft="69,16" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,2228 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/7/2023 2:24:10 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="MTZRHSP201"
+  DTS:CreatorName="PRUBRASIL\aol044"
+  DTS:DTSID="{38F0016A-4A4F-4768-A7CB-FFF7418A1759}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ST_gli_tb_act_party_to_customer_VG"
+  DTS:PackageType="5"
+  DTS:ProtectionLevel="2"
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{C157BCF4-EDE0-40A5-9737-CA57721323C1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Insere ST_gli_tb_act_party_to_customer_VG"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{9900481B-CBB9-4510-955E-759AA1502494}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insere ST_gli_tb_act_party_to_customer_VG">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{BFF270B8-8B7D-4E1E-B55F-B70849DB8DE4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Data Flow Task"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum"
+                  componentClassID="Microsoft.ManagedComponentHost"
+                  contactInfo="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum.;Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;9"
+                  description="Includes and runs custom script code. For example, apply a business rule that limits the range of valid values in an &quot;income&quot; column or add values in two columns and calculate the average of the sum."
+                  name="checksum"
+                  version="9">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Stores the source code of the component"
+                      isArray="true"
+                      name="SourceCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="30">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[ComponentWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services component wrapper
+*  This module defines the base class for your component
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+using Microsoft.SqlServer.Dts.Runtime.Wrapper;
+
+public class UserComponent: ScriptComponent
+{
+    public Connections Connections;
+    public Variables Variables;
+    public UserComponent()
+    {
+        Connections = new Connections(this);
+        Variables = new Variables(this);
+    }
+
+    public override void ProcessInput(int InputID, string InputName, PipelineBuffer Buffer, OutputNameMap OutputMap)
+    {
+
+        if (InputName.Equals(@"Input 0", StringComparison.Ordinal))
+        {
+            Input0_ProcessInput(new Input0Buffer(Buffer, GetColumnIndexes(InputID), OutputMap));
+        }
+
+    }
+
+    public virtual void Input0_ProcessInput(Input0Buffer Buffer)
+    {
+        while (Buffer.NextRow())
+        {
+            Input0_ProcessInputRow(Buffer);
+        }
+    }
+
+    public virtual void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+    }
+
+}
+
+public class Connections
+{
+    ScriptComponent ParentComponent;
+
+    public Connections(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+
+public class Variables
+{
+    ScriptComponent ParentComponent;
+
+    public Variables(ScriptComponent Component)
+    {
+        ParentComponent = Component;
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.resx]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[main.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Security.Cryptography;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+
+[Microsoft.SqlServer.Dts.Pipeline.SSISScriptComponentEntryPointAttribute]
+public class ScriptMain : UserComponent
+{
+
+    private SHA1 sha1 = new SHA1CryptoServiceProvider(); // used to create SHA1 hash
+
+    public override void Input0_ProcessInputRow(Input0Buffer Row)
+    {
+        string fieldsString = "";
+
+        // loop over each input column
+        foreach (IDTSInputColumn100 field in ComponentMetaData.InputCollection[0].InputColumnCollection)
+        {
+            // remove underscore from input field name
+            string fieldName = field.Name.Replace("_", "").Replace(" ", "").ToString();
+
+            // Check if + _IsNull is False and then add value to string.
+            if (Row.GetType().GetProperty(fieldName + "_IsNull").GetValue(Row, null).ToString() == "False")
+            {
+                fieldsString = fieldsString + Row.GetType().GetProperty(fieldName).GetValue(Row, null).ToString();
+            }
+
+            // Add seperator after each field.
+            fieldsString = fieldsString + "|";
+        }
+
+        byte[] hashBytes = sha1.ComputeHash(System.Text.UTF8Encoding.UTF8.GetBytes(fieldsString));
+        // convert the byte stream to a string
+        System.Text.StringBuilder sb = new System.Text.StringBuilder();
+        for (int i = 0; i < hashBytes.Length; i++)
+        {
+            sb.Append(hashBytes[i].ToString("X2"));
+        }
+        // hash is defined as DT_STR 64)
+        Row.checksum = sb.ToString(); // add the result to the output
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[BufferWrapper.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[/* THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT!
+*  Microsoft SQL Server Integration Services buffer wrappers
+*  This module defines classes for accessing data flow buffers
+*  THIS IS AUTO-GENERATED CODE THAT WILL BE OVERWRITTEN! DO NOT EDIT! */
+
+
+
+using System;
+using System.Data;
+using Microsoft.SqlServer.Dts.Pipeline;
+using Microsoft.SqlServer.Dts.Pipeline.Wrapper;
+
+public class Input0Buffer: ScriptBuffer
+
+{
+    public Input0Buffer(PipelineBuffer Buffer, int[] BufferColumnIndexes, OutputNameMap OutputMap)
+        : base(Buffer, BufferColumnIndexes, OutputMap)
+    {
+    }
+
+    public String checksum
+    {
+        set
+        {
+            this[0] = value;
+        }
+    }
+    public bool checksum_IsNull
+    {
+        set
+        {
+            if (value)
+            {
+                SetNull(0);
+            }
+            else
+            {
+                throw new InvalidOperationException("IsNull property cannot be set to False. Assign a value to the column instead.");
+            }
+        }
+    }
+
+    new public bool NextRow()
+    {
+        return base.NextRow();
+    }
+
+    new public bool EndOfRowset()
+    {
+        return base.EndOfRowset();
+    }
+
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Settings.get_Default():SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Sett" +
+    "ings")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
+        [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
+        private static Settings defaultInstance = new Settings();
+        
+        public static Settings Default {
+            get {
+                return defaultInstance;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Project]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF16LE]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:CodeName>
+		<msb:Language>msBuild</msb:Language>
+		<msb:DisplayName>SC_c40d51a70f0e45a2bad8ac325a752145</msb:DisplayName>
+		<msb:ProjectId>{87F6BD8C-A5D6-400E-8150-3716F965E1C7}</msb:ProjectId>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="SC_c40d51a70f0e45a2bad8ac325a752145.csproj"/>
+		<msb:File Include="Properties\AssemblyInfo.cs"/>
+		<msb:File Include="Properties\Settings.settings"/>
+		<msb:File Include="Properties\Resources.resx"/>
+		<msb:File Include="Properties\Resources.Designer.cs"/>
+		<msb:File Include="Properties\Settings.Designer.cs"/>
+		<msb:File Include="main.cs"/>
+		<msb:File Include="BufferWrapper.cs"/>
+		<msb:File Include="ComponentWrapper.cs"/>
+	</msb:ItemGroup>
+</c:Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\AssemblyInfo.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[using System.Reflection;
+using System.Runtime.CompilerServices;
+
+//
+// General Information about an assembly is controlled through the following 
+// set of attributes. Change these attribute values to modify the information
+// associated with an assembly.
+//
+[assembly: AssemblyTitle("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyDescription("")]
+[assembly: AssemblyConfiguration("")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("SC_c40d51a70f0e45a2bad8ac325a752145")]
+[assembly: AssemblyCopyright("Copyright @  2022")]
+[assembly: AssemblyTrademark("")]
+[assembly: AssemblyCulture("")]
+//
+// Version information for an assembly consists of the following four values:
+//
+//      Major Version
+//      Minor Version 
+//      Build Number
+//      Revision
+//
+// You can specify all the values or you can default the Revision and Build Numbers 
+// by using the '*' as shown below:
+
+[assembly: AssemblyVersion("1.0.*")]
+]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_c40d51a70f0e45a2bad8ac325a752145.csproj]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version="1.0" encoding="utf-8"?><Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"><PropertyGroup><ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids><Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration><Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform><ProductVersion>8.0.30703</ProductVersion><SchemaVersion>2.0</SchemaVersion><ProjectGuid>{0B20F60D-F921-4ABA-9E9D-93878749877C}</ProjectGuid><OutputType>Library</OutputType><AppDesignerFolder>Properties</AppDesignerFolder><RootNamespace>SC_c40d51a70f0e45a2bad8ac325a752145</RootNamespace><AssemblyName>SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA</AssemblyName><TargetFrameworkVersion>v4.0</TargetFrameworkVersion><FileAlignment>512</FileAlignment><ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch>true</ResolveAssemblyReferenceIgnoreTargetFrameworkAttributeVersionMismatch></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Debug' "><DebugSymbols>true</DebugSymbols><DebugType>full</DebugType><Optimize>false</Optimize><OutputPath>.\bin\Debug\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>DEBUG;TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><PropertyGroup Condition=" '$(Configuration)' == 'Release' "><DebugSymbols>false</DebugSymbols><Optimize>true</Optimize><OutputPath>.\bin\Release\</OutputPath><EnableUnmanagedDebugging>false</EnableUnmanagedDebugging><DefineConstants>TRACE</DefineConstants><ErrorReport>prompt</ErrorReport><WarningLevel>4</WarningLevel></PropertyGroup><ItemGroup><Reference Include="System" /><Reference Include="System.Data" /><Reference Include="System.Windows.Forms" /><Reference Include="System.Xml" /><Reference Include="Microsoft.SqlServer.TxScript, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSRuntimeWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.DTSPipelineWrap, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Reference Include="Microsoft.SqlServer.PipelineHost, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" /><Compile Include="main.cs" /><Compile Include="BufferWrapper.cs" /><Compile Include="ComponentWrapper.cs" /></ItemGroup><ItemGroup><AppDesigner Include="Properties\" /><Compile Include="Properties\AssemblyInfo.cs"><SubType>Code</SubType></Compile><EmbeddedResource Include="Properties\Resources.resx"><Generator>ResXFileCodeGenerator</Generator><LastGenOutput>Resources.Designer.cs</LastGenOutput></EmbeddedResource><Compile Include="Properties\Resources.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Resources.resx</DependentUpon></Compile><None Include="Properties\Settings.settings"><Generator>SettingsSingleFileGenerator</Generator><LastGenOutput>Settings.Designer.cs</LastGenOutput></None><Compile Include="Properties\Settings.Designer.cs"><AutoGen>True</AutoGen><DependentUpon>Settings.settings</DependentUpon></Compile></ItemGroup><!-- Include the build rules for a C# project.--><Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" /><!-- This section defines VSTA properties that describe the host-changable project properties. --><ProjectExtensions><VisualStudio><FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}"><ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="cs" TemplatesPath="" /><Host Name="ScriptComponent" IconIndex="0" /><ProjectClient><HostIdentifier>SSIS_SC120</HostIdentifier></ProjectClient></FlavorProperties></VisualStudio></ProjectExtensions></Project>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Settings.settings]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[Properties\Resources.Designer.cs]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[UTF8]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[//------------------------------------------------------------------------------
+// <auto-generated>
+//     This code was generated by a tool.
+//
+//     Changes to this file may cause incorrect behavior and will be lost if
+//     the code is regenerated.
+// </auto-generated>
+//------------------------------------------------------------------------------
+
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_ResourceManager():System.Resources.Resou" +
+    "rceManager")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.get_Culture():System.Globalization.CultureIn" +
+    "fo")]
+[assembly: global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode", Scope="member", Target="SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources.set_Culture(System.Globalization.CultureInfo" +
+    "):Void")]
+
+namespace SC_c40d51a70f0e45a2bad8ac325a752145.Properties {
+    
+    
+    /// <summary>
+    ///   A strongly-typed resource class, for looking up localized strings, etc.
+    /// </summary>
+    // This class was auto-generated by the StronglyTypedResourceBuilder
+    // class via a tool like ResGen or Visual Studio.
+    // To add or remove a member, edit your .ResX file then rerun ResGen
+    // with the /str option, or rebuild your VS project.
+    [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+    internal class Resources {
+        
+        private static global::System.Resources.ResourceManager resourceMan;
+        
+        private static global::System.Globalization.CultureInfo resourceCulture;
+        
+        [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
+        internal Resources() {
+        }
+        
+        /// <summary>
+        ///   Returns the cached ResourceManager instance used by this class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if ((resourceMan == null)) {
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("SC_c40d51a70f0e45a2bad8ac325a752145.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = temp;
+                }
+                return resourceMan;
+            }
+        }
+        
+        /// <summary>
+        ///   Overrides the current thread's CurrentUICulture property for all
+        ///   resource lookups using this strongly typed resource class.
+        /// </summary>
+        [global::System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
+                return resourceCulture;
+            }
+            set {
+                resourceCulture = value;
+            }
+        }
+    }
+}
+]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Stores the binary representation of the component"
+                      isArray="true"
+                      name="BinaryCode"
+                      state="cdata">
+                      <arrayElements
+                        arrayElementCount="2">
+                        <arrayElement
+                          dataType="System.String"><![CDATA[SC_0C23FEE7B3CB47ECAE9AFB38BE5B7EBA.dll]]></arrayElement>
+                        <arrayElement
+                          dataType="System.String"><![CDATA[TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAMM0+WMAAAAAAAAAAOAAIiALATAAABYAAAAIAAAAAAAA4jUA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAMAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAJA1AABPAAAAAEAAAHgEAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAA6BUAAAAgAAAAFgAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAAHgEAAAAQAAAAAYAAAAYAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAHgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAADE
+NQAAAAAAAEgAAAACAAUAyCIAABASAAABAAAAAAAAANg0AAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAABswBAAyAQAAAQAAEXIBAABwCgIoEAAACm8RAAAKFowgAAAB
+bxIAAApvEwAACm8UAAAKDTiQAAAACW8VAAAKdCMAAAFvFgAACnIDAABwcgEAAHBvFwAACnIHAABw
+cgEAAHBvFwAACm8YAAAKEwQDbxkAAAoRBHILAABwKBoAAApvGwAACgMUbxwAAApvGAAACnIbAABw
+KB0AAAosIAYDbxkAAAoRBG8bAAAKAxRvHAAACm8YAAAKKBoAAAoKBnInAABwKBoAAAoKCW8eAAAK
+OmX////eFAl1EQAAARMFEQUsBxEFbx8AAArcAnsBAAAEKCAAAAoGbyEAAApvIgAACgtzIwAACgwW
+EwYrHwgHEQaPKQAAAXIrAABwKCQAAApvJQAACiYRBhdYEwYRBgeOaTLaAwhvGAAACm8EAAAGKgAA
+ARAAAAIAJwCiyQAUAAAAAEoCcyYAAAp9AQAABAIoCAAABioqAgMEBSgnAAAKKiYCFgMoKAAACipa
+AywIAhYoKQAACipyMQAAcHMqAAAKeh4CKCsAAAoqHgIoLAAACip+AigtAAAKAgJzDAAABn0CAAAE
+AgJzDQAABn0DAAAEKpIEcs4AAHAaby4AAAosFQIFAgMoLwAACg4EcwMAAAZvCgAABipKKwcCA28L
+AAAGA28GAAAGLfEqBio6AigwAAAKAgN9BAAABCo6AigwAAAKAgN9BQAABCoeAigwAAAKKq5+BgAA
+BC0ect4AAHDQBwAAAigxAAAKbzIAAApzMwAACoAGAAAEfgYAAAQqGn4HAAAEKh4CgAcAAAQqGn4I
+AAAEKh4CKDQAAAoqLnMTAAAGgAgAAAQqAAAAQlNKQgEAAQAAAAAADAAAAHY0LjAuMzAzMTkAAAAA
+BQBsAAAA9AUAACN+AABgBgAASAgAACNTdHJpbmdzAAAAAKgOAABQAQAAI1VTAPgPAAAQAAAAI0dV
+SUQAAAAIEAAACAIAACNCbG9iAAAAAAAAAAIAAAFXFaIBCQEAAAD6ATMAFgAAAQAAAC4AAAAIAAAA
+CAAAABQAAAAPAAAANAAAABAAAAABAAAAAwAAAAUAAAAGAAAAAQAAAAUAAAABAAAAAADDAwEAAAAA
+AAYArwIEBgYAQwMEBgYA+wHxBQ8AeAYAAAYAKAJ8BAYAkgJ8BAYAcwJ8BAYAKgN8BAYAzwJ8BAYA
+6AJ8BAYAPwJ8BAYAWgJ+AwoAAwM9AQYAbgADCAYAVgXYBwYAygX+BgYA+gAZBAoAgAU9AQ4AcQU9
+AQoAAAU9AQoAYQc9AQYAJAcZBAYA3gHxBQYAkQUkBgYA5wRnBBIArgGtAxIADwKtAxIAjgFSBAYA
+wwEEBhYAAQChBRYASgChBQYAeAAZBBYAYQChBRYALQChBRYAGgChBQYAmgMZBAYAYQEZBAYA8wR8
+BAYAdQPYBwYAIAQDCAYAYQMZBAYAPAUDCAYAvAQZBAYA1gQZBAYABgEZBAYAJAh8BAAAAACHAAAA
+AAABAAEAAQAQAEcEAAAQAAEAAQABABAAZAUAAEkAAgADAAEAEABDBwAAVQACAAgAAQAQABEHAABZ
+AAQADAABABAAtgYAAFkABQANAAAAEAArBocGWQAGAA4AAAEQAO4GhwZxAAgAEgABAHMA3AAGABEH
+4AAGALYG5AABAFEH6AABAFEH6AARADsE7AARAH4B8AARAOoA9ABQIAAAAADGAOQH+AABAKAhAAAA
+AIYY5AUGAAIAsyEAAAAAhhjkBZUAAgC+IQAAAACGCC4EEAAFAMghAAAAAIYI6wP+AAYA3yEAAAAA
+hgD7B3MABwDnIQAAAACGACsHcwAHAO8hAAAAAIYY5AUGAAcADyIAAAAAxgDCBwMBBwA0IgAAAADG
+AbsH+AALAEciAAAAAMYB5Af4AAwASSIAAAAAhhjkBQ0BDQBYIgAAAACGGOQFDQEOAGciAAAAAIMY
+5AUGAA8AbyIAAAAAkwiNBRMBDwCbIgAAAACTCGYBGAEPAKIiAAAAAJMIcgEdAQ8AqiIAAAAAlgg3
+ByMBEACxIgAAAACGGOQFBgAQALkiAAAAAJEY6gUoARAAAAABAP8HAAABAIYFAAACAMkGAAADAA4F
+AAABAG8DAAABAG8DAAABALQAAAACADMBAAADAIYFAAAEAA4FAAABAIYFAAABAP8HAAABAGcHAAAB
+AGcHAAABAG8DCQDkBQEAEQDkBQYAGQDkBQoAKQDkBRAAMQDkBRAAOQDkBRAAQQDkBRAASQDkBRAA
+UQDkBRAAWQDkBRAAYQDkBRAAaQDkBQYAuQDkBQYA2QDkBRUA6QDkBQYAqQC8ACkA8QCoBC4A+QAH
+BDMACQGOBDoAEQHWBUAAgQBxB0UAGQEqAUkAIQHiAE0AsQCYA0kAsQBeAVMAIQEdB1kAKQE5CF8A
+MQFmA2YAIQEtCG0AgQDPB3MAiQCmAQYAOQF+AHcAOQHABn0AQQGhA4MAeQDkBQYASQGYA4oAeQDb
+AI8AUQHkBQYAkQDkBZUAkQAQBJ8AkQD/AwEAWQHkBRAAkQD7B3MAkQArB3MAqQDkBQYAIQH3BqUA
+qQDdBq0AsQDkBQYAKQEYAbMAKQEgCLwAwQDkBcIA4QDkBQYALgALAEMBLgATAEwBLgAbAGsBLgAj
+AHQBLgArAJ0BLgAzAJ0BLgA7AJ0BLgBDAHQBLgBLAKMBLgBTAJ0BLgBbALoBQwBjAAICaQBzAGsB
+iQBzAGsB4wBrAAICAQF7AAICGwADAAEABwADAAgABQAAADIELAEAAO8DMAEAAJEFNAEAAIYBOQEA
+ADsHPgEBAAQAAwABAAUABQACAA8ABwACABAACQABABEACQACABIACwAEgAAAAQAAAAchSYYAAAAA
+AACQAAAABAAAAAAAAAAAAAAAygDSAAAAAAAMAAAAAAAAAAAAAADTAH0HAAAAAAwAAAAAAAAAAAAA
+ANMAmgcAAAAABAAAAAAAAAAAAAAAygAZBAAAAAAMAAAAAAAAAAAAAADTABgFAAAAAAAAAAABAAAA
+NQYAAAAAAElEVFNDb21wb25lbnRNZXRhRGF0YTEwMABJRFRTSW5wdXRDb2x1bW4xMDAASURUU0lu
+cHV0Q29sdW1uQ29sbGVjdGlvbjEwMABJRFRTSW5wdXRDb2xsZWN0aW9uMTAwAElEVFNJbnB1dDEw
+MABTSEExAHNoYTEASW50MzIAZ2V0X1VURjgAPE1vZHVsZT4AU0NfMEMyM0ZFRTdCM0NCNDdFQ0FF
+OUFGQjM4QkU1QjdFQkEASW5wdXRJRABnZXRfQ29tcG9uZW50TWV0YURhdGEAbXNjb3JsaWIAQXBw
+ZW5kAFJlcGxhY2UAZGVmYXVsdEluc3RhbmNlAElEaXNwb3NhYmxlAFJ1bnRpbWVUeXBlSGFuZGxl
+AEdldFR5cGVGcm9tSGFuZGxlAGdldF9OYW1lAElucHV0TmFtZQBNaWNyb3NvZnQuU3FsU2VydmVy
+LkR0cy5QaXBlbGluZQBHZXRUeXBlAGdldF9DdWx0dXJlAHNldF9DdWx0dXJlAHJlc291cmNlQ3Vs
+dHVyZQBBcHBsaWNhdGlvblNldHRpbmdzQmFzZQBEaXNwb3NlAEVkaXRvckJyb3dzYWJsZVN0YXRl
+AENvbXBpbGVyR2VuZXJhdGVkQXR0cmlidXRlAERlYnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUA
+RGVidWdnYWJsZUF0dHJpYnV0ZQBFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUAQXNzZW1ibHlUaXRs
+ZUF0dHJpYnV0ZQBBc3NlbWJseVRyYWRlbWFya0F0dHJpYnV0ZQBUYXJnZXRGcmFtZXdvcmtBdHRy
+aWJ1dGUAQXNzZW1ibHlDb25maWd1cmF0aW9uQXR0cmlidXRlAEFzc2VtYmx5RGVzY3JpcHRpb25B
+dHRyaWJ1dGUAQ29tcGlsYXRpb25SZWxheGF0aW9uc0F0dHJpYnV0ZQBBc3NlbWJseVByb2R1Y3RB
+dHRyaWJ1dGUAQXNzZW1ibHlDb3B5cmlnaHRBdHRyaWJ1dGUAU1NJU1NjcmlwdENvbXBvbmVudEVu
+dHJ5UG9pbnRBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAFJ1bnRpbWVDb21wYXRp
+YmlsaXR5QXR0cmlidXRlAEJ5dGUAR2V0VmFsdWUAdmFsdWUARW5jb2RpbmcAU3lzdGVtLlJ1bnRp
+bWUuVmVyc2lvbmluZwBUb1N0cmluZwBDb21wdXRlSGFzaABTeXN0ZW0uQ29tcG9uZW50TW9kZWwA
+U0NfMEMyM0ZFRTdCM0NCNDdFQ0FFOUFGQjM4QkU1QjdFQkEuZGxsAHNldF9jaGVja3N1bV9Jc051
+bGwAU2V0TnVsbABnZXRfSXRlbQBzZXRfSXRlbQBTeXN0ZW0ASGFzaEFsZ29yaXRobQBzZXRfY2hl
+Y2tzdW0AcmVzb3VyY2VNYW4AU2NyaXB0TWFpbgBTeXN0ZW0uQ29uZmlndXJhdGlvbgBTeXN0ZW0u
+R2xvYmFsaXphdGlvbgBTeXN0ZW0uUmVmbGVjdGlvbgBnZXRfSW5wdXRDb2x1bW5Db2xsZWN0aW9u
+AGdldF9JbnB1dENvbGxlY3Rpb24ASW52YWxpZE9wZXJhdGlvbkV4Y2VwdGlvbgBTdHJpbmdDb21w
+YXJpc29uAEN1bHR1cmVJbmZvAFByb3BlcnR5SW5mbwBPdXRwdXROYW1lTWFwAE91dHB1dE1hcABN
+aWNyb3NvZnQuU3FsU2VydmVyLkRUU1BpcGVsaW5lV3JhcABTSEExQ3J5cHRvU2VydmljZVByb3Zp
+ZGVyAFN0cmluZ0J1aWxkZXIASW5wdXQwQnVmZmVyAFBpcGVsaW5lQnVmZmVyAFNjcmlwdEJ1ZmZl
+cgBnZXRfUmVzb3VyY2VNYW5hZ2VyAE1pY3Jvc29mdC5TcWxTZXJ2ZXIuRHRzLlBpcGVsaW5lLldy
+YXBwZXIASUVudW1lcmF0b3IAR2V0RW51bWVyYXRvcgAuY3RvcgAuY2N0b3IAU3lzdGVtLkRpYWdu
+b3N0aWNzAFN5c3RlbS5SdW50aW1lLkNvbXBpbGVyU2VydmljZXMAU3lzdGVtLlJlc291cmNlcwBT
+Q19jNDBkNTFhNzBmMGU0NWEyYmFkOGFjMzI1YTc1MjE0NS5Qcm9wZXJ0aWVzLlJlc291cmNlcy5y
+ZXNvdXJjZXMARGVidWdnaW5nTW9kZXMAU0NfYzQwZDUxYTcwZjBlNDVhMmJhZDhhYzMyNWE3NTIx
+NDUuUHJvcGVydGllcwBWYXJpYWJsZXMAR2V0Qnl0ZXMAQnVmZmVyQ29sdW1uSW5kZXhlcwBHZXRD
+b2x1bW5JbmRleGVzAFNldHRpbmdzAEVxdWFscwBTeXN0ZW0uQ29sbGVjdGlvbnMAQ29ubmVjdGlv
+bnMAQ29uY2F0AE9iamVjdABFbmRPZlJvd3NldABnZXRfRGVmYXVsdABVc2VyQ29tcG9uZW50AFBh
+cmVudENvbXBvbmVudABTY3JpcHRDb21wb25lbnQAZ2V0X0N1cnJlbnQATWljcm9zb2Z0LlNxbFNl
+cnZlci5UeFNjcmlwdABNaWNyb3NvZnQuU3FsU2VydmVyLlBpcGVsaW5lSG9zdABJbnB1dDBfUHJv
+Y2Vzc0lucHV0AE1vdmVOZXh0AFN5c3RlbS5UZXh0AElucHV0MF9Qcm9jZXNzSW5wdXRSb3cATmV4
+dFJvdwBTeXN0ZW0uU2VjdXJpdHkuQ3J5cHRvZ3JhcGh5AGdldF9Bc3NlbWJseQBvcF9FcXVhbGl0
+eQBHZXRQcm9wZXJ0eQAAAAAAAQADXwAAAyAAAA9fAEkAcwBOAHUAbABsAAALRgBhAGwAcwBlAAAD
+fAAABVgAMgAAgJtJAHMATgB1AGwAbAAgAHAAcgBvAHAAZQByAHQAeQAgAGMAYQBuAG4AbwB0ACAA
+YgBlACAAcwBlAHQAIAB0AG8AIABGAGEAbABzAGUALgAgAEEAcwBzAGkAZwBuACAAYQAgAHYAYQBs
+AHUAZQAgAHQAbwAgAHQAaABlACAAYwBvAGwAdQBtAG4AIABpAG4AcwB0AGUAYQBkAC4AAA9JAG4A
+cAB1AHQAIAAwAABxUwBDAF8AYwA0ADAAZAA1ADEAYQA3ADAAZgAwAGUANAA1AGEAMgBiAGEAZAA4
+AGEAYwAzADIANQBhADcANQAyADEANAA1AC4AUAByAG8AcABlAHIAdABpAGUAcwAuAFIAZQBzAG8A
+dQByAGMAZQBzAAClIrz2WHNIS7ZspMtNDtlGAAQgAQEIAyAAAQUgAQEREQQgAQEOBSABARFpDQcH
+Dh0FEj0SQQ4SRQgEIAASeQQgABJ9BiABEoCFHAUgABKAiQQgABJBAyAAHAMgAA4FIAIODg4FIAAS
+gJUFAAIODg4GIAESgJkOBiACHBwdHAUAAgIODgMgAAIFAAASgJ0FIAEdBQ4GIAEdBR0FBCABDg4F
+IAESPQ4JIAMBEk0dCBJRBSACAQgcByACAg4RgLEFIAEdCAgIAAESgJURgLUFIAASgLkHIAIBDhKA
+uQi3elxWGTTgiQiJhF3NgIDMkQMGEjkDBhIUAwYSGAMGElUDBhJhAwYSZQMGEiAFIAEBEgwEIAEB
+AgkgBAEIDhJNElEFIAEBElUEAAASYQQAABJlBQABARJlBAAAEiADAAABAygADgMoAAIECAASYQQI
+ABJlBAgAEiAIAQAIAAAAAAAeAQABAFQCFldyYXBOb25FeGNlcHRpb25UaHJvd3MBCAEAAgAAAAAA
+KAEAI1NDX2M0MGQ1MWE3MGYwZTQ1YTJiYWQ4YWMzMjVhNzUyMTQ1AAAFAQAAAAAWAQARQ29weXJp
+Z2h0IEAgIDIwMjIAAEcBABouTkVURnJhbWV3b3JrLFZlcnNpb249djQuMAEAVA4URnJhbWV3b3Jr
+RGlzcGxheU5hbWUQLk5FVCBGcmFtZXdvcmsgNAQBAAAAALQAAADOyu++AQAAAJEAAABsU3lzdGVt
+LlJlc291cmNlcy5SZXNvdXJjZVJlYWRlciwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3Vs
+dHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5I1N5c3RlbS5SZXNv
+dXJjZXMuUnVudGltZVJlc291cmNlU2V0AgAAAAAAAAAAAAAAUEFEUEFEULQAAAC4NQAAAAAAAAAA
+AADSNQAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAxDUAAAAAAAAAAAAAAABfQ29yRGxsTWFpbgBt
+c2NvcmVlLmRsbAAAAAAA/yUAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAABABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABI
+AAAAWEAAABoEAAAAAAAAAAAAABoENAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAA
+AAC9BO/+AAABAAAAAQBJhgchAAABAEmGByE/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAA
+AAEAVgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4A
+AAAAAAAAsAR6AwAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAABWAwAAAQAwADAAMAAw
+ADAANABiADAAAAAaAAEAAQBDAG8AbQBtAGUAbgB0AHMAAAAAAAAAIgABAAEAQwBvAG0AcABhAG4A
+eQBOAGEAbQBlAAAAAAAAAAAAcAAkAAEARgBpAGwAZQBEAGUAcwBjAHIAaQBwAHQAaQBvAG4AAAAA
+AFMAQwBfAGMANAAwAGQANQAxAGEANwAwAGYAMABlADQANQBhADIAYgBhAGQAOABhAGMAMwAyADUA
+YQA3ADUAMgAxADQANQAAAD4ADwABAEYAaQBsAGUAVgBlAHIAcwBpAG8AbgAAAAAAMQAuADAALgA4
+ADQANQA1AC4AMwA0ADMANwA3AAAAAABwACgAAQBJAG4AdABlAHIAbgBhAGwATgBhAG0AZQAAAFMA
+QwBfADAAQwAyADMARgBFAEUANwBCADMAQwBCADQANwBFAEMAQQBFADkAQQBGAEIAMwA4AEIARQA1
+AEIANwBFAEIAQQAuAGQAbABsAAAASAASAAEATABlAGcAYQBsAEMAbwBwAHkAcgBpAGcAaAB0AAAA
+QwBvAHAAeQByAGkAZwBoAHQAIABAACAAIAAyADAAMgAyAAAAKgABAAEATABlAGcAYQBsAFQAcgBh
+AGQAZQBtAGEAcgBrAHMAAAAAAAAAAAB4ACgAAQBPAHIAaQBnAGkAbgBhAGwARgBpAGwAZQBuAGEA
+bQBlAAAAUwBDAF8AMABDADIAMwBGAEUARQA3AEIAMwBDAEIANAA3AEUAQwBBAEUAOQBBAEYAQgAz
+ADgAQgBFADUAQgA3AEUAQgBBAC4AZABsAGwAAABoACQAAQBQAHIAbwBkAHUAYwB0AE4AYQBtAGUA
+AAAAAFMAQwBfAGMANAAwAGQANQAxAGEANwAwAGYAMABlADQANQBhADIAYgBhAGQAOABhAGMAMwAy
+ADUAYQA3ADUAMgAxADQANQAAAEIADwABAFAAcgBvAGQAdQBjAHQAVgBlAHIAcwBpAG8AbgAAADEA
+LgAwAC4AOAA0ADUANQAuADMANAAzADcANwAAAAAARgAPAAEAQQBzAHMAZQBtAGIAbAB5ACAAVgBl
+AHIAcwBpAG8AbgAAADEALgAwAC4AOAA0ADUANQAuADMANAAzADcANwAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAAAwAAADkNQAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=]]></arrayElement>
+                      </arrayElements>
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the Microsoft Visual Studio Tools for Applications project. Project names must be unique within a package."
+                      name="VSTAProjectName"
+                      typeConverter="NOTBROWSABLE">SC_0c23fee7b3cb47ecae9afb38be5b7eba</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the programming language used by the script."
+                      name="ScriptLanguage"
+                      typeConverter="Microsoft.SqlServer.VSTAHosting.ScriptingLanguages">CSharp</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read-only variables."
+                      name="ReadOnlyVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a comma-separated list of read/write variables."
+                      name="ReadWriteVariables"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ScriptUIWriteableVariablePickerDlg"></property>
+                    <property
+                      dataType="System.String"
+                      description="List of breakpoints present on the script."
+                      isArray="true"
+                      name="BreakpointCollection"
+                      typeConverter="NOTBROWSABLE">
+                      <arrayElements
+                        arrayElementCount="0" />
+                    </property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataChecksum"
+                      typeConverter="NOTBROWSABLE">b8992e8552f1713884552d0e07226560</property>
+                    <property
+                      dataType="System.String"
+                      description="Checksum to match component metedata against compiled codes."
+                      name="MetadataShaChecksum"
+                      typeConverter="NOTBROWSABLE">a35b06c430e92ea5cb715f61697aa734ad5b70f8</property>
+                    <property
+                      dataType="System.String"
+                      name="UserComponentTypeName">Microsoft.ScriptComponentHost</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Inputs[Input 0]"
+                      hasSideEffects="true"
+                      name="Input 0">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0]"
+                      name="Output 0"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Inputs[Input 0]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0].Columns[checksum]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0].Columns[checksum]"
+                          name="checksum" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_gli_tb_act_party_to_customer_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_gli_tb_act_party_to_customer_VG]) [refTable]
+where [refTable].[PARTY_KEY_ID] = ? and [refTable].[ACCOUNT_NR] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PARTY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PARTY_FIRST_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PARTY_SECONDARY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACCOUNT_NR" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EFFECTIVE_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPIRY_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RELATIONSHIP_TYPE_NM" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_SYSTEM_CD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]};#{Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD009 Actimize SRVACTIMIZE]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_KEY_ID"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PARTY_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="ACCOUNT_NR"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ACCOUNT_NR</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup 1"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from [dbo].[ST_gli_tb_act_party_to_customer_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select * from (select * from [dbo].[ST_gli_tb_act_party_to_customer_VG]) [refTable]
+where [refTable].[PARTY_KEY_ID] = ? and [refTable].[ACCOUNT_NR] = ? and [refTable].[CHECKSUM_SCD_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PARTY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PARTY_FIRST_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="PARTY_SECONDARY_KEY_ID" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="ACCOUNT_NR" dataType="DT_STR" length="255" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="EFFECTIVE_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPIRY_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RELATIONSHIP_TYPE_NM" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="SOURCE_SYSTEM_CD" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="INSERT_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="UPDATE_SCD_DT" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CHECKSUM_SCD_ID" dataType="DT_STR" length="100" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]};#{Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]};#{Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0].Columns[checksum]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD009 Actimize SRVACTIMIZE]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_KEY_ID"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PARTY_KEY_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="ACCOUNT_NR"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ACCOUNT_NR</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0].Columns[checksum]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CHECKSUM_SCD_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="OLE DB Command"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE ST_gli_tb_act_party_to_customer_VG SET
+       
+      PARTY_FIRST_KEY_ID=?
+	  ,PARTY_SECONDARY_KEY_ID=?
+	  ,EFFECTIVE_DT=?
+	  ,EXPIRY_DT=?
+	  ,RELATIONSHIP_TYPE_NM=?
+	  ,SOURCE_SYSTEM_CD=?
+      ,UPDATE_SCD_DT=?
+      ,CHECKSUM_SCD_ID=?
+       
+	  WHERE
+	   PARTY_KEY_ID=?
+	   AND
+	   ACCOUNT_NR =?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD009 Actimize SRVACTIMIZE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="ACCOUNT_NR"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[PARTY_FIRST_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_FIRST_KEY_ID"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[PARTY_SECONDARY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_SECONDARY_KEY_ID"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[EFFECTIVE_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[EXPIRY_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPIRY_DT"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[RELATIONSHIP_TYPE_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="RELATIONSHIP_TYPE_NM"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[INSERT_SCD_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0].Columns[checksum]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="dbTimeStamp"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="dbTimeStamp"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="dbTimeStamp"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="Param_8">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="OLE DB Destination"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ST_gli_tb_act_party_to_customer_VG]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">0</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD009 Actimize SRVACTIMIZE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PARTY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_KEY_ID"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PARTY_FIRST_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_FIRST_KEY_ID"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[PARTY_SECONDARY_KEY_ID]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="50"
+                          cachedName="PARTY_SECONDARY_KEY_ID"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ACCOUNT_NR]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="255"
+                          cachedName="ACCOUNT_NR"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NR]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EFFECTIVE_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EFFECTIVE_DT"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[EXPIRY_DT]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPIRY_DT"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[RELATIONSHIP_TYPE_NM]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="11"
+                          cachedName="RELATIONSHIP_TYPE_NM"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[SOURCE_SYSTEM_CD]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="5"
+                          cachedName="SOURCE_SYSTEM_CD"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[checksum]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="checksum"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0].Columns[checksum]" />
+                        <inputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[INSERT_SCD_DT]"
+                          cachedDataType="dbTimeStamp"
+                          cachedName="INSERT_SCD_DT"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="ACCOUNT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbTimeStamp"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbTimeStamp"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[UPDATE_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="UPDATE_SCD_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CHECKSUM_SCD_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="CHECKSUM_SCD_ID" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="OLE DB Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset"></property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select
+DISTINCT
+ a.PRIMARY_PARTY_KEY_ID as PARTY_KEY_ID
+,a.PRIMARY_PARTY_KEY_ID as PARTY_FIRST_KEY_ID
+,a.PRIMARY_PARTY_KEY_ID as PARTY_SECONDARY_KEY_ID
+,a.ACCOUNT_NR as  ACCOUNT_NR 
+,a.EFFECTIVE_DT as [EFFECTIVE_DT]
+,a.EXPIRATION_DT as [EXPIRY_DT]
+,'CUSTOMER' as [RELATIONSHIP_TYPE_NM]
+,'I4PRO' as [SOURCE_SYSTEM_CD]
+,getdate() as INSERT_SCD_DT
+from ST_gli_tb_act_account_VG a
+left join ST_gli_tb_act_account_bn_vg b on a.ACCOUNT_NR = b.ACCOUNT_NR
+where --a.PRIMARY_PARTY_KEY_ID in (141560,141702,141703,141814,152565,20088,192743)
+--a.ACCOUNT_NR = '4001791'
+B.ACCOUNT_NR IS NULL
+union all
+SELECT
+DISTINCT
+ B.PRIMARY_PARTY_KEY_ID as PARTY_KEY_ID
+,A.PRIMARY_PARTY_KEY_ID as PARTY_FIRST_KEY_ID
+,B.PRIMARY_PARTY_KEY_ID as PARTY_SECONDARY_KEY_ID
+,a.ACCOUNT_NR as  ACCOUNT_NR 
+,a.EFFECTIVE_DT as [EFFECTIVE_DT]
+,a.EXPIRATION_DT as [EXPIRY_DT]
+,'BENEFICIARY' as [RELATIONSHIP_TYPE_NM]
+,'I4PRO' as [SOURCE_SYSTEM_CD]
+,getdate() as INSERT_SCD_DT
+FROM ST_gli_tb_act_account_bn_vg B
+INNER JOIN ST_gli_tb_act_account_VG A on a.ACCOUNT_NR = b.ACCOUNT_NR</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">2</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Connections[OleDbConnection]"
+                      connectionManagerID="{5C17518C-29F6-42B5-B5B8-A88DB97F3188}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[MTZSQLD009 Actimize SRVACTIMIZE]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_KEY_ID]"
+                          length="50"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_KEY_ID]"
+                          name="PARTY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          length="50"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_FIRST_KEY_ID]"
+                          name="PARTY_FIRST_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          length="50"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          name="PARTY_SECONDARY_KEY_ID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NR]"
+                          length="255"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[ACCOUNT_NR]"
+                          name="ACCOUNT_NR"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EXPIRY_DT]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[EXPIRY_DT]"
+                          name="EXPIRY_DT"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          length="11"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          name="RELATIONSHIP_TYPE_NM"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          length="5"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          name="ACCOUNT_NR" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          name="EFFECTIVE_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EXPIRY_DT]"
+                          dataType="dbDate"
+                          name="EXPIRY_DT" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          name="SOURCE_SYSTEM_CD" />
+                        <externalMetadataColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          name="INSERT_SCD_DT" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_KEY_ID]"
+                          name="PARTY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_FIRST_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_FIRST_KEY_ID]"
+                          name="PARTY_FIRST_KEY_ID" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          codePage="1252"
+                          dataType="str"
+                          length="50"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PARTY_SECONDARY_KEY_ID]"
+                          name="PARTY_SECONDARY_KEY_ID" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NR]"
+                          codePage="1252"
+                          dataType="str"
+                          length="255"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ACCOUNT_NR]"
+                          name="ACCOUNT_NR" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EFFECTIVE_DT]"
+                          name="EFFECTIVE_DT" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EXPIRY_DT]"
+                          dataType="dbDate"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EXPIRY_DT]"
+                          name="EXPIRY_DT" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          codePage="1252"
+                          dataType="str"
+                          length="11"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RELATIONSHIP_TYPE_NM]"
+                          name="RELATIONSHIP_TYPE_NM" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          codePage="1252"
+                          dataType="str"
+                          length="5"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SOURCE_SYSTEM_CD]"
+                          name="SOURCE_SYSTEM_CD" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          dataType="dbTimeStamp"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[INSERT_SCD_DT]"
+                          name="INSERT_SCD_DT" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Lookup Match Output]"
+                  endId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Lookup No Match Output]"
+                  endId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Lookup No Match Output1]"
+                  endId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command.Inputs[OLE DB Command Input]"
+                  name="Lookup No Match Output"
+                  startId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[OLE DB Source Output]"
+                  endId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Inputs[Input 0]"
+                  name="OLE DB Source Output"
+                  startId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Output 0]"
+                  endId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup.Inputs[Lookup Input]"
+                  name="Output 0"
+                  startId="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum.Outputs[Output 0]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task"
+          TopLeft="56.5714364149133,19.7647077527426" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="282.4,188.8"
+          Size="282.4,232"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG"
+          TopLeft="190.85714610742,77.6941187366895" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="112.8,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup"
+          TopLeft="559.2,207.2" />
+        <NodeLayout
+          Size="149.6,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source"
+          TopLeft="148.7,102.3" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination"
+          TopLeft="135.2,207.2" />
+        <NodeLayout
+          Size="121.6,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1"
+          TopLeft="559.2,308.8" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Command"
+          TopLeft="140,303.2" />
+        <NodeLayout
+          Size="124.8,41.6"
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\checksum"
+          TopLeft="547.9,100.7" />
+        <EdgeLayout
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Output 0]"
+          TopLeft="612.95,142.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,64.9"
+              Start="0,0"
+              End="0,57.4">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.4" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="298.3,122.3">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="249.6,0"
+              Start="0,0"
+              End="242.1,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="242.1,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Lookup No Match Output1]"
+          TopLeft="559.2,326.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-254.4,0"
+              Start="0,0"
+              End="-246.9,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-246.9,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-179.25638671875,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Lookup No Match Output]"
+          TopLeft="559.2,228">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-253.6,0"
+              Start="0,0"
+              End="-246.1,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-246.1,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-178.85638671875,5,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task.Paths[Lookup Match Output]"
+          TopLeft="617.8,248.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-48.19138671875,20.4453125,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_gli_tb_act_party_to_customer_VG]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insere ST_gli_tb_act_party_to_customer_VG\Data Flow Task\Lookup 1">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[ST_gli_tb_act_party_to_customer_VG]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

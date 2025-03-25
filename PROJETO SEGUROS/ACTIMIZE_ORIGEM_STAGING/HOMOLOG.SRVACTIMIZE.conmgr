@@ -1,0 +1,22 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="HOMOLOG SRVACTIMIZE"
+  DTS:DTSID="{30B5448A-E50E-4BD6-BCBE-44B33F8AEFD5}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="Password">@[$Project::pSAA_PASS]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="ServerName">@[$Project::pSAA_SERVER]</DTS:PropertyExpression>
+  <DTS:PropertyExpression
+    DTS:Name="UserName">@[$Project::pSAA_USER]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=DESENV;User ID=SRVACTIMIZE;Provider=OraOLEDB.Oracle.1;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1"
+        p4:Salt="tpxdQN00Tw=="
+        p4:IV="W3rG/7LTGQg=" xmlns:p4="www.microsoft.com/SqlServer/SSIS">LASLUrl3wSLilkJ3BqL9LkXjfL6xxkmA0GJibxaNknM0hCP27M+PESej/SLWDx62SKy5qnyhOEheXqh/VuQKxJPWIIVwbWlkDmx6B7cR2cXgc29MOS9w/cTcTHV899D4BWgfJKxXuDK2o58YE4CsHmeCZUhuVLWnx5bu/+HGIao=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
